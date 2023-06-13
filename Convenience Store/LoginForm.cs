@@ -1,4 +1,5 @@
-﻿using static System.Net.Mime.MediaTypeNames;
+﻿using System.Drawing.Drawing2D;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace Convenience_Store
 {
@@ -30,7 +31,7 @@ namespace Convenience_Store
             }
         }
 
-        private void cbPassword_CheckedChanged(object sender, EventArgs e)
+        private void cbPassword_CheckedChanged_1(object sender, EventArgs e)
         {
             if (cbPassword.Checked)
             {
@@ -40,6 +41,11 @@ namespace Convenience_Store
             {
                 txtPassword.UseSystemPasswordChar = true;
             }
+        }
+
+        private void btnLogin_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
