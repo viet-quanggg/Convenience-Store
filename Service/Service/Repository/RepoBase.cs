@@ -16,7 +16,7 @@ namespace Service.Repository
         public RepoBase()
          {
              ConvenienceStorecontext = new ConvenienceStoreContext();
-            Dbset = ConvenienceStorecontext.Set<T>();
+             Dbset = ConvenienceStorecontext.Set<T>();
         }
         
         public List<T> GetAll()

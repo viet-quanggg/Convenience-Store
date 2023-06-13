@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Service.Repository
 {
-    class RepoMerchandise : RepoBase<Merchandise>
+    public class RepoMerchandise : RepoBase<Merchandise>
     {
     }
 }
