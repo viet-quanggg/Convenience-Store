@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace Service.Repository
 {
 
-    internal class RepoAccount :RepoBase<Account>
+    public class RepoAccount :RepoBase<Account>
     {
 
     }

@@ -1,10 +1,14 @@
-﻿using System.Drawing.Drawing2D;
+﻿using Service.Repository;
+using System.Drawing.Drawing2D;
+using Service.Repository;
 using static System.Net.Mime.MediaTypeNames;
+using Microsoft.VisualBasic.ApplicationServices;
 
 namespace Convenience_Store
 {
     public partial class LoginForm : Form
     {
+         RepoAccount RepoAccount = new RepoAccount();
         public LoginForm()
         {
             InitializeComponent();
@@ -14,15 +18,19 @@ namespace Convenience_Store
         {
             string username = txtUsername.Text;
             string password = txtPassword.Text;
+            var check = RepoAccount.GetAll().FirstOrDefault(a => a.AccName.Equals(username) && a.AccPass.Equals(password));
 
-            if (username.Equals("admin") && password.Equals("1234"))
+            if (check != null)
             {
                 MessageBox.Show("đăng nhập thành công", "thông báo", MessageBoxButtons.OK);
                 this.Hide();
 
                 //return home page
-                //Form form = new test();
-                //form.ShowDialog();
+                //HomePage.Username = username;
+                Form form = new HomePage();
+                
+                form.ShowDialog();
+ 
 
             }
             else
