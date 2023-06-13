@@ -69,9 +69,9 @@
             label1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             label1.BackColor = SystemColors.ActiveCaptionText;
             label1.BorderStyle = BorderStyle.FixedSingle;
-            label1.Location = new Point(-1, 93);
+            label1.Location = new Point(-1, 95);
             label1.Name = "label1";
-            label1.Size = new Size(918, 10);
+            label1.Size = new Size(924, 10);
             label1.TabIndex = 18;
             label1.Text = "label1";
             label1.TextAlign = ContentAlignment.TopCenter;
@@ -80,6 +80,7 @@
             // 
             panel2.Controls.Add(label3);
             panel2.Controls.Add(btnExit);
+            panel2.Controls.Add(label6);
             panel2.Location = new Point(1, 476);
             panel2.Name = "panel2";
             panel2.Size = new Size(920, 77);
@@ -109,7 +110,7 @@
             label6.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             label6.BackColor = SystemColors.ActiveCaptionText;
             label6.BorderStyle = BorderStyle.FixedSingle;
-            label6.Location = new Point(0, 463);
+            label6.Location = new Point(-1, 0);
             label6.Name = "label6";
             label6.Size = new Size(935, 10);
             label6.TabIndex = 18;
@@ -165,9 +166,11 @@
             btnCustomer.TabIndex = 4;
             btnCustomer.Text = "Customer";
             btnCustomer.UseVisualStyleBackColor = true;
+            btnCustomer.Click += btnCustomer_Click;
             // 
             // btnSetting
             // 
+            btnSetting.DialogResult = DialogResult.OK;
             btnSetting.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
             btnSetting.Location = new Point(674, 338);
             btnSetting.Name = "btnSetting";
@@ -183,7 +186,6 @@
             ClientSize = new Size(920, 550);
             Controls.Add(btnSetting);
             Controls.Add(btnCustomer);
-            Controls.Add(label6);
             Controls.Add(btnImportBill);
             Controls.Add(btnExportBill);
             Controls.Add(btnMerchandise);
