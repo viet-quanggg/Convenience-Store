@@ -38,7 +38,7 @@
             label3 = new Label();
             panel2 = new Panel();
             label4 = new Label();
-            button1 = new Button();
+            btnExit = new Button();
             cbPassword = new CheckBox();
             panel3 = new Panel();
             panel4 = new Panel();
@@ -136,7 +136,7 @@
             // panel2
             // 
             panel2.Controls.Add(label4);
-            panel2.Controls.Add(button1);
+            panel2.Controls.Add(btnExit);
             panel2.Location = new Point(2, 474);
             panel2.Name = "panel2";
             panel2.Size = new Size(912, 124);
@@ -152,16 +152,17 @@
             label4.TabIndex = 1;
             label4.Text = "Login Page";
             // 
-            // button1
+            // btnExit
             // 
-            button1.FlatAppearance.BorderSize = 2;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Location = new Point(10, 85);
-            button1.Name = "button1";
-            button1.Size = new Size(94, 29);
-            button1.TabIndex = 0;
-            button1.Text = "Exit";
-            button1.UseVisualStyleBackColor = true;
+            btnExit.FlatAppearance.BorderSize = 2;
+            btnExit.FlatStyle = FlatStyle.Flat;
+            btnExit.Location = new Point(10, 85);
+            btnExit.Name = "btnExit";
+            btnExit.Size = new Size(94, 29);
+            btnExit.TabIndex = 0;
+            btnExit.Text = "Exit";
+            btnExit.UseVisualStyleBackColor = true;
+            btnExit.Click += btnExit_Click;
             // 
             // cbPassword
             // 
@@ -260,7 +261,7 @@
         private Label label3;
         private Panel panel2;
         private Label label4;
-        private Button button1;
+        private Button btnExit;
         private CheckBox cbPassword;
         private Panel panel3;
         private Panel panel4;

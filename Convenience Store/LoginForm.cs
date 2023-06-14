@@ -9,7 +9,7 @@ namespace Convenience_Store
 {
     public partial class LoginForm : Form
     {
-         RepoAccount RepoAccount = new RepoAccount();
+        RepoAccount RepoAccount = new RepoAccount();
         public LoginForm()
         {
             InitializeComponent();
@@ -22,22 +22,40 @@ namespace Convenience_Store
             var check = RepoAccount.GetAll().FirstOrDefault(a => a.AccName.Equals(account) && a.AccPass.Equals(password));
             var link = RepoAccount.GetAll().Where(a => a.AccName.Equals(account));
 
+            if (string.IsNullOrEmpty(txtUsername.Text))
+            {
+                MessageBox.Show("Please enter a valid name", "Error");
+                return;
+            }
+            if (string.IsNullOrEmpty(txtPassword.Text) || txtPassword.Text.Length < 3)
+            {
+                MessageBox.Show("Please enter a password with at least 3 characters", "Error");
+                return;
+            }
             if (check != null)
             {
-                MessageBox.Show("đăng nhập thành công", "thông báo", MessageBoxButtons.OK);
-                this.Hide();
-               
-                //return home page
-                //HomePage.Username = username;
-                Form form = new HomePage(link.ToList());
-                
-                form.ShowDialog();
- 
+
+                if (MessageBox.Show("Login success", "Notification", MessageBoxButtons.OKCancel) == DialogResult.OK)
+                {
+                    this.Hide();
+
+                    //return home page
+                    //HomePage.Username = username;
+                    Form form = new HomePage(link.ToList());
+
+                    form.ShowDialog();
+                }
+
+                else
+                {
+                    return;
+                }
+
 
             }
             else
             {
-                MessageBox.Show("đăng nhập thất bại", "thông báo", MessageBoxButtons.OK);
+                MessageBox.Show("Login fail", "Notification", MessageBoxButtons.OK);
             }
         }
 
@@ -56,6 +74,11 @@ namespace Convenience_Store
         private void btnLogin_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
