@@ -139,7 +139,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(7, 10);
+            label4.Location = new Point(13, 40);
             label4.Name = "label4";
             label4.Size = new Size(29, 20);
             label4.TabIndex = 4;
@@ -288,15 +288,15 @@
             panel4.Controls.Add(txtId);
             panel4.Controls.Add(label12);
             panel4.Controls.Add(label4);
-            panel4.Location = new Point(5, 112);
+            panel4.Location = new Point(3, 107);
             panel4.Name = "panel4";
-            panel4.Size = new Size(421, 201);
+            panel4.Size = new Size(421, 216);
             panel4.TabIndex = 9;
             // 
             // label14
             // 
             label14.AutoSize = true;
-            label14.Location = new Point(7, 109);
+            label14.Location = new Point(13, 139);
             label14.Name = "label14";
             label14.Size = new Size(46, 20);
             label14.TabIndex = 8;
@@ -304,14 +304,14 @@
             // 
             // txtRole
             // 
-            txtRole.Location = new Point(114, 106);
+            txtRole.Location = new Point(120, 136);
             txtRole.Name = "txtRole";
             txtRole.Size = new Size(125, 27);
             txtRole.TabIndex = 7;
             // 
             // txtName2
             // 
-            txtName2.Location = new Point(114, 55);
+            txtName2.Location = new Point(120, 85);
             txtName2.Name = "txtName2";
             txtName2.Size = new Size(125, 27);
             txtName2.TabIndex = 7;
@@ -319,7 +319,7 @@
             // txtId
             // 
             txtId.Enabled = false;
-            txtId.Location = new Point(114, 3);
+            txtId.Location = new Point(120, 33);
             txtId.Name = "txtId";
             txtId.Size = new Size(125, 27);
             txtId.TabIndex = 7;
@@ -327,7 +327,7 @@
             // label12
             // 
             label12.AutoSize = true;
-            label12.Location = new Point(7, 58);
+            label12.Location = new Point(13, 88);
             label12.Name = "label12";
             label12.Size = new Size(56, 20);
             label12.TabIndex = 6;
@@ -365,6 +365,7 @@
             Controls.Add(panel3);
             Controls.Add(panel2);
             Controls.Add(panel1);
+            FormBorderStyle = FormBorderStyle.SizableToolWindow;
             Name = "AccountSetting";
             Text = "AccountSetting";
             panel1.ResumeLayout(false);
