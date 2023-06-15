@@ -80,7 +80,7 @@ namespace Convenience_Store
                 MessageBox.Show("Please enter a valid name", "Error");
                 return;
             }
-            if (string.IsNullOrEmpty(txtPassword.Text) || txtPassword.Text.Length < 3 || string.IsNullOrWhiteSpace(txtPassword.Text))
+            if (ValidateString(txtPassword.Text) || txtPassword.Text.Length < 3 )
             {
                 MessageBox.Show("Please enter a password with at least 3 characters", "Error");
                 return;
@@ -90,7 +90,7 @@ namespace Convenience_Store
                 MessageBox.Show("Please enter a valid date of birth", "Error");
                 return;
             }
-            if (!Regex.IsMatch(txtPhone.Text, @"^\d{10}$") || string.IsNullOrWhiteSpace(txtPhone.Text))
+            if (!Regex.IsMatch(txtPhone.Text, @"^\d{10}$") || ValidateString(txtPhone.Text))
             {
                 MessageBox.Show("Please enter a valid 10-digit phone number", "Error");
                 return;
