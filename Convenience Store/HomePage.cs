@@ -79,6 +79,21 @@ namespace Convenience_Store
             setting.ShowDialog();
         }
 
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Are you sure you want to exit", "Confirmation", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                // Close the current form
+                this.Close();
 
+                // Create a new instance of the LoginForm and display it
+                LoginForm loginForm = new LoginForm();
+                loginForm.Show();
+            }
+            else
+            {
+                return;
+            }
+        }
     }
 }

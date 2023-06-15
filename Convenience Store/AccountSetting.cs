@@ -1,4 +1,5 @@
-﻿using Service.Models;
+﻿using Microsoft.Identity.Client;
+using Service.Models;
 using Service.Repository;
 using System;
 using System.Collections.Generic;
@@ -6,11 +7,13 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Principal;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Linq;
+using static System.Windows.Forms.LinkLabel;
 
 namespace Convenience_Store
 {
@@ -19,8 +22,8 @@ namespace Convenience_Store
     {
         private readonly Account _account;
         private RepoAccount _Account;
-
-
+        private Account currAccount; //Khai báo currAccount là một trường của lớp AccountSetting
+        public List<Account> Accounts { get; set; }
 
 
         public AccountSetting(List<Account> accounts)
@@ -103,7 +106,12 @@ namespace Convenience_Store
 
         private void btnExit_Click(object sender, EventArgs e)
         {
-            this.Close();
+            var link = _Account.GetAll().Where(a => a.AccName.Equals(_account.AccName));
+            this.Hide();
+
+            Form form = new HomePage(link.ToList());
+            form.ShowDialog();
+            
         }
 
         private void btnLogout_Click(object sender, EventArgs e)

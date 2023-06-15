@@ -80,5 +80,11 @@ namespace Convenience_Store
         {
             this.Close();
         }
+
+        private void btnclear_Click(object sender, EventArgs e)
+        {
+            txtUsername.Text = string.Empty;
+            txtPassword.Text = string.Empty;
+        }
     }
 }

@@ -45,6 +45,7 @@
             label5 = new Label();
             sqlCommand1 = new Microsoft.Data.SqlClient.SqlCommand();
             label7 = new Label();
+            btnclear = new Button();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             panel3.SuspendLayout();
@@ -177,6 +178,7 @@
             // 
             // panel3
             // 
+            panel3.Controls.Add(btnclear);
             panel3.Controls.Add(cbPassword);
             panel3.Controls.Add(btnLogin);
             panel3.Controls.Add(txtPassword);
@@ -227,6 +229,16 @@
             label7.Text = "label7";
             label7.TextAlign = ContentAlignment.TopCenter;
             // 
+            // btnclear
+            // 
+            btnclear.Location = new Point(41, 120);
+            btnclear.Name = "btnclear";
+            btnclear.Size = new Size(94, 29);
+            btnclear.TabIndex = 15;
+            btnclear.Text = "Clear";
+            btnclear.UseVisualStyleBackColor = true;
+            btnclear.Click += btnclear_Click;
+            // 
             // LoginForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -269,5 +281,6 @@
         private Microsoft.Data.SqlClient.SqlCommand sqlCommand1;
         private Label label6;
         private Label label7;
+        private Button btnclear;
     }
 }
