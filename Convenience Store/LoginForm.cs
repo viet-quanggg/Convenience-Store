@@ -3,39 +3,71 @@ using System.Drawing.Drawing2D;
 using Service.Repository;
 using static System.Net.Mime.MediaTypeNames;
 using Microsoft.VisualBasic.ApplicationServices;
+using Service.Models;
+using System.Text.RegularExpressions;
 
 namespace Convenience_Store
 {
     public partial class LoginForm : Form
     {
-         RepoAccount RepoAccount = new RepoAccount();
+        RepoAccount RepoAccount = new RepoAccount();
         public LoginForm()
         {
             InitializeComponent();
+
         }
 
+        public Boolean ValidateString(string s)
+        {
+            return string.IsNullOrEmpty(s) || string.IsNullOrWhiteSpace(s);
+
+        }
+        public string formatString(string s)
+        {
+            return Regex.Replace(s, @"\s+", " ").Trim();
+
+        }
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            string username = txtUsername.Text;
+            string account = txtUsername.Text.ToLower();
             string password = txtPassword.Text;
-            var check = RepoAccount.GetAll().FirstOrDefault(a => a.AccName.Equals(username) && a.AccPass.Equals(password));
+            var check = RepoAccount.GetAll().FirstOrDefault(a => a.AccName.Equals(account) && a.AccPass.Equals(password));
+            var link = RepoAccount.GetAll().Where(a => a.AccName.Equals(account));
 
+            if (ValidateString(txtUsername.Text) || Regex.IsMatch(formatString(txtUsername.Text), @"^[^a-zA-Z]+$"))
+            {
+                MessageBox.Show("Please enter a valid name", "Error");
+                return;
+            }
+            if (ValidateString(txtPassword.Text) || txtPassword.Text.Length < 3)
+            {
+                MessageBox.Show("Please enter a password with at least 3 characters", "Error");
+                return;
+            }
             if (check != null)
             {
-                MessageBox.Show("đăng nhập thành công", "thông báo", MessageBoxButtons.OK);
-                this.Hide();
 
-                //return home page
-                //HomePage.Username = username;
-                Form form = new HomePage();
-                
-                form.ShowDialog();
- 
+                if (MessageBox.Show("Login success", "Notification", MessageBoxButtons.OKCancel) == DialogResult.OK)
+                {
+                    this.Hide();
+
+                    //return home page
+                    //HomePage.Username = username;
+                    Form form = new HomePage(link.ToList());
+
+                    form.ShowDialog();
+                }
+
+                else
+                {
+                    return;
+                }
+
 
             }
             else
             {
-                MessageBox.Show("đăng nhập thất bại", "thông báo", MessageBoxButtons.OK);
+                MessageBox.Show("Login fail", "Notification", MessageBoxButtons.OK);
             }
         }
 
@@ -54,6 +86,17 @@ namespace Convenience_Store
         private void btnLogin_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnclear_Click(object sender, EventArgs e)
+        {
+            txtUsername.Text = string.Empty;
+            txtPassword.Text = string.Empty;
         }
     }
 }

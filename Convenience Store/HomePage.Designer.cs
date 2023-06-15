@@ -104,6 +104,7 @@
             btnExit.TabIndex = 19;
             btnExit.Text = "Exit";
             btnExit.UseVisualStyleBackColor = true;
+            btnExit.Click += btnExit_Click;
             // 
             // label6
             // 
@@ -126,6 +127,7 @@
             btnOrder.TabIndex = 3;
             btnOrder.Text = "New Order";
             btnOrder.UseVisualStyleBackColor = true;
+            btnOrder.Click += btnOrder_Click;
             // 
             // btnMerchandise
             // 
@@ -136,6 +138,7 @@
             btnMerchandise.TabIndex = 4;
             btnMerchandise.Text = "Merchandise";
             btnMerchandise.UseVisualStyleBackColor = true;
+            btnMerchandise.Click += btnMerchandise_Click;
             // 
             // btnExportBill
             // 
@@ -146,6 +149,7 @@
             btnExportBill.TabIndex = 4;
             btnExportBill.Text = "Export Bill";
             btnExportBill.UseVisualStyleBackColor = true;
+            btnExportBill.Click += btnExportBill_Click;
             // 
             // btnImportBill
             // 
@@ -156,6 +160,7 @@
             btnImportBill.TabIndex = 4;
             btnImportBill.Text = "Import Bill";
             btnImportBill.UseVisualStyleBackColor = true;
+            btnImportBill.Click += btnImportBill_Click;
             // 
             // btnCustomer
             // 
@@ -178,6 +183,7 @@
             btnSetting.TabIndex = 4;
             btnSetting.Text = "Setting";
             btnSetting.UseVisualStyleBackColor = true;
+            btnSetting.Click += btnSetting_Click;
             // 
             // HomePage
             // 
@@ -194,6 +200,7 @@
             Controls.Add(panel1);
             Name = "HomePage";
             Text = "Form1";
+            Load += HomePage_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             panel2.ResumeLayout(false);

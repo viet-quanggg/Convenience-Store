@@ -44,12 +44,12 @@
             label11 = new Label();
             txtPassword = new TextBox();
             dtpDOB = new DateTimePicker();
-            cbId = new ComboBox();
-            cbRole = new ComboBox();
             txtName1 = new TextBox();
             txtAddress = new TextBox();
             txtPhone = new TextBox();
             panel3 = new Panel();
+            txtRole1 = new TextBox();
+            txtId1 = new TextBox();
             label13 = new Label();
             panel4 = new Panel();
             label14 = new Label();
@@ -123,6 +123,7 @@
             btnExit.TabIndex = 19;
             btnExit.Text = "Exit";
             btnExit.UseVisualStyleBackColor = true;
+            btnExit.Click += btnExit_Click;
             // 
             // label6
             // 
@@ -139,7 +140,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(7, 10);
+            label4.Location = new Point(13, 40);
             label4.Name = "label4";
             label4.Size = new Size(29, 20);
             label4.TabIndex = 4;
@@ -208,26 +209,13 @@
             // 
             // dtpDOB
             // 
+            dtpDOB.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             dtpDOB.Location = new Point(122, 154);
+            dtpDOB.MaxDate = new DateTime(2050, 12, 31, 0, 0, 0, 0);
+            dtpDOB.MinDate = new DateTime(1960, 1, 1, 0, 0, 0, 0);
             dtpDOB.Name = "dtpDOB";
-            dtpDOB.Size = new Size(250, 27);
+            dtpDOB.Size = new Size(261, 27);
             dtpDOB.TabIndex = 6;
-            // 
-            // cbId
-            // 
-            cbId.FormattingEnabled = true;
-            cbId.Location = new Point(122, 15);
-            cbId.Name = "cbId";
-            cbId.Size = new Size(151, 28);
-            cbId.TabIndex = 7;
-            // 
-            // cbRole
-            // 
-            cbRole.FormattingEnabled = true;
-            cbRole.Location = new Point(122, 253);
-            cbRole.Name = "cbRole";
-            cbRole.Size = new Size(151, 28);
-            cbRole.TabIndex = 7;
             // 
             // txtName1
             // 
@@ -252,9 +240,9 @@
             // 
             // panel3
             // 
+            panel3.Controls.Add(txtRole1);
+            panel3.Controls.Add(txtId1);
             panel3.Controls.Add(label13);
-            panel3.Controls.Add(cbRole);
-            panel3.Controls.Add(cbId);
             panel3.Controls.Add(dtpDOB);
             panel3.Controls.Add(txtName1);
             panel3.Controls.Add(txtPhone);
@@ -270,6 +258,28 @@
             panel3.Name = "panel3";
             panel3.Size = new Size(487, 344);
             panel3.TabIndex = 8;
+            // 
+            // txtRole1
+            // 
+            txtRole1.BackColor = SystemColors.MenuBar;
+            txtRole1.BorderStyle = BorderStyle.FixedSingle;
+            txtRole1.Enabled = false;
+            txtRole1.Location = new Point(122, 254);
+            txtRole1.Name = "txtRole1";
+            txtRole1.ReadOnly = true;
+            txtRole1.Size = new Size(125, 27);
+            txtRole1.TabIndex = 10;
+            // 
+            // txtId1
+            // 
+            txtId1.BackColor = SystemColors.MenuBar;
+            txtId1.BorderStyle = BorderStyle.FixedSingle;
+            txtId1.Enabled = false;
+            txtId1.Location = new Point(122, 11);
+            txtId1.Name = "txtId1";
+            txtId1.ReadOnly = true;
+            txtId1.Size = new Size(125, 27);
+            txtId1.TabIndex = 9;
             // 
             // label13
             // 
@@ -288,15 +298,15 @@
             panel4.Controls.Add(txtId);
             panel4.Controls.Add(label12);
             panel4.Controls.Add(label4);
-            panel4.Location = new Point(5, 112);
+            panel4.Location = new Point(3, 107);
             panel4.Name = "panel4";
-            panel4.Size = new Size(421, 201);
+            panel4.Size = new Size(421, 216);
             panel4.TabIndex = 9;
             // 
             // label14
             // 
             label14.AutoSize = true;
-            label14.Location = new Point(7, 109);
+            label14.Location = new Point(13, 139);
             label14.Name = "label14";
             label14.Size = new Size(46, 20);
             label14.TabIndex = 8;
@@ -304,30 +314,38 @@
             // 
             // txtRole
             // 
-            txtRole.Location = new Point(114, 106);
+            txtRole.Enabled = false;
+            txtRole.Location = new Point(120, 136);
             txtRole.Name = "txtRole";
+            txtRole.ReadOnly = true;
             txtRole.Size = new Size(125, 27);
             txtRole.TabIndex = 7;
             // 
             // txtName2
             // 
-            txtName2.Location = new Point(114, 55);
+            txtName2.Enabled = false;
+            txtName2.Location = new Point(120, 85);
             txtName2.Name = "txtName2";
+            txtName2.ReadOnly = true;
             txtName2.Size = new Size(125, 27);
             txtName2.TabIndex = 7;
             // 
             // txtId
             // 
+            txtId.BackColor = SystemColors.MenuBar;
+            txtId.BorderStyle = BorderStyle.FixedSingle;
             txtId.Enabled = false;
-            txtId.Location = new Point(114, 3);
+            txtId.Location = new Point(120, 33);
             txtId.Name = "txtId";
+            txtId.ReadOnly = true;
             txtId.Size = new Size(125, 27);
             txtId.TabIndex = 7;
+            txtId.TextChanged += txtId_TextChanged;
             // 
             // label12
             // 
             label12.AutoSize = true;
-            label12.Location = new Point(7, 58);
+            label12.Location = new Point(13, 88);
             label12.Name = "label12";
             label12.Size = new Size(56, 20);
             label12.TabIndex = 6;
@@ -342,6 +360,7 @@
             btnLogout.TabIndex = 9;
             btnLogout.Text = "Logout";
             btnLogout.UseVisualStyleBackColor = true;
+            btnLogout.Click += btnLogout_Click;
             // 
             // btnSave
             // 
@@ -352,6 +371,7 @@
             btnSave.TabIndex = 10;
             btnSave.Text = "Save";
             btnSave.UseVisualStyleBackColor = true;
+            btnSave.Click += btnSave_Click;
             // 
             // AccountSetting
             // 
@@ -365,6 +385,7 @@
             Controls.Add(panel3);
             Controls.Add(panel2);
             Controls.Add(panel1);
+            FormBorderStyle = FormBorderStyle.SizableToolWindow;
             Name = "AccountSetting";
             Text = "AccountSetting";
             panel1.ResumeLayout(false);
@@ -396,7 +417,6 @@
         private Label label11;
         private TextBox txtPassword;
         private DateTimePicker dtpDOB;
-        private ComboBox cbId;
         private ComboBox cbRole;
         private TextBox txtName1;
         private TextBox txtAddress;
@@ -411,5 +431,7 @@
         private Label label12;
         private Button btnLogout;
         private Button btnSave;
+        private TextBox txtId1;
+        private TextBox txtRole1;
     }
 }
