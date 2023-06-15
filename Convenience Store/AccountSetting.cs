@@ -31,23 +31,31 @@ namespace Convenience_Store
             InitializeComponent();
             _Account = new RepoAccount();
             _account = accounts.FirstOrDefault(); // Get the first account in the list
-            txtId.Text = _account.AccId.ToString();
-            txtName2.Text = _account.AccName;
-            txtRole.Text = _account.AccRole.ToString();
-            txtId1.Text = _account.AccId.ToString();
-            txtRole1.Text = _account.AccRole.ToString();
-            var accRoles = _Account.GetAll().Select(a => a.AccRole).Distinct(); // Get AccRole values from the accounts list
+            if (_account != null)
+            {
+                txtId.Text = _account.AccId.ToString();
+                txtName2.Text = _account.AccName;
+                txtRole.Text = _account.AccRole.ToString();
+                txtId1.Text = _account.AccId.ToString();
+                txtRole1.Text = _account.AccRole.ToString();
+                var accRoles = _Account.GetAll().Select(a => a.AccRole).Distinct(); // Get AccRole values from the accounts list
 
-            /*cbRole.DataSource = accRoles.ToList(); // Bind the accRoles list to the ComboBox
-            cbRole.Refresh(); // Refresh the ComboBox*/
+                /*cbRole.DataSource = accRoles.ToList(); // Bind the accRoles list to the ComboBox
+                cbRole.Refresh(); // Refresh the ComboBox*/
 
-            // Populate the text boxes with the account data
-            txtName1.Text = _account.AccName;
-            txtPassword.Text = _account.AccPass;
-            dtpDOB.Value = (DateTime)_account.AccDob;
-            txtPhone.Text = _account.AccPhone;
-            //cbRole.Text = _account.AccRole.ToString(); // Set the ComboBox value to the account's AccRole
-            txtAddress.Text = _account.AccAddress;
+                // Populate the text boxes with the account data
+                txtName1.Text = _account.AccName;
+                txtPassword.Text = _account.AccPass;
+                dtpDOB.Value = (DateTime)_account.AccDob;
+                txtPhone.Text = _account.AccPhone;
+                //cbRole.Text = _account.AccRole.ToString(); // Set the ComboBox value to the account's AccRole
+                txtAddress.Text = _account.AccAddress;
+            }
+
+            else {
+                MessageBox.Show("Please enter a valid name", "Error");
+                return;
+            }
         }
 
         private void txtId_TextChanged(object sender, EventArgs e)
@@ -96,6 +104,7 @@ namespace Convenience_Store
 
                 // Show a message box indicating that the account was updated
                 MessageBox.Show("Account updated successfully", "Success");
+                return;
             }
             else
             {
@@ -106,7 +115,7 @@ namespace Convenience_Store
 
         private void btnExit_Click(object sender, EventArgs e)
         {
-            var link = _Account.GetAll().Where(a => a.AccName.Equals(_account.AccName));
+            var link = _Account.GetAll().Where(a => a.AccId.Equals(_account.AccId));
             this.Hide();
 
             Form form = new HomePage(link.ToList());

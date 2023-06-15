@@ -17,10 +17,10 @@ namespace Convenience_Store
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            string account = txtUsername.Text;
+            string account = txtUsername.Text.ToLower();
             string password = txtPassword.Text;
-            var check = RepoAccount.GetAll().FirstOrDefault(a => a.AccName.Equals(account) && a.AccPass.Equals(password));
-            var link = RepoAccount.GetAll().Where(a => a.AccName.Equals(account));
+            var check = RepoAccount.GetAll().FirstOrDefault(a => a.AccName.ToLower().Equals(account) && a.AccPass.Equals(password));
+            var link = RepoAccount.GetAll().Where(a => a.AccName.ToLower().Equals(account));
 
             if (string.IsNullOrEmpty(txtUsername.Text))
             {
