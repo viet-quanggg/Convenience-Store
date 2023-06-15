@@ -34,18 +34,16 @@
             label2 = new Label();
             label1 = new Label();
             panel1 = new Panel();
-            label6 = new Label();
             label3 = new Label();
             panel2 = new Panel();
             label4 = new Label();
             btnExit = new Button();
             cbPassword = new CheckBox();
             panel3 = new Panel();
+            btnclear = new Button();
             panel4 = new Panel();
             label5 = new Label();
             sqlCommand1 = new Microsoft.Data.SqlClient.SqlCommand();
-            label7 = new Label();
-            btnclear = new Button();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             panel3.SuspendLayout();
@@ -56,10 +54,10 @@
             // 
             btnLogin.FlatAppearance.BorderSize = 2;
             btnLogin.FlatStyle = FlatStyle.Flat;
-            btnLogin.Location = new Point(481, 120);
-            btnLogin.Margin = new Padding(3, 4, 3, 4);
+            btnLogin.Location = new Point(722, 180);
+            btnLogin.Margin = new Padding(4, 6, 4, 6);
             btnLogin.Name = "btnLogin";
-            btnLogin.Size = new Size(86, 31);
+            btnLogin.Size = new Size(129, 46);
             btnLogin.TabIndex = 10;
             btnLogin.Text = "Login";
             btnLogin.UseVisualStyleBackColor = true;
@@ -69,87 +67,84 @@
             // txtPassword
             // 
             txtPassword.ForeColor = SystemColors.ActiveCaptionText;
-            txtPassword.Location = new Point(140, 70);
-            txtPassword.Margin = new Padding(3, 4, 3, 4);
+            txtPassword.Location = new Point(210, 105);
+            txtPassword.Margin = new Padding(4, 6, 4, 6);
             txtPassword.Name = "txtPassword";
-            txtPassword.Size = new Size(427, 23);
+            txtPassword.Size = new Size(638, 29);
             txtPassword.TabIndex = 9;
             txtPassword.UseSystemPasswordChar = true;
             // 
             // txtUsername
             // 
-            txtUsername.Location = new Point(140, 15);
-            txtUsername.Margin = new Padding(3, 4, 3, 4);
+            txtUsername.Location = new Point(210, 22);
+            txtUsername.Margin = new Padding(4, 6, 4, 6);
             txtUsername.Name = "txtUsername";
-            txtUsername.Size = new Size(427, 23);
+            txtUsername.Size = new Size(638, 29);
             txtUsername.TabIndex = 8;
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(41, 74);
+            label2.Location = new Point(62, 111);
+            label2.Margin = new Padding(4, 0, 4, 0);
             label2.Name = "label2";
-            label2.Size = new Size(69, 17);
+            label2.Size = new Size(98, 25);
             label2.TabIndex = 7;
             label2.Text = "Password";
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(41, 22);
+            label1.Location = new Point(62, 33);
+            label1.Margin = new Padding(4, 0, 4, 0);
             label1.Name = "label1";
-            label1.Size = new Size(73, 17);
+            label1.Size = new Size(102, 25);
             label1.TabIndex = 6;
             label1.Text = "Username\r\n";
             // 
             // panel1
             // 
-            panel1.Controls.Add(label6);
+            panel1.BackColor = Color.FromArgb(128, 128, 255);
             panel1.Controls.Add(label3);
+            panel1.Dock = DockStyle.Top;
             panel1.ForeColor = SystemColors.MenuText;
-            panel1.Location = new Point(-4, 0);
+            panel1.Location = new Point(0, 0);
+            panel1.Margin = new Padding(4);
             panel1.Name = "panel1";
-            panel1.Size = new Size(918, 115);
+            panel1.Size = new Size(1371, 172);
             panel1.TabIndex = 12;
-            // 
-            // label6
-            // 
-            label6.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            label6.BackColor = SystemColors.ActiveCaptionText;
-            label6.BorderStyle = BorderStyle.FixedSingle;
-            label6.Location = new Point(-9, 105);
-            label6.Name = "label6";
-            label6.Size = new Size(927, 10);
-            label6.TabIndex = 17;
-            label6.Text = "label6";
-            label6.TextAlign = ContentAlignment.TopCenter;
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI", 48F, FontStyle.Regular, GraphicsUnit.Point);
-            label3.Location = new Point(111, -17);
+            label3.Font = new Font("Segoe UI", 48F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
+            label3.Location = new Point(192, 9);
+            label3.Margin = new Padding(4, 0, 4, 0);
             label3.Name = "label3";
-            label3.Size = new Size(703, 106);
+            label3.Size = new Size(1021, 149);
             label3.TabIndex = 0;
             label3.Text = "Convenience Store";
             // 
             // panel2
             // 
+            panel2.Anchor = AnchorStyles.None;
+            panel2.BackColor = Color.FromArgb(128, 128, 255);
             panel2.Controls.Add(label4);
             panel2.Controls.Add(btnExit);
-            panel2.Location = new Point(2, 474);
+            panel2.Location = new Point(0, 714);
+            panel2.Margin = new Padding(4);
             panel2.Name = "panel2";
-            panel2.Size = new Size(912, 124);
+            panel2.Size = new Size(1371, 186);
             panel2.TabIndex = 13;
             // 
             // label4
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label4.Location = new Point(792, 89);
+            label4.Location = new Point(1188, 134);
+            label4.Margin = new Padding(4, 0, 4, 0);
             label4.Name = "label4";
-            label4.Size = new Size(108, 28);
+            label4.Size = new Size(153, 38);
             label4.TabIndex = 1;
             label4.Text = "Login Page";
             // 
@@ -157,9 +152,10 @@
             // 
             btnExit.FlatAppearance.BorderSize = 2;
             btnExit.FlatStyle = FlatStyle.Flat;
-            btnExit.Location = new Point(10, 85);
+            btnExit.Location = new Point(15, 128);
+            btnExit.Margin = new Padding(4);
             btnExit.Name = "btnExit";
-            btnExit.Size = new Size(94, 29);
+            btnExit.Size = new Size(141, 44);
             btnExit.TabIndex = 0;
             btnExit.Text = "Exit";
             btnExit.UseVisualStyleBackColor = true;
@@ -168,9 +164,10 @@
             // cbPassword
             // 
             cbPassword.AutoSize = true;
-            cbPassword.Location = new Point(588, 72);
+            cbPassword.Location = new Point(882, 108);
+            cbPassword.Margin = new Padding(4);
             cbPassword.Name = "cbPassword";
-            cbPassword.Size = new Size(129, 21);
+            cbPassword.Size = new Size(179, 29);
             cbPassword.TabIndex = 14;
             cbPassword.Text = "Show Password";
             cbPassword.UseVisualStyleBackColor = true;
@@ -186,27 +183,42 @@
             panel3.Controls.Add(label2);
             panel3.Controls.Add(label1);
             panel3.Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
-            panel3.Location = new Point(83, 257);
+            panel3.Location = new Point(124, 386);
+            panel3.Margin = new Padding(4);
             panel3.Name = "panel3";
-            panel3.Size = new Size(764, 163);
+            panel3.Size = new Size(1146, 244);
             panel3.TabIndex = 15;
+            // 
+            // btnclear
+            // 
+            btnclear.Location = new Point(62, 180);
+            btnclear.Margin = new Padding(4);
+            btnclear.Name = "btnclear";
+            btnclear.Size = new Size(141, 44);
+            btnclear.TabIndex = 15;
+            btnclear.Text = "Clear";
+            btnclear.UseVisualStyleBackColor = true;
+            btnclear.Click += btnclear_Click;
             // 
             // panel4
             // 
             panel4.Controls.Add(label5);
             panel4.Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
-            panel4.Location = new Point(83, 154);
+            panel4.Location = new Point(124, 231);
+            panel4.Margin = new Padding(4);
             panel4.Name = "panel4";
-            panel4.Size = new Size(764, 105);
+            panel4.Size = new Size(1146, 158);
             panel4.TabIndex = 16;
             // 
             // label5
             // 
+            label5.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             label5.AutoSize = true;
-            label5.Font = new Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point);
-            label5.Location = new Point(319, 32);
+            label5.Font = new Font("Segoe UI Semibold", 20.1428585F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
+            label5.Location = new Point(425, 51);
+            label5.Margin = new Padding(4, 0, 4, 0);
             label5.Name = "label5";
-            label5.Size = new Size(157, 38);
+            label5.Size = new Size(271, 65);
             label5.TabIndex = 0;
             label5.Text = "Login Form";
             // 
@@ -217,39 +229,16 @@
             sqlCommand1.Notification = null;
             sqlCommand1.Transaction = null;
             // 
-            // label7
-            // 
-            label7.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            label7.BackColor = SystemColors.ActiveCaptionText;
-            label7.BorderStyle = BorderStyle.FixedSingle;
-            label7.Location = new Point(-4, 461);
-            label7.Name = "label7";
-            label7.Size = new Size(927, 10);
-            label7.TabIndex = 18;
-            label7.Text = "label7";
-            label7.TextAlign = ContentAlignment.TopCenter;
-            // 
-            // btnclear
-            // 
-            btnclear.Location = new Point(41, 120);
-            btnclear.Name = "btnclear";
-            btnclear.Size = new Size(94, 29);
-            btnclear.TabIndex = 15;
-            btnclear.Text = "Clear";
-            btnclear.UseVisualStyleBackColor = true;
-            btnclear.Click += btnclear_Click;
-            // 
             // LoginForm
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(12F, 30F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(914, 600);
-            Controls.Add(label7);
+            ClientSize = new Size(1371, 900);
             Controls.Add(panel4);
             Controls.Add(panel3);
             Controls.Add(panel2);
             Controls.Add(panel1);
-            Margin = new Padding(3, 4, 3, 4);
+            Margin = new Padding(4, 6, 4, 6);
             Name = "LoginForm";
             Text = "LoginPage";
             panel1.ResumeLayout(false);
@@ -279,8 +268,6 @@
         private Panel panel4;
         private Label label5;
         private Microsoft.Data.SqlClient.SqlCommand sqlCommand1;
-        private Label label6;
-        private Label label7;
         private Button btnclear;
     }
 }

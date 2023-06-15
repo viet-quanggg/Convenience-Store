@@ -17,6 +17,11 @@ namespace Convenience_Store
     {
         RepoAccount RepoAccount = new RepoAccount();
 
+        public HomePage()
+        {
+
+        }
+
         private List<Account> _accounts;
         public List<Account> Accounts
         {
@@ -63,8 +68,8 @@ namespace Convenience_Store
 
         private void btnImportBill_Click(object sender, EventArgs e)
         {
-            /*Form importbill = new (Accounts);
-            importbill.ShowDialog();*/
+            Form importbill = new ImportBillForm();
+            importbill.ShowDialog();
         }
 
         private void btnCustomer_Click(object sender, EventArgs e)

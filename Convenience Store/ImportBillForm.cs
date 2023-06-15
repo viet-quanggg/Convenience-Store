@@ -52,7 +52,7 @@ namespace Convenience_Store
         private void btnExit_Click(object sender, EventArgs e)
         {
             this.Close();
-            Form homePage = new HomePage();
+            Form homePage = new HomePage(); 
             homePage.ShowDialog();
             this.Close();
 
