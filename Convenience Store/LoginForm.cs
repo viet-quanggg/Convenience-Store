@@ -4,6 +4,7 @@ using Service.Repository;
 using static System.Net.Mime.MediaTypeNames;
 using Microsoft.VisualBasic.ApplicationServices;
 using Service.Models;
+using System.Text.RegularExpressions;
 
 namespace Convenience_Store
 {
@@ -13,21 +14,32 @@ namespace Convenience_Store
         public LoginForm()
         {
             InitializeComponent();
+
         }
 
+        public Boolean ValidateString(string s)
+        {
+            return string.IsNullOrEmpty(s) || string.IsNullOrWhiteSpace(s);
+
+        }
+        public string formatString(string s)
+        {
+            return Regex.Replace(s, @"\s+", " ").Trim();
+
+        }
         private void btnLogin_Click(object sender, EventArgs e)
         {
             string account = txtUsername.Text.ToLower();
             string password = txtPassword.Text;
-            var check = RepoAccount.GetAll().FirstOrDefault(a => a.AccName.ToLower().Equals(account) && a.AccPass.Equals(password));
-            var link = RepoAccount.GetAll().Where(a => a.AccName.ToLower().Equals(account));
+            var check = RepoAccount.GetAll().FirstOrDefault(a => a.AccName.Equals(account) && a.AccPass.Equals(password));
+            var link = RepoAccount.GetAll().Where(a => a.AccName.Equals(account));
 
-            if (string.IsNullOrEmpty(txtUsername.Text))
+            if (ValidateString(txtUsername.Text) || Regex.IsMatch(formatString(txtUsername.Text), @"^[^a-zA-Z]+$"))
             {
                 MessageBox.Show("Please enter a valid name", "Error");
                 return;
             }
-            if (string.IsNullOrEmpty(txtPassword.Text) || txtPassword.Text.Length < 3)
+            if (ValidateString(txtPassword.Text) || txtPassword.Text.Length < 3)
             {
                 MessageBox.Show("Please enter a password with at least 3 characters", "Error");
                 return;
