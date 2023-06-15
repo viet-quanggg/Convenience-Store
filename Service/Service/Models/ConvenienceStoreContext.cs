@@ -31,7 +31,7 @@ namespace Service.Models
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseSqlServer(GetConnectionString());
+                optionsBuilder.UseSqlServer("Server=(local);uid=sa;pwd=12345;database=ConvenienceStore;TrustServerCertificate=True");
             }
         }
 

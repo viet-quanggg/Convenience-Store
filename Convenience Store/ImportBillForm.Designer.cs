@@ -1,6 +1,6 @@
 ﻿namespace Convenience_Store
 {
-    partial class ImportBill
+    partial class ImportBillForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,13 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             panel1 = new Panel();
+            label6 = new Label();
             label1 = new Label();
             panel4 = new Panel();
             label2 = new Label();
             btnExit = new Button();
             txtSearch = new TextBox();
             dgvImportBill = new DataGridView();
+            importBillBindingSource = new BindingSource(components);
             btnSearch = new Button();
             btnExport = new Button();
             btnDelete = new Button();
@@ -50,27 +53,41 @@
             panel1.SuspendLayout();
             panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvImportBill).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)importBillBindingSource).BeginInit();
             panel2.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(128, 128, 255);
+            panel1.Controls.Add(label6);
             panel1.Controls.Add(label1);
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Margin = new Padding(4);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1187, 60);
+            panel1.Size = new Size(1186, 60);
             panel1.TabIndex = 0;
+            // 
+            // label6
+            // 
+            label6.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
+            label6.AutoSize = true;
+            label6.Location = new Point(18, 21);
+            label6.Margin = new Padding(4, 0, 4, 0);
+            label6.Name = "label6";
+            label6.Size = new Size(0, 30);
+            label6.TabIndex = 10;
             // 
             // label1
             // 
             label1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
             label1.AutoSize = true;
-            label1.BackColor = Color.White;
+            label1.BackColor = Color.FromArgb(128, 128, 255);
+            label1.FlatStyle = FlatStyle.System;
             label1.Font = new Font("Segoe UI", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
-            label1.Location = new Point(495, 9);
+            label1.ForeColor = SystemColors.ControlText;
+            label1.Location = new Point(486, 9);
             label1.Margin = new Padding(4, 0, 4, 0);
             label1.Name = "label1";
             label1.Size = new Size(160, 38);
@@ -87,7 +104,7 @@
             panel4.Location = new Point(0, 693);
             panel4.Margin = new Padding(4);
             panel4.Name = "panel4";
-            panel4.Size = new Size(1187, 60);
+            panel4.Size = new Size(1186, 60);
             panel4.TabIndex = 1;
             // 
             // label2
@@ -95,7 +112,7 @@
             label2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
-            label2.Location = new Point(969, 20);
+            label2.Location = new Point(1018, 30);
             label2.Margin = new Padding(4, 0, 4, 0);
             label2.Name = "label2";
             label2.Size = new Size(168, 30);
@@ -105,7 +122,7 @@
             // 
             // btnExit
             // 
-            btnExit.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            btnExit.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
             btnExit.Location = new Point(18, 12);
             btnExit.Margin = new Padding(4);
             btnExit.Name = "btnExit";
@@ -113,6 +130,7 @@
             btnExit.TabIndex = 0;
             btnExit.Text = "Exit";
             btnExit.UseVisualStyleBackColor = true;
+            btnExit.Click += btnExit_Click;
             // 
             // txtSearch
             // 
@@ -120,20 +138,29 @@
             txtSearch.Location = new Point(458, 72);
             txtSearch.Margin = new Padding(4);
             txtSearch.Name = "txtSearch";
-            txtSearch.Size = new Size(567, 35);
+            txtSearch.PlaceholderText = "Search Bill Based On Merchandise Name";
+            txtSearch.Size = new Size(566, 35);
             txtSearch.TabIndex = 0;
             // 
             // dgvImportBill
             // 
+            dgvImportBill.AllowUserToAddRows = false;
+            dgvImportBill.AllowUserToDeleteRows = false;
             dgvImportBill.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             dgvImportBill.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvImportBill.Location = new Point(459, 122);
             dgvImportBill.Margin = new Padding(4);
             dgvImportBill.Name = "dgvImportBill";
+            dgvImportBill.ReadOnly = true;
             dgvImportBill.RowHeadersWidth = 51;
             dgvImportBill.RowTemplate.Height = 29;
-            dgvImportBill.Size = new Size(709, 501);
+            dgvImportBill.Size = new Size(710, 501);
             dgvImportBill.TabIndex = 2;
+            dgvImportBill.CellClick += dgvImportBill_CellClick;
+            // 
+            // importBillBindingSource
+            // 
+            importBillBindingSource.DataSource = typeof(Service.Models.ImportBill);
             // 
             // btnSearch
             // 
@@ -145,6 +172,7 @@
             btnSearch.TabIndex = 3;
             btnSearch.Text = "Search";
             btnSearch.UseVisualStyleBackColor = true;
+            btnSearch.Click += btnSearch_Click;
             // 
             // btnExport
             // 
@@ -156,17 +184,19 @@
             btnExport.TabIndex = 4;
             btnExport.Text = "Export";
             btnExport.UseVisualStyleBackColor = true;
+            btnExport.Click += btnExport_Click;
             // 
             // btnDelete
             // 
             btnDelete.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            btnDelete.Location = new Point(817, 632);
+            btnDelete.Location = new Point(818, 632);
             btnDelete.Margin = new Padding(4);
             btnDelete.Name = "btnDelete";
             btnDelete.Size = new Size(132, 44);
             btnDelete.TabIndex = 5;
             btnDelete.Text = "Delete";
             btnDelete.UseVisualStyleBackColor = true;
+            btnDelete.Click += btnDelete_Click;
             // 
             // panel2
             // 
@@ -272,11 +302,11 @@
             btnEdit.UseVisualStyleBackColor = true;
             btnEdit.Click += btnEdit_Click;
             // 
-            // ImportBill
+            // ImportBillForm
             // 
             AutoScaleDimensions = new SizeF(12F, 30F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1187, 753);
+            ClientSize = new Size(1186, 753);
             Controls.Add(btnEdit);
             Controls.Add(btnImport);
             Controls.Add(panel2);
@@ -288,13 +318,15 @@
             Controls.Add(panel4);
             Controls.Add(panel1);
             Margin = new Padding(4);
-            Name = "ImportBill";
+            Name = "ImportBillForm";
             Text = "ImportBill";
+            Load += ImportBill_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             panel4.ResumeLayout(false);
             panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dgvImportBill).EndInit();
+            ((System.ComponentModel.ISupportInitialize)importBillBindingSource).EndInit();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
             ResumeLayout(false);
@@ -322,5 +354,7 @@
         private TextBox txtAccRole;
         private TextBox txtAccName;
         private TextBox txtAccId;
+        private BindingSource importBillBindingSource;
+        private Label label6;
     }
 }
