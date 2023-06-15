@@ -62,18 +62,25 @@ namespace Convenience_Store
         {
 
         }
+        public Boolean ValidateString(string s)
+        {
+            return string.IsNullOrEmpty(s) || string.IsNullOrWhiteSpace(s);
+            
+        }
+        public string formatString(string s) { 
+                return Regex.Replace(s, @"\s+", " ").Trim(); 
 
-
+        }
         private void btnSave_Click(object sender, EventArgs e)
         {
             // Find the account with matching ID
             var currAccount = _Account.GetAll().FirstOrDefault(a => a.AccId == _account.AccId);
-            if (string.IsNullOrEmpty(txtName1.Text))
+            if (/*string.IsNullOrEmpty(txtName1.Text) || string.IsNullOrWhiteSpace(txtName1.Text) ||*/ValidateString(txtName1.Text)  || Regex.IsMatch(formatString(txtName1.Text), @"^[^a-zA-Z]+$") ) 
             {
                 MessageBox.Show("Please enter a valid name", "Error");
                 return;
             }
-            if (string.IsNullOrEmpty(txtPassword.Text) || txtPassword.Text.Length < 3)
+            if (string.IsNullOrEmpty(txtPassword.Text) || txtPassword.Text.Length < 3 || string.IsNullOrWhiteSpace(txtPassword.Text))
             {
                 MessageBox.Show("Please enter a password with at least 3 characters", "Error");
                 return;
@@ -83,7 +90,7 @@ namespace Convenience_Store
                 MessageBox.Show("Please enter a valid date of birth", "Error");
                 return;
             }
-            if (!Regex.IsMatch(txtPhone.Text, @"^\d{10}$"))
+            if (!Regex.IsMatch(txtPhone.Text, @"^\d{10}$") || string.IsNullOrWhiteSpace(txtPhone.Text))
             {
                 MessageBox.Show("Please enter a valid 10-digit phone number", "Error");
                 return;
@@ -92,7 +99,7 @@ namespace Convenience_Store
             if (currAccount != null)
             {
                 // Update the account with the new values from the text boxes and ComboBox
-                currAccount.AccName = txtName1.Text;
+                currAccount.AccName = formatString(txtName1.Text);
                 currAccount.AccPass = txtPassword.Text;
                 currAccount.AccDob = dtpDOB.Value;
                 currAccount.AccPhone = txtPhone.Text;
