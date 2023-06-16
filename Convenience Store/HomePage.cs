@@ -43,8 +43,9 @@ namespace Convenience_Store
         }
         private void btnOrder_Click(object sender, EventArgs e)
         {
-            /*Form order = new (Accounts);
-            order.ShowDialog();*/
+            /*Form exportbill = new(Accounts);
+           exportbill.ShowDialog();
+           this.Close();*/
         }
 
         private void btnMerchandise_Click(object sender, EventArgs e)
@@ -80,7 +81,7 @@ namespace Convenience_Store
         {
             Form setting = new AccountSetting(Accounts);
             setting.ShowDialog();
-            this.Close();    
+            this.Close();
         }
 
 
