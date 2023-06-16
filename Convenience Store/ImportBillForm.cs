@@ -18,15 +18,21 @@ namespace Convenience_Store
         RepoImportBill repoBill = new RepoImportBill();
         RepoAccount repoAccount = new RepoAccount();
         List<ImportBill> list = new List<ImportBill>();
-
+        private readonly Account _account;
         public static DataGridViewRow SelectedRow { get; set; }
         int index;
-        public ImportBillForm()
+        public ImportBillForm(List<Account> accounts)
         {
 
             InitializeComponent();
+            _account = accounts.FirstOrDefault();
+            if (_account != null)
+            {
+                txtId.Text = _account.AccId.ToString();
+                txtName.Text = _account.AccName;
+                txtRole.Text = _account.AccRole.ToString();
 
-
+            }
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -36,7 +42,7 @@ namespace Convenience_Store
 
         private void btnImport_Click(object sender, EventArgs e)
         {
-            Form billPopup = new ImportPopup_Create(dgvImportBill);
+            Form billPopup = new ImportPopup_Create(dgvImportBill, _account);
             billPopup.ShowDialog();
         }
 
@@ -45,17 +51,18 @@ namespace Convenience_Store
             index = dgvImportBill.CurrentCell.RowIndex;
             SelectedRow = dgvImportBill.Rows[index];
             var currentBill = repoBill.GetAll()[dgvImportBill.CurrentCell.RowIndex];
-            Form billPopup = new ImportPopup(dgvImportBill, index, SelectedRow, list);
+            Form billPopup = new ImportPopup(dgvImportBill, index, SelectedRow, list, _account);
             billPopup.ShowDialog();
         }
 
         private void btnExit_Click(object sender, EventArgs e)
         {
-            /*this.Close();
-            Form homePage = new HomePage(); 
-            homePage.ShowDialog();
-            this.Close();*/
+            var link = repoAccount.GetAll().Where(a => a.AccId.Equals(_account.AccId));
+            this.Hide();
 
+            Form form = new HomePage(link.ToList());
+            form.ShowDialog();
+            this.Close();
         }
 
         private void ImportBill_Load(object sender, EventArgs e)

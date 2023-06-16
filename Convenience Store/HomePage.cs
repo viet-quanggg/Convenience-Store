@@ -61,8 +61,8 @@ namespace Convenience_Store
 
         private void btnImportBill_Click(object sender, EventArgs e)
         {
-            /*Form importbill = new (Accounts);
-            importbill.ShowDialog();*/
+            Form importbill = new ImportBillForm(Accounts);
+            importbill.ShowDialog();
         }
 
         private void btnCustomer_Click(object sender, EventArgs e)
