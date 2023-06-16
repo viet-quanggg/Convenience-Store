@@ -49,32 +49,38 @@ namespace Convenience_Store
 
         private void btnMerchandise_Click(object sender, EventArgs e)
         {
-            /*Form merchandise = new (Accounts);
-            merchandise.ShowDialog();*/
+            /*Form exportbill = new(Accounts);
+            exportbill.ShowDialog();
+            this.Close();*/
         }
 
         private void btnExportBill_Click(object sender, EventArgs e)
         {
-            /*Form exportbill = new (Accounts);
-            exportbill.ShowDialog();*/
+            /*Form exportbill = new(Accounts);
+            exportbill.ShowDialog();
+            this.Close();*/
+
         }
 
         private void btnImportBill_Click(object sender, EventArgs e)
         {
             Form importbill = new ImportBillForm(Accounts);
             importbill.ShowDialog();
+            this.Close();
         }
 
         private void btnCustomer_Click(object sender, EventArgs e)
         {
-            /*Form customer = new (Accounts);
-            customer.ShowDialog();*/
+            /*Form exportbill = new(Accounts);
+            exportbill.ShowDialog();
+            this.Close();*/
         }
 
         private void btnSetting_Click(object sender, EventArgs e)
         {
             Form setting = new AccountSetting(Accounts);
             setting.ShowDialog();
+            this.Close();    
         }
 
 
@@ -88,6 +94,7 @@ namespace Convenience_Store
                 // Create a new instance of the LoginForm and display it
                 LoginForm loginForm = new LoginForm();
                 loginForm.Show();
+                this.Hide();
             }
             else
             {

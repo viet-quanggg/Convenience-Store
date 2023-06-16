@@ -139,8 +139,9 @@ namespace Convenience_Store
              }
  */
             // Close this form
+            this.Close();
             var link = _Account.GetAll().Where(a => a.AccId.Equals(_account.AccId));
-            var homePage = new HomePage(link.ToList());
+            HomePage homePage = new HomePage(link.ToList());
             homePage.Show();
             this.Close();
         }
