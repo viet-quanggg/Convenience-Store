@@ -15,25 +15,18 @@ namespace Convenience_Store
 {
     public partial class HomePage : Form
     {
-        RepoAccount RepoAccount = new RepoAccount();
 
-        public HomePage()
-        {
 
-        }
 
-        private List<Account> _accounts;
-        public List<Account> Accounts
-        {
-            get { return _accounts; }
-            set { _accounts = value; }
-        }
+        private List<Account> Accounts;
 
         public HomePage(List<Account> accounts)
         {
             InitializeComponent();
-            Accounts = accounts;
+            this.Accounts = accounts;
+
         }
+
 
         private void HomePage_Load(object sender, EventArgs e)
         {
@@ -68,8 +61,8 @@ namespace Convenience_Store
 
         private void btnImportBill_Click(object sender, EventArgs e)
         {
-            Form importbill = new ImportBillForm();
-            importbill.ShowDialog();
+            /*Form importbill = new (Accounts);
+            importbill.ShowDialog();*/
         }
 
         private void btnCustomer_Click(object sender, EventArgs e)
@@ -83,6 +76,7 @@ namespace Convenience_Store
             Form setting = new AccountSetting(Accounts);
             setting.ShowDialog();
         }
+
 
         private void btnExit_Click(object sender, EventArgs e)
         {

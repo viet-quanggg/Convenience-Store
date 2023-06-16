@@ -29,10 +29,10 @@ namespace Convenience_Store
         }
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            string account = txtUsername.Text.ToLower();
+            string user = txtUsername.Text.ToLower();
             string password = txtPassword.Text;
-            var check = RepoAccount.GetAll().FirstOrDefault(a => a.AccName.Equals(account) && a.AccPass.Equals(password));
-            var link = RepoAccount.GetAll().Where(a => a.AccName.Equals(account));
+            
+            
 
             if (ValidateString(txtUsername.Text) || Regex.IsMatch(formatString(txtUsername.Text), @"^[^a-zA-Z]+$"))
             {
@@ -44,18 +44,16 @@ namespace Convenience_Store
                 MessageBox.Show("Please enter a password with at least 3 characters", "Error");
                 return;
             }
-            if (check != null)
+            var check = RepoAccount.GetAll().Where(a => a.AccName.ToLower().Equals(user) && a.AccPass.Equals(password));
+            if (check.Count() == 1)
             {
-
+                var link = RepoAccount.GetAll().Where(a => a.AccName.ToLower().Equals(user));
                 if (MessageBox.Show("Login success", "Notification", MessageBoxButtons.OKCancel) == DialogResult.OK)
                 {
                     this.Hide();
-
-                    //return home page
-                    //HomePage.Username = username;
-                    Form form = new HomePage(link.ToList());
-
-                    form.ShowDialog();
+                    // Truyền danh sách tài khoản cho form HomePage
+                    Form homePage = new HomePage(link.ToList());
+                    homePage.ShowDialog();
                 }
 
                 else

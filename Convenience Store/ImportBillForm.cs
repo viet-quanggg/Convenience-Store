@@ -51,10 +51,10 @@ namespace Convenience_Store
 
         private void btnExit_Click(object sender, EventArgs e)
         {
-            this.Close();
+            /*this.Close();
             Form homePage = new HomePage(); 
             homePage.ShowDialog();
-            this.Close();
+            this.Close();*/
 
         }
 

@@ -263,7 +263,6 @@
             // 
             txtRole1.BackColor = SystemColors.MenuBar;
             txtRole1.BorderStyle = BorderStyle.FixedSingle;
-            txtRole1.Enabled = false;
             txtRole1.Location = new Point(122, 254);
             txtRole1.Name = "txtRole1";
             txtRole1.ReadOnly = true;
@@ -274,7 +273,6 @@
             // 
             txtId1.BackColor = SystemColors.MenuBar;
             txtId1.BorderStyle = BorderStyle.FixedSingle;
-            txtId1.Enabled = false;
             txtId1.Location = new Point(122, 11);
             txtId1.Name = "txtId1";
             txtId1.ReadOnly = true;

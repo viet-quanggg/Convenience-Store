@@ -52,7 +52,8 @@ namespace Convenience_Store
                 txtAddress.Text = _account.AccAddress;
             }
 
-            else {
+            else
+            {
                 MessageBox.Show("Please enter a valid name", "Error");
                 return;
             }
@@ -65,22 +66,23 @@ namespace Convenience_Store
         public Boolean ValidateString(string s)
         {
             return string.IsNullOrEmpty(s) || string.IsNullOrWhiteSpace(s);
-            
+
         }
-        public string formatString(string s) { 
-                return Regex.Replace(s, @"\s+", " ").Trim(); 
+        public string formatString(string s)
+        {
+            return Regex.Replace(s, @"\s+", " ").Trim();
 
         }
         private void btnSave_Click(object sender, EventArgs e)
         {
             // Find the account with matching ID
             var currAccount = _Account.GetAll().FirstOrDefault(a => a.AccId == _account.AccId);
-            if (/*string.IsNullOrEmpty(txtName1.Text) || string.IsNullOrWhiteSpace(txtName1.Text) ||*/ValidateString(txtName1.Text)  || Regex.IsMatch(formatString(txtName1.Text), @"^[^a-zA-Z]+$") ) 
-            {
-                MessageBox.Show("Please enter a valid name", "Error");
-                return;
-            }
-            if (ValidateString(txtPassword.Text) || txtPassword.Text.Length < 3 )
+            /* if (*//*string.IsNullOrEmpty(txtName1.Text) || string.IsNullOrWhiteSpace(txtName1.Text) ||*//*ValidateString(txtName1.Text) || Regex.IsMatch(formatString(txtName1.Text), @"^[^a-zA-Z]+$"))
+             {
+                 MessageBox.Show("Please enter a valid name", "Error");
+                 return;
+             }*/
+            if (ValidateString(txtPassword.Text) || txtPassword.Text.Length < 3)
             {
                 MessageBox.Show("Please enter a password with at least 3 characters", "Error");
                 return;
@@ -99,11 +101,12 @@ namespace Convenience_Store
             if (currAccount != null)
             {
                 // Update the account with the new values from the text boxes and ComboBox
+                currAccount.AccId = int.Parse(txtId1.Text);
                 currAccount.AccName = formatString(txtName1.Text);
                 currAccount.AccPass = txtPassword.Text;
                 currAccount.AccDob = dtpDOB.Value;
                 currAccount.AccPhone = txtPhone.Text;
-                //currAccount.AccRole = (int)cbRole.SelectedItem;
+                currAccount.AccRole = int.Parse(txtRole1.Text);
                 currAccount.AccAddress = txtAddress.Text;
 
                 // Save the updated account to the database
@@ -127,7 +130,7 @@ namespace Convenience_Store
 
             Form form = new HomePage(link.ToList());
             form.ShowDialog();
-            
+
         }
 
         private void btnLogout_Click(object sender, EventArgs e)
