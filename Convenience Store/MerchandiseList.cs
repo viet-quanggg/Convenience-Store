@@ -36,13 +36,13 @@ namespace Convenience_Store
 
         }
 
-        private void btnExit_Click(object sender, EventArgs e)
+        /*private void btnExit_Click(object sender, EventArgs e)
         {
             this.Close();
             Form homePage = new HomePage();
             homePage.ShowDialog();
             this.Close();
-        }
+        }*/
 
         private void btnFinish_Click(object sender, EventArgs e)
         {
