@@ -126,19 +126,22 @@ namespace Convenience_Store
         private void btnExit_Click(object sender, EventArgs e)
         {
             // Bring HomePage form to the front or create a new instance if it doesn't exist
-            if (Application.OpenForms.OfType<HomePage>().Any())
-            {
-                var homePageForm = Application.OpenForms.OfType<HomePage>().First();
-                homePageForm.BringToFront();
-            }
-            else
-            {
-                var link = _Account.GetAll().Where(a => a.AccId.Equals(_account.AccId));
-                var homePageForm = new HomePage(link.ToList());
-                homePageForm.Show();
-            }
-
+            /* if (Application.OpenForms.OfType<HomePage>().Any())
+             {
+                 var homePageForm = Application.OpenForms.OfType<HomePage>().First();
+                 homePageForm.BringToFront();
+             }
+             else
+             {
+                 var link = _Account.GetAll().Where(a => a.AccId.Equals(_account.AccId));
+                 var homePageForm = new HomePage(link.ToList());
+                 homePageForm.Show();
+             }
+ */
             // Close this form
+            var link = _Account.GetAll().Where(a => a.AccId.Equals(_account.AccId));
+            var homePage = new HomePage(link.ToList());
+            homePage.Show();
             this.Close();
         }
 

@@ -57,11 +57,11 @@ namespace Convenience_Store
 
         private void btnExit_Click(object sender, EventArgs e)
         {
-            var link = repoAccount.GetAll().Where(a => a.AccId.Equals(_account.AccId));
+            /*var link = repoAccount.GetAll().Where(a => a.AccId.Equals(_account.AccId));
             this.Hide();
 
             Form form = new HomePage(link.ToList());
-            form.ShowDialog();
+            form.ShowDialog();*/
             this.Close();
         }
 
