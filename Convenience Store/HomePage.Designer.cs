@@ -55,6 +55,7 @@
             // 
             // label2
             // 
+            label2.Anchor = AnchorStyles.None;
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 27.8571434F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
             label2.Location = new Point(323, 16);
@@ -69,13 +70,14 @@
             panel2.Controls.Add(label3);
             panel2.Controls.Add(btnExit);
             panel2.Dock = DockStyle.Bottom;
-            panel2.Location = new Point(0, 510);
+            panel2.Location = new Point(0, 472);
             panel2.Name = "panel2";
-            panel2.Size = new Size(920, 40);
+            panel2.Size = new Size(920, 78);
             panel2.TabIndex = 2;
             // 
             // label3
             // 
+            label3.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             label3.Location = new Point(797, 41);
@@ -86,10 +88,10 @@
             // 
             // btnExit
             // 
-            btnExit.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
-            btnExit.Location = new Point(9, 8);
+            btnExit.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            btnExit.Location = new Point(12, 33);
             btnExit.Name = "btnExit";
-            btnExit.Size = new Size(95, 25);
+            btnExit.Size = new Size(95, 33);
             btnExit.TabIndex = 19;
             btnExit.Text = "Exit";
             btnExit.UseVisualStyleBackColor = true;
@@ -97,6 +99,7 @@
             // 
             // btnOrder
             // 
+            btnOrder.Anchor = AnchorStyles.None;
             btnOrder.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
             btnOrder.Location = new Point(55, 178);
             btnOrder.Name = "btnOrder";
@@ -108,6 +111,7 @@
             // 
             // btnMerchandise
             // 
+            btnMerchandise.Anchor = AnchorStyles.None;
             btnMerchandise.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
             btnMerchandise.Location = new Point(351, 178);
             btnMerchandise.Name = "btnMerchandise";
@@ -119,6 +123,7 @@
             // 
             // btnExportBill
             // 
+            btnExportBill.Anchor = AnchorStyles.None;
             btnExportBill.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
             btnExportBill.Location = new Point(674, 178);
             btnExportBill.Name = "btnExportBill";
@@ -130,6 +135,7 @@
             // 
             // btnImportBill
             // 
+            btnImportBill.Anchor = AnchorStyles.None;
             btnImportBill.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
             btnImportBill.Location = new Point(55, 338);
             btnImportBill.Name = "btnImportBill";
@@ -141,6 +147,7 @@
             // 
             // btnCustomer
             // 
+            btnCustomer.Anchor = AnchorStyles.None;
             btnCustomer.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
             btnCustomer.Location = new Point(360, 338);
             btnCustomer.Name = "btnCustomer";
@@ -152,6 +159,7 @@
             // 
             // btnSetting
             // 
+            btnSetting.Anchor = AnchorStyles.None;
             btnSetting.DialogResult = DialogResult.OK;
             btnSetting.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
             btnSetting.Location = new Point(674, 338);

@@ -31,8 +31,8 @@ namespace Convenience_Store
         {
             string user = txtUsername.Text.ToLower();
             string password = txtPassword.Text;
-            
-            
+
+
 
             if (ValidateString(txtUsername.Text) || Regex.IsMatch(formatString(txtUsername.Text), @"^[^a-zA-Z]+$"))
             {
@@ -95,6 +95,11 @@ namespace Convenience_Store
         {
             txtUsername.Text = string.Empty;
             txtPassword.Text = string.Empty;
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -77,11 +77,11 @@ namespace Convenience_Store
         {
             // Find the account with matching ID
             var currAccount = _Account.GetAll().FirstOrDefault(a => a.AccId == _account.AccId);
-             if (ValidateString(txtName1.Text) || Regex.IsMatch(formatString(txtName1.Text), @"^[^a-zA-Z]+$"))
-             {
-                 MessageBox.Show("Please enter a valid name", "Error");
-                 return;
-             }
+            if (ValidateString(txtName1.Text) || Regex.IsMatch(formatString(txtName1.Text), @"^[^a-zA-Z]+$"))
+            {
+                MessageBox.Show("Please enter a valid name", "Error");
+                return;
+            }
             if (ValidateString(txtPassword.Text) || txtPassword.Text.Length < 3)
             {
                 MessageBox.Show("Please enter a password with at least 3 characters", "Error");
