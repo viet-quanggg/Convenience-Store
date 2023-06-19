@@ -7,6 +7,8 @@ namespace Service.Models
 {
     public partial class ImportBill
     {
+        private List<Account> accounts;
+
         public ImportBill(int imId, string imName, string imProvider, DateTime imDate, int merId, int proId, Merchandise mer, Provider pro)
         {
             ImId = imId;

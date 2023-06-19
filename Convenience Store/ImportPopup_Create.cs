@@ -1,4 +1,5 @@
 ﻿using Service.Models;
+using Service.Repository;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,10 +16,19 @@ namespace Convenience_Store
     public partial class ImportPopup_Create : Form
     {
         private DataGridView f1dgvImportBill;
-        public ImportPopup_Create(DataGridView dgvImportBill)
+        private readonly Account _account;
+        
+        public ImportPopup_Create(DataGridView dgvImportBill, Account _account)
         {
             InitializeComponent();
             this.f1dgvImportBill = dgvImportBill;
+            if (_account != null)
+            {
+                txtAccId.Text = _account.AccId.ToString();
+                txtAccName.Text = _account.AccName;
+                txtRoleId.Text = _account.AccRole.ToString();
+
+            }
         }
 
         private void btnCreate_Click(object sender, EventArgs e)
@@ -107,7 +117,6 @@ namespace Convenience_Store
 
         public void refresh()
         {
-            txtAccName.Clear();
             txtBillName.Clear();
             txtProName.Clear();
             txtProviderPhone.Clear();
@@ -134,7 +143,8 @@ namespace Convenience_Store
             refresh();
         }
 
-        private void loadData() {
+        private void loadData()
+        {
             using (var context1 = new ConvenienceStoreContext())
             {
                 var updated = from ib in context1.ImportBills

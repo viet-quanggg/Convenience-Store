@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Service.Models;
+using Service.Repository;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -20,16 +21,24 @@ namespace Convenience_Store
         private DataGridViewRow f1selectedRow;
         private DataGridView f1dgvImportBill;
         List<ImportBill> f1list;
+        private readonly Account _account;
+        
 
 
-
-        public ImportPopup(DataGridView dgvImportBill, int index, DataGridViewRow SelectedRow, List<ImportBill> list)
+        public ImportPopup(DataGridView dgvImportBill, int index, DataGridViewRow SelectedRow, List<ImportBill> list, Account _account)
         {
             InitializeComponent();
             this.f1index = index;
             this.f1selectedRow = SelectedRow;
             this.f1dgvImportBill = dgvImportBill;
             this.f1list = list;
+            if (_account != null)
+            {
+                txtAccId.Text = _account.AccId.ToString();
+                txtAccName.Text = _account.AccName;
+                txtRoleId.Text = _account.AccRole.ToString();
+
+            }
 
         }
 
