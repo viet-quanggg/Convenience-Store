@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             dgvKho = new DataGridView();
             panel1 = new Panel();
             btnChemicals = new Button();
@@ -88,14 +88,14 @@
             // 
             dgvKho.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             dgvKho.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = SystemColors.Window;
-            dataGridViewCellStyle2.Font = new Font("Times New Roman", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
-            dgvKho.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = SystemColors.Window;
+            dataGridViewCellStyle1.Font = new Font("Times New Roman", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.False;
+            dgvKho.DefaultCellStyle = dataGridViewCellStyle1;
             dgvKho.Location = new Point(437, 272);
             dgvKho.Name = "dgvKho";
             dgvKho.ReadOnly = true;
@@ -128,6 +128,7 @@
             // 
             // btnChemicals
             // 
+            btnChemicals.Cursor = Cursors.Hand;
             btnChemicals.Location = new Point(603, 14);
             btnChemicals.Name = "btnChemicals";
             btnChemicals.Size = new Size(94, 66);
@@ -138,6 +139,7 @@
             // 
             // btnCanned
             // 
+            btnCanned.Cursor = Cursors.Hand;
             btnCanned.Location = new Point(603, 86);
             btnCanned.Name = "btnCanned";
             btnCanned.Size = new Size(94, 66);
@@ -148,6 +150,7 @@
             // 
             // btnCigarette
             // 
+            btnCigarette.Cursor = Cursors.Hand;
             btnCigarette.Location = new Point(3, 86);
             btnCigarette.Name = "btnCigarette";
             btnCigarette.Size = new Size(94, 66);
@@ -158,6 +161,7 @@
             // 
             // btnFrozen
             // 
+            btnFrozen.Cursor = Cursors.Hand;
             btnFrozen.Location = new Point(203, 86);
             btnFrozen.Name = "btnFrozen";
             btnFrozen.Size = new Size(94, 66);
@@ -168,6 +172,7 @@
             // 
             // btnOffice
             // 
+            btnOffice.Cursor = Cursors.Hand;
             btnOffice.Location = new Point(103, 86);
             btnOffice.Name = "btnOffice";
             btnOffice.Size = new Size(94, 66);
@@ -178,6 +183,7 @@
             // 
             // btnTissue
             // 
+            btnTissue.Cursor = Cursors.Hand;
             btnTissue.Location = new Point(303, 86);
             btnTissue.Name = "btnTissue";
             btnTissue.Size = new Size(94, 66);
@@ -188,6 +194,7 @@
             // 
             // btnSpices
             // 
+            btnSpices.Cursor = Cursors.Hand;
             btnSpices.Location = new Point(503, 86);
             btnSpices.Name = "btnSpices";
             btnSpices.Size = new Size(94, 66);
@@ -198,6 +205,7 @@
             // 
             // btnMilk
             // 
+            btnMilk.Cursor = Cursors.Hand;
             btnMilk.Location = new Point(503, 14);
             btnMilk.Name = "btnMilk";
             btnMilk.Size = new Size(94, 66);
@@ -208,6 +216,7 @@
             // 
             // btnMedicine
             // 
+            btnMedicine.Cursor = Cursors.Hand;
             btnMedicine.Location = new Point(403, 14);
             btnMedicine.Name = "btnMedicine";
             btnMedicine.Size = new Size(94, 66);
@@ -218,6 +227,7 @@
             // 
             // btnPersonal
             // 
+            btnPersonal.Cursor = Cursors.Hand;
             btnPersonal.Location = new Point(403, 86);
             btnPersonal.Name = "btnPersonal";
             btnPersonal.Size = new Size(94, 66);
@@ -228,6 +238,7 @@
             // 
             // btnInstant
             // 
+            btnInstant.Cursor = Cursors.Hand;
             btnInstant.Location = new Point(203, 14);
             btnInstant.Name = "btnInstant";
             btnInstant.Size = new Size(94, 66);
@@ -238,6 +249,7 @@
             // 
             // btnBeverage
             // 
+            btnBeverage.Cursor = Cursors.Hand;
             btnBeverage.Location = new Point(303, 14);
             btnBeverage.Name = "btnBeverage";
             btnBeverage.Size = new Size(94, 66);
@@ -248,6 +260,7 @@
             // 
             // btnAlcoho
             // 
+            btnAlcoho.Cursor = Cursors.Hand;
             btnAlcoho.Location = new Point(103, 14);
             btnAlcoho.Name = "btnAlcoho";
             btnAlcoho.Size = new Size(94, 66);
@@ -258,6 +271,7 @@
             // 
             // btnSnack
             // 
+            btnSnack.Cursor = Cursors.Hand;
             btnSnack.Location = new Point(3, 14);
             btnSnack.Name = "btnSnack";
             btnSnack.Size = new Size(94, 66);
@@ -309,6 +323,7 @@
             // 
             // txtPrice
             // 
+            txtPrice.Cursor = Cursors.IBeam;
             txtPrice.Location = new Point(153, 98);
             txtPrice.Name = "txtPrice";
             txtPrice.Size = new Size(209, 27);
@@ -326,6 +341,7 @@
             // 
             // txtQuantity
             // 
+            txtQuantity.Cursor = Cursors.IBeam;
             txtQuantity.Location = new Point(153, 146);
             txtQuantity.Name = "txtQuantity";
             txtQuantity.Size = new Size(209, 27);
@@ -333,6 +349,7 @@
             // 
             // txtDes
             // 
+            txtDes.Cursor = Cursors.IBeam;
             txtDes.Location = new Point(153, 56);
             txtDes.Name = "txtDes";
             txtDes.Size = new Size(209, 27);
@@ -340,6 +357,7 @@
             // 
             // txtUnit
             // 
+            txtUnit.Cursor = Cursors.IBeam;
             txtUnit.Location = new Point(153, 191);
             txtUnit.Name = "txtUnit";
             txtUnit.Size = new Size(209, 27);
@@ -365,6 +383,7 @@
             // 
             // txtName
             // 
+            txtName.Cursor = Cursors.IBeam;
             txtName.Location = new Point(153, 14);
             txtName.Name = "txtName";
             txtName.Size = new Size(209, 27);
@@ -411,6 +430,7 @@
             // 
             // Edit
             // 
+            Edit.Cursor = Cursors.Hand;
             Edit.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             Edit.Location = new Point(145, 264);
             Edit.Name = "Edit";
@@ -422,6 +442,7 @@
             // 
             // Delete
             // 
+            Delete.Cursor = Cursors.Hand;
             Delete.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             Delete.Location = new Point(275, 264);
             Delete.Name = "Delete";
@@ -433,6 +454,7 @@
             // 
             // Add
             // 
+            Add.Cursor = Cursors.Hand;
             Add.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             Add.Location = new Point(12, 264);
             Add.Name = "Add";
@@ -454,6 +476,7 @@
             // 
             // txtSearchKho
             // 
+            txtSearchKho.Cursor = Cursors.IBeam;
             txtSearchKho.Location = new Point(108, 216);
             txtSearchKho.Name = "txtSearchKho";
             txtSearchKho.Size = new Size(288, 27);
@@ -582,6 +605,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            AutoScroll = true;
             ClientSize = new Size(1202, 714);
             Controls.Add(panel5);
             Controls.Add(panel4);
