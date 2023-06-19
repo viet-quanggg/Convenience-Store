@@ -63,12 +63,12 @@ namespace Convenience_Store
         {
 
         }
-        public Boolean ValidateString(string s)
+        public static Boolean ValidateString(string s)
         {
             return string.IsNullOrEmpty(s) || string.IsNullOrWhiteSpace(s);
 
         }
-        public string formatString(string s)
+        public static string formatString(string s)
         {
             return Regex.Replace(s, @"\s+", " ").Trim();
 

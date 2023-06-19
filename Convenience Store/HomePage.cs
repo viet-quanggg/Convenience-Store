@@ -1,4 +1,5 @@
-﻿using Service.Models;
+﻿using Convenience_Store;
+using Service.Models;
 using Service.Repository;
 using System;
 using System.Collections.Generic;
@@ -43,8 +44,9 @@ namespace Convenience_Store
         }
         private void btnOrder_Click(object sender, EventArgs e)
         {
-            /*Form order = new (Accounts);
-            order.ShowDialog();*/
+            Form order = new Order(Accounts);
+            order.ShowDialog();
+            this.Close();
         }
 
         private void btnMerchandise_Click(object sender, EventArgs e)
