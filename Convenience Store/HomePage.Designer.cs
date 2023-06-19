@@ -39,6 +39,7 @@
             btnImportBill = new Button();
             btnCustomer = new Button();
             btnSetting = new Button();
+            btnMerchandiseorder = new Button();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             SuspendLayout();
@@ -100,6 +101,7 @@
             // btnOrder
             // 
             btnOrder.Anchor = AnchorStyles.None;
+            btnOrder.AutoSize = true;
             btnOrder.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
             btnOrder.Location = new Point(55, 178);
             btnOrder.Name = "btnOrder";
@@ -112,6 +114,7 @@
             // btnMerchandise
             // 
             btnMerchandise.Anchor = AnchorStyles.None;
+            btnMerchandise.AutoSize = true;
             btnMerchandise.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
             btnMerchandise.Location = new Point(351, 178);
             btnMerchandise.Name = "btnMerchandise";
@@ -124,6 +127,7 @@
             // btnExportBill
             // 
             btnExportBill.Anchor = AnchorStyles.None;
+            btnExportBill.AutoSize = true;
             btnExportBill.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
             btnExportBill.Location = new Point(674, 178);
             btnExportBill.Name = "btnExportBill";
@@ -136,8 +140,9 @@
             // btnImportBill
             // 
             btnImportBill.Anchor = AnchorStyles.None;
+            btnImportBill.AutoSize = true;
             btnImportBill.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
-            btnImportBill.Location = new Point(55, 338);
+            btnImportBill.Location = new Point(55, 296);
             btnImportBill.Name = "btnImportBill";
             btnImportBill.Size = new Size(201, 54);
             btnImportBill.TabIndex = 4;
@@ -148,8 +153,9 @@
             // btnCustomer
             // 
             btnCustomer.Anchor = AnchorStyles.None;
+            btnCustomer.AutoSize = true;
             btnCustomer.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
-            btnCustomer.Location = new Point(360, 338);
+            btnCustomer.Location = new Point(360, 296);
             btnCustomer.Name = "btnCustomer";
             btnCustomer.Size = new Size(201, 54);
             btnCustomer.TabIndex = 4;
@@ -160,9 +166,10 @@
             // btnSetting
             // 
             btnSetting.Anchor = AnchorStyles.None;
+            btnSetting.AutoSize = true;
             btnSetting.DialogResult = DialogResult.OK;
             btnSetting.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
-            btnSetting.Location = new Point(674, 338);
+            btnSetting.Location = new Point(674, 296);
             btnSetting.Name = "btnSetting";
             btnSetting.Size = new Size(201, 54);
             btnSetting.TabIndex = 4;
@@ -170,11 +177,25 @@
             btnSetting.UseVisualStyleBackColor = true;
             btnSetting.Click += btnSetting_Click;
             // 
+            // btnMerchandiseorder
+            // 
+            btnMerchandiseorder.Anchor = AnchorStyles.None;
+            btnMerchandiseorder.AutoSize = true;
+            btnMerchandiseorder.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
+            btnMerchandiseorder.Location = new Point(351, 412);
+            btnMerchandiseorder.Name = "btnMerchandiseorder";
+            btnMerchandiseorder.Size = new Size(221, 54);
+            btnMerchandiseorder.TabIndex = 5;
+            btnMerchandiseorder.Text = "Merchandise Order";
+            btnMerchandiseorder.UseVisualStyleBackColor = true;
+            btnMerchandiseorder.Click += btnMerchandiseorder_Click;
+            // 
             // HomePage
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(920, 550);
+            Controls.Add(btnMerchandiseorder);
             Controls.Add(btnSetting);
             Controls.Add(btnCustomer);
             Controls.Add(btnImportBill);
@@ -192,6 +213,7 @@
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -208,5 +230,6 @@
         private Button btnCustomer;
         private Button btnSetting;
         private TextBox textBox1;
+        private Button btnMerchandiseorder;
     }
 }

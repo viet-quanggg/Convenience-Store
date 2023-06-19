@@ -35,11 +35,11 @@ namespace Convenience_Store
             var check = Accounts.FirstOrDefault(a => a.AccRole != 0); ;
             if (check != null)
             {
-                btnCustomer.Visible = false;
+                btnMerchandiseorder.Visible = false;
             }
             else
             {
-                btnCustomer.Visible = true;
+                btnMerchandiseorder.Visible = true;
             }
         }
         private void btnOrder_Click(object sender, EventArgs e)
@@ -63,8 +63,9 @@ namespace Convenience_Store
 
         private void btnImportBill_Click(object sender, EventArgs e)
         {
-            /*Form importbill = new (Accounts);
-            importbill.ShowDialog();*/
+            Form importbill = new ImportBillForm(Accounts);
+            importbill.ShowDialog();
+            this.Close();
         }
 
         private void btnCustomer_Click(object sender, EventArgs e)
@@ -77,6 +78,7 @@ namespace Convenience_Store
         {
             Form setting = new AccountSetting(Accounts);
             setting.ShowDialog();
+            this.Close();
         }
 
 
@@ -96,5 +98,13 @@ namespace Convenience_Store
                 return;
             }
         }
+
+        private void btnMerchandiseorder_Click(object sender, EventArgs e)
+        {
+            Form merchandiseorder = new MerchandiseOrder(Accounts);
+            merchandiseorder.ShowDialog();
+            this.Close();
+        
+    }
     }
 }
