@@ -117,10 +117,13 @@
             // 
             // dgvCurrentlyAdd
             // 
+            dgvCurrentlyAdd.AllowUserToAddRows = false;
+            dgvCurrentlyAdd.AllowUserToDeleteRows = false;
             dgvCurrentlyAdd.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvCurrentlyAdd.Location = new Point(43, 149);
             dgvCurrentlyAdd.Margin = new Padding(2);
             dgvCurrentlyAdd.Name = "dgvCurrentlyAdd";
+            dgvCurrentlyAdd.ReadOnly = true;
             dgvCurrentlyAdd.RowHeadersWidth = 62;
             dgvCurrentlyAdd.RowTemplate.Height = 33;
             dgvCurrentlyAdd.Size = new Size(290, 221);
@@ -128,6 +131,8 @@
             // 
             // dgvMerchandise
             // 
+            dgvMerchandise.AllowUserToAddRows = false;
+            dgvMerchandise.AllowUserToDeleteRows = false;
             dgvMerchandise.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvMerchandise.Location = new Point(401, 149);
             dgvMerchandise.Margin = new Padding(2);
@@ -137,7 +142,7 @@
             dgvMerchandise.RowTemplate.Height = 33;
             dgvMerchandise.Size = new Size(466, 221);
             dgvMerchandise.TabIndex = 36;
-            dgvMerchandise.CellDoubleClick += dgvMerchandise_CellDoubleClick;
+            dgvMerchandise.CellClick += dgvMerchandise_CellClick;
             // 
             // label7
             // 

@@ -101,8 +101,17 @@ namespace Convenience_Store
         }
 
 
-        private void dgvMerchandise_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        /* private void dgvMerchandise_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+         {
+             if (e != null && e.RowIndex >= 0 && e.RowIndex < searchlist.Count)
+             {
+                 index = (int)dgvMerchandise.Rows[e.RowIndex].Cells[0].Value;
+             }
+         }*/
+
+        private void dgvMerchandise_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+
             if (e != null && e.RowIndex >= 0 && e.RowIndex < searchlist.Count)
             {
                 index = (int)dgvMerchandise.Rows[e.RowIndex].Cells[0].Value;

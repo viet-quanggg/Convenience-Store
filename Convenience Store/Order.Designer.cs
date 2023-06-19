@@ -31,10 +31,10 @@
             dgvOrder = new DataGridView();
             lblTotal = new Label();
             pnlHeader = new Panel();
-            lblQuantity = new Label();
-            txtQuantity = new TextBox();
             lblHeaderLine = new Label();
             lblOrderTitle = new Label();
+            lblQuantity = new Label();
+            txtQuantity = new TextBox();
             pnlFooter = new Panel();
             lblOrderFooter = new Label();
             btnExit = new Button();
@@ -67,6 +67,8 @@
             // 
             // dgvOrder
             // 
+            dgvOrder.AllowUserToAddRows = false;
+            dgvOrder.AllowUserToDeleteRows = false;
             dgvOrder.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvOrder.Location = new Point(450, 103);
             dgvOrder.Margin = new Padding(2);
@@ -83,7 +85,7 @@
             // 
             lblTotal.AutoSize = true;
             lblTotal.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            lblTotal.Location = new Point(403, 382);
+            lblTotal.Location = new Point(403, 375);
             lblTotal.Margin = new Padding(2, 0, 2, 0);
             lblTotal.Name = "lblTotal";
             lblTotal.Size = new Size(58, 28);
@@ -99,24 +101,6 @@
             pnlHeader.Name = "pnlHeader";
             pnlHeader.Size = new Size(956, 103);
             pnlHeader.TabIndex = 20;
-            // 
-            // lblQuantity
-            // 
-            lblQuantity.AutoSize = true;
-            lblQuantity.Location = new Point(251, 94);
-            lblQuantity.Name = "lblQuantity";
-            lblQuantity.Size = new Size(72, 20);
-            lblQuantity.TabIndex = 15;
-            lblQuantity.Text = "Quantity :";
-            // 
-            // txtQuantity
-            // 
-            txtQuantity.BackColor = SystemColors.MenuBar;
-            txtQuantity.BorderStyle = BorderStyle.FixedSingle;
-            txtQuantity.Location = new Point(251, 128);
-            txtQuantity.Name = "txtQuantity";
-            txtQuantity.Size = new Size(146, 27);
-            txtQuantity.TabIndex = 16;
             // 
             // lblHeaderLine
             // 
@@ -139,6 +123,24 @@
             lblOrderTitle.Size = new Size(185, 78);
             lblOrderTitle.TabIndex = 0;
             lblOrderTitle.Text = "Order";
+            // 
+            // lblQuantity
+            // 
+            lblQuantity.AutoSize = true;
+            lblQuantity.Location = new Point(251, 94);
+            lblQuantity.Name = "lblQuantity";
+            lblQuantity.Size = new Size(72, 20);
+            lblQuantity.TabIndex = 15;
+            lblQuantity.Text = "Quantity :";
+            // 
+            // txtQuantity
+            // 
+            txtQuantity.BackColor = SystemColors.MenuBar;
+            txtQuantity.BorderStyle = BorderStyle.FixedSingle;
+            txtQuantity.Location = new Point(251, 128);
+            txtQuantity.Name = "txtQuantity";
+            txtQuantity.Size = new Size(146, 27);
+            txtQuantity.TabIndex = 16;
             // 
             // pnlFooter
             // 
@@ -187,18 +189,18 @@
             txtTotal.BackColor = SystemColors.Menu;
             txtTotal.BorderStyle = BorderStyle.None;
             txtTotal.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
-            txtTotal.Location = new Point(465, 360);
+            txtTotal.Location = new Point(459, 371);
             txtTotal.Margin = new Padding(2);
             txtTotal.Multiline = true;
             txtTotal.Name = "txtTotal";
-            txtTotal.Size = new Size(164, 50);
+            txtTotal.Size = new Size(164, 33);
             txtTotal.TabIndex = 25;
             // 
             // lblDollarSign
             // 
             lblDollarSign.AutoSize = true;
             lblDollarSign.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            lblDollarSign.Location = new Point(627, 379);
+            lblDollarSign.Location = new Point(627, 371);
             lblDollarSign.Margin = new Padding(2, 0, 2, 0);
             lblDollarSign.Name = "lblDollarSign";
             lblDollarSign.Size = new Size(23, 28);
@@ -209,7 +211,7 @@
             // 
             btnExport.FlatAppearance.BorderSize = 2;
             btnExport.FlatStyle = FlatStyle.Flat;
-            btnExport.Location = new Point(655, 370);
+            btnExport.Location = new Point(655, 371);
             btnExport.Name = "btnExport";
             btnExport.Size = new Size(117, 33);
             btnExport.TabIndex = 2;
@@ -235,7 +237,7 @@
             btnEdit.Name = "btnEdit";
             btnEdit.Size = new Size(117, 33);
             btnEdit.TabIndex = 28;
-            btnEdit.Text = "Edit";
+            btnEdit.Text = "Save";
             btnEdit.UseVisualStyleBackColor = true;
             btnEdit.Click += btnEdit_Click;
             // 
