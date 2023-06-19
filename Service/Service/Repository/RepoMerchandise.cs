@@ -9,5 +9,18 @@ namespace Service.Repository
 {
     public class RepoMerchandise : RepoBase<Merchandise>
     {
+        ConvenienceStoreContext context = new ConvenienceStoreContext();
+        public void Update(Merchandise entity)
+        {
+            var e = context.Merchandises.SingleOrDefault(m => m.MerId == entity.MerId);
+            e.MerName = entity.MerName;
+            e.MerDescription = entity.MerDescription;
+            e.MerPrice = entity.MerPrice;
+            e.MerUnit = entity.MerUnit;
+            e.MerQuantity = entity.MerQuantity;
+            e.MerIdCategory = entity.MerIdCategory;
+
+            context.SaveChanges();
+        }
     }
 }
