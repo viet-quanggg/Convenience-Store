@@ -214,11 +214,10 @@ namespace Convenience_Store
 
         private void ExitButton_Click(object sender, EventArgs e)
         {
+            this.Close();
             var link = repoAccount.GetAll().Where(a => a.AccId.Equals(_account.AccId));
-            this.Hide();
-
-            Form form = new HomePage(link.ToList());
-            form.ShowDialog();
+            HomePage homePage = new HomePage(link.ToList());
+            homePage.Show();
             this.Close();
         }
     }
