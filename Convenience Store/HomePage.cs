@@ -32,7 +32,7 @@ namespace Convenience_Store
         private void HomePage_Load(object sender, EventArgs e)
         {
             //ẩn nút cho từng role
-            var check = Accounts.FirstOrDefault(a => a.AccRole != 0); ;
+            /*var check = Accounts.FirstOrDefault(a => a.AccRole != 0); ;
             if (check != null)
             {
                 btnMerchandiseorder.Visible = false;
@@ -40,7 +40,7 @@ namespace Convenience_Store
             else
             {
                 btnMerchandiseorder.Visible = true;
-            }
+            }*/
         }
         private void btnOrder_Click(object sender, EventArgs e)
         {
@@ -99,16 +99,18 @@ namespace Convenience_Store
             }
         }
 
-<<<<<<< HEAD
         private void btnStaffManage_Click(object sender, EventArgs e)
         {
-=======
+            Form importbill = new StaffManageForm(Accounts);
+            importbill.ShowDialog();
+            this.Close();
+        }
         private void btnMerchandiseorder_Click(object sender, EventArgs e)
         {
             Form merchandiseorder = new MerchandiseOrder(Accounts);
             merchandiseorder.ShowDialog();
             this.Close();
->>>>>>> 90b544cb76b034d3154c47e82ba233664bfd8c70
+
 
         }
     }

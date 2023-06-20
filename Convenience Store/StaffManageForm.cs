@@ -18,7 +18,7 @@ namespace Convenience_Store
     {
         int indexRow;
         RepoAccount _context = new RepoAccount();
-        public StaffManageForm()
+        public StaffManageForm(List<Account> accounts)
         {
             InitializeComponent();
             var listAllStaff = _context.GetAll()
