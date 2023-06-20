@@ -96,5 +96,10 @@ namespace Convenience_Store
                 return;
             }
         }
+
+        private void btnStaffManage_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

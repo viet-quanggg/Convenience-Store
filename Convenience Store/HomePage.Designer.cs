@@ -39,6 +39,7 @@
             btnImportBill = new Button();
             btnCustomer = new Button();
             btnSetting = new Button();
+            btnStaffManage = new Button();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             SuspendLayout();
@@ -170,11 +171,24 @@
             btnSetting.UseVisualStyleBackColor = true;
             btnSetting.Click += btnSetting_Click;
             // 
+            // btnStaffManage
+            // 
+            btnStaffManage.Anchor = AnchorStyles.None;
+            btnStaffManage.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
+            btnStaffManage.Location = new Point(360, 248);
+            btnStaffManage.Name = "btnStaffManage";
+            btnStaffManage.Size = new Size(201, 54);
+            btnStaffManage.TabIndex = 5;
+            btnStaffManage.Text = "Staff Manage";
+            btnStaffManage.UseVisualStyleBackColor = true;
+            btnStaffManage.Click += btnStaffManage_Click;
+            // 
             // HomePage
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(920, 550);
+            Controls.Add(btnStaffManage);
             Controls.Add(btnSetting);
             Controls.Add(btnCustomer);
             Controls.Add(btnImportBill);
@@ -208,5 +222,6 @@
         private Button btnCustomer;
         private Button btnSetting;
         private TextBox textBox1;
+        private Button btnStaffManage;
     }
 }
