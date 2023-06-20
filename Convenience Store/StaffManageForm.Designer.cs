@@ -35,7 +35,6 @@
             btnEdit = new Button();
             btnDelete = new Button();
             AllStaffDataGridView = new DataGridView();
-            label2 = new Label();
             nametTxt = new TextBox();
             searchButton = new Button();
             label3 = new Label();
@@ -51,8 +50,13 @@
             txtID = new TextBox();
             label8 = new Label();
             ExitButton = new Button();
+            panel2 = new Panel();
+            panel3 = new Panel();
+            label2 = new Label();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)AllStaffDataGridView).BeginInit();
+            panel2.SuspendLayout();
+            panel3.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
@@ -62,17 +66,19 @@
             panel1.Controls.Add(label1);
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
+            panel1.Margin = new Padding(4);
             panel1.Name = "panel1";
-            panel1.Size = new Size(800, 40);
+            panel1.Size = new Size(1377, 60);
             panel1.TabIndex = 1;
             // 
             // label6
             // 
             label6.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
             label6.AutoSize = true;
-            label6.Location = new Point(12, 14);
+            label6.Location = new Point(18, 21);
+            label6.Margin = new Padding(4, 0, 4, 0);
             label6.Name = "label6";
-            label6.Size = new Size(0, 20);
+            label6.Size = new Size(0, 30);
             label6.TabIndex = 10;
             // 
             // label1
@@ -83,18 +89,21 @@
             label1.FlatStyle = FlatStyle.System;
             label1.Font = new Font("Segoe UI", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
             label1.ForeColor = SystemColors.ControlText;
-            label1.Location = new Point(338, 6);
+            label1.Location = new Point(570, 9);
+            label1.Margin = new Padding(4, 0, 4, 0);
             label1.Name = "label1";
-            label1.Size = new Size(140, 28);
+            label1.Size = new Size(208, 38);
             label1.TabIndex = 2;
-            label1.Text = "Staff Manage";
+            label1.Text = "Staff Manager";
             label1.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // btnAdd
             // 
-            btnAdd.Location = new Point(27, 368);
+            btnAdd.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            btnAdd.Location = new Point(13, 702);
+            btnAdd.Margin = new Padding(4);
             btnAdd.Name = "btnAdd";
-            btnAdd.Size = new Size(121, 43);
+            btnAdd.Size = new Size(132, 44);
             btnAdd.TabIndex = 3;
             btnAdd.Text = "New Staff";
             btnAdd.UseVisualStyleBackColor = true;
@@ -102,9 +111,11 @@
             // 
             // btnEdit
             // 
-            btnEdit.Location = new Point(321, 368);
+            btnEdit.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            btnEdit.Location = new Point(622, 702);
+            btnEdit.Margin = new Padding(4);
             btnEdit.Name = "btnEdit";
-            btnEdit.Size = new Size(121, 43);
+            btnEdit.Size = new Size(132, 44);
             btnEdit.TabIndex = 4;
             btnEdit.Text = "Edit";
             btnEdit.UseVisualStyleBackColor = true;
@@ -112,9 +123,11 @@
             // 
             // btnDelete
             // 
-            btnDelete.Location = new Point(464, 368);
+            btnDelete.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            btnDelete.Location = new Point(1232, 702);
+            btnDelete.Margin = new Padding(4);
             btnDelete.Name = "btnDelete";
-            btnDelete.Size = new Size(121, 43);
+            btnDelete.Size = new Size(132, 44);
             btnDelete.TabIndex = 5;
             btnDelete.Text = "Delete";
             btnDelete.UseVisualStyleBackColor = true;
@@ -122,36 +135,31 @@
             // 
             // AllStaffDataGridView
             // 
+            AllStaffDataGridView.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             AllStaffDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            AllStaffDataGridView.Location = new Point(374, 100);
+            AllStaffDataGridView.Location = new Point(622, 118);
+            AllStaffDataGridView.Margin = new Padding(4);
             AllStaffDataGridView.Name = "AllStaffDataGridView";
             AllStaffDataGridView.RowHeadersWidth = 51;
             AllStaffDataGridView.RowTemplate.Height = 29;
-            AllStaffDataGridView.Size = new Size(426, 251);
+            AllStaffDataGridView.Size = new Size(742, 576);
             AllStaffDataGridView.TabIndex = 7;
             AllStaffDataGridView.CellDoubleClick += AllStaffDataGridView_CellDoubleClick;
             // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Location = new Point(121, 43);
-            label2.Name = "label2";
-            label2.Size = new Size(75, 20);
-            label2.TabIndex = 8;
-            label2.Text = "Staff Infor";
-            // 
             // nametTxt
             // 
-            nametTxt.Location = new Point(374, 67);
+            nametTxt.Location = new Point(622, 75);
+            nametTxt.Margin = new Padding(4);
             nametTxt.Name = "nametTxt";
-            nametTxt.Size = new Size(328, 27);
+            nametTxt.Size = new Size(596, 35);
             nametTxt.TabIndex = 9;
             // 
             // searchButton
             // 
-            searchButton.Location = new Point(708, 66);
+            searchButton.Location = new Point(1226, 68);
+            searchButton.Margin = new Padding(4);
             searchButton.Name = "searchButton";
-            searchButton.Size = new Size(92, 28);
+            searchButton.Size = new Size(138, 42);
             searchButton.TabIndex = 10;
             searchButton.Text = "Search";
             searchButton.UseVisualStyleBackColor = true;
@@ -160,140 +168,193 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(0, 128);
+            label3.Location = new Point(15, 55);
+            label3.Margin = new Padding(4, 0, 4, 0);
             label3.Name = "label3";
-            label3.Size = new Size(107, 20);
+            label3.Size = new Size(152, 30);
             label3.TabIndex = 11;
             label3.Text = "Account Name";
             // 
             // txtName
             // 
-            txtName.Location = new Point(134, 121);
+            txtName.Location = new Point(216, 52);
+            txtName.Margin = new Padding(4);
             txtName.Name = "txtName";
-            txtName.Size = new Size(234, 27);
+            txtName.Size = new Size(349, 35);
             txtName.TabIndex = 12;
             // 
             // txt
             // 
             txt.AutoSize = true;
-            txt.Location = new Point(0, 169);
+            txt.Location = new Point(15, 98);
+            txt.Margin = new Padding(4, 0, 4, 0);
             txt.Name = "txt";
-            txt.Size = new Size(128, 20);
+            txt.Size = new Size(182, 30);
             txt.TabIndex = 13;
             txt.Text = "Account Password";
             // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(0, 210);
+            label5.Location = new Point(15, 142);
+            label5.Margin = new Padding(4, 0, 4, 0);
             label5.Name = "label5";
-            label5.Size = new Size(75, 20);
+            label5.Size = new Size(104, 30);
             label5.TabIndex = 14;
             label5.Text = "Staff DOB";
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(0, 255);
+            label4.Location = new Point(12, 184);
+            label4.Margin = new Padding(4, 0, 4, 0);
             label4.Name = "label4";
-            label4.Size = new Size(85, 20);
+            label4.Size = new Size(120, 30);
             label4.TabIndex = 15;
             label4.Text = "Staff Phone";
             // 
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(0, 293);
+            label7.Location = new Point(15, 227);
+            label7.Margin = new Padding(4, 0, 4, 0);
             label7.Name = "label7";
-            label7.Size = new Size(97, 20);
+            label7.Size = new Size(135, 30);
             label7.TabIndex = 16;
             label7.Text = "Staff Address";
             // 
             // txtPassword
             // 
-            txtPassword.Location = new Point(134, 162);
+            txtPassword.Location = new Point(216, 95);
+            txtPassword.Margin = new Padding(4);
             txtPassword.Name = "txtPassword";
-            txtPassword.Size = new Size(234, 27);
+            txtPassword.Size = new Size(349, 35);
             txtPassword.TabIndex = 17;
             // 
             // txtDob
             // 
-            txtDob.Location = new Point(103, 203);
+            txtDob.Location = new Point(216, 138);
+            txtDob.Margin = new Padding(4);
             txtDob.Name = "txtDob";
-            txtDob.Size = new Size(265, 27);
+            txtDob.Size = new Size(349, 35);
             txtDob.TabIndex = 18;
             // 
             // txtPhone
             // 
-            txtPhone.Location = new Point(134, 248);
+            txtPhone.Location = new Point(216, 181);
+            txtPhone.Margin = new Padding(4);
             txtPhone.Name = "txtPhone";
-            txtPhone.Size = new Size(234, 27);
+            txtPhone.Size = new Size(349, 35);
             txtPhone.TabIndex = 19;
             // 
             // txtAddress
             // 
-            txtAddress.Location = new Point(134, 286);
+            txtAddress.Location = new Point(216, 224);
+            txtAddress.Margin = new Padding(4);
             txtAddress.Name = "txtAddress";
-            txtAddress.Size = new Size(234, 27);
+            txtAddress.Size = new Size(349, 35);
             txtAddress.TabIndex = 20;
             // 
             // txtID
             // 
-            txtID.Location = new Point(134, 79);
+            txtID.Enabled = false;
+            txtID.Location = new Point(216, 9);
+            txtID.Margin = new Padding(4);
             txtID.Name = "txtID";
-            txtID.Size = new Size(234, 27);
+            txtID.Size = new Size(349, 35);
             txtID.TabIndex = 21;
             // 
             // label8
             // 
             label8.AutoSize = true;
-            label8.Location = new Point(0, 86);
+            label8.Location = new Point(15, 12);
+            label8.Margin = new Padding(4, 0, 4, 0);
             label8.Name = "label8";
-            label8.Size = new Size(74, 20);
+            label8.Size = new Size(117, 30);
             label8.TabIndex = 22;
-            label8.Text = "Accout ID";
+            label8.Text = "Account ID";
             // 
             // ExitButton
             // 
-            ExitButton.Location = new Point(725, 422);
+            ExitButton.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            ExitButton.Location = new Point(13, 18);
+            ExitButton.Margin = new Padding(4);
             ExitButton.Name = "ExitButton";
-            ExitButton.Size = new Size(75, 27);
+            ExitButton.Size = new Size(142, 38);
             ExitButton.TabIndex = 23;
             ExitButton.Text = "Exit";
             ExitButton.UseVisualStyleBackColor = true;
             ExitButton.Click += ExitButton_Click;
             // 
+            // panel2
+            // 
+            panel2.BackColor = Color.FromArgb(128, 128, 255);
+            panel2.Controls.Add(label2);
+            panel2.Controls.Add(ExitButton);
+            panel2.Dock = DockStyle.Bottom;
+            panel2.Location = new Point(0, 753);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(1377, 60);
+            panel2.TabIndex = 24;
+            // 
+            // panel3
+            // 
+            panel3.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
+            panel3.Controls.Add(txtDob);
+            panel3.Controls.Add(label8);
+            panel3.Controls.Add(label3);
+            panel3.Controls.Add(txtID);
+            panel3.Controls.Add(txtName);
+            panel3.Controls.Add(txtAddress);
+            panel3.Controls.Add(txt);
+            panel3.Controls.Add(txtPhone);
+            panel3.Controls.Add(label5);
+            panel3.Controls.Add(label4);
+            panel3.Controls.Add(txtPassword);
+            panel3.Controls.Add(label7);
+            panel3.Location = new Point(13, 118);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(580, 279);
+            panel3.TabIndex = 25;
+            // 
+            // label2
+            // 
+            label2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
+            label2.ForeColor = Color.Black;
+            label2.Location = new Point(1186, 30);
+            label2.Margin = new Padding(4, 0, 4, 0);
+            label2.Name = "label2";
+            label2.Size = new Size(148, 30);
+            label2.TabIndex = 11;
+            label2.Text = "Staff Manager";
+            // 
             // StaffManageForm
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(12F, 30F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
-            Controls.Add(ExitButton);
-            Controls.Add(label8);
-            Controls.Add(txtID);
-            Controls.Add(txtAddress);
-            Controls.Add(txtPhone);
-            Controls.Add(txtDob);
-            Controls.Add(txtPassword);
-            Controls.Add(label7);
-            Controls.Add(label4);
-            Controls.Add(label5);
-            Controls.Add(txt);
-            Controls.Add(txtName);
-            Controls.Add(label3);
+            ClientSize = new Size(1377, 813);
+            Controls.Add(panel2);
             Controls.Add(searchButton);
             Controls.Add(nametTxt);
-            Controls.Add(label2);
             Controls.Add(AllStaffDataGridView);
             Controls.Add(btnDelete);
             Controls.Add(btnEdit);
             Controls.Add(btnAdd);
             Controls.Add(panel1);
+            Controls.Add(panel3);
+            Margin = new Padding(4);
             Name = "StaffManageForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "StaffManageForm";
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)AllStaffDataGridView).EndInit();
+            panel2.ResumeLayout(false);
+            panel2.PerformLayout();
+            panel3.ResumeLayout(false);
+            panel3.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -307,7 +368,6 @@
         private Button btnEdit;
         private Button btnDelete;
         private DataGridView AllStaffDataGridView;
-        private Label label2;
         private TextBox nametTxt;
         private Button searchButton;
         private Label label3;
@@ -323,5 +383,8 @@
         private TextBox txtID;
         private Label label8;
         private Button ExitButton;
+        private Panel panel2;
+        private Panel panel3;
+        private Label label2;
     }
 }

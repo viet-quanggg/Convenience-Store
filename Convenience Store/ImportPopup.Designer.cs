@@ -105,7 +105,7 @@
             panel2.Location = new Point(0, 753);
             panel2.Margin = new Padding(4);
             panel2.Name = "panel2";
-            panel2.Size = new Size(1377, 60);
+            panel2.Size = new Size(1403, 60);
             panel2.TabIndex = 2;
             // 
             // btnExit
@@ -279,7 +279,7 @@
             label1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(668, 160);
+            label1.Location = new Point(740, 160);
             label1.Margin = new Padding(4, 0, 4, 0);
             label1.Name = "label1";
             label1.Size = new Size(121, 30);
@@ -293,7 +293,7 @@
             txtProviderPhone.Location = new Point(236, 156);
             txtProviderPhone.Margin = new Padding(4);
             txtProviderPhone.Name = "txtProviderPhone";
-            txtProviderPhone.Size = new Size(418, 35);
+            txtProviderPhone.Size = new Size(490, 35);
             txtProviderPhone.TabIndex = 30;
             // 
             // label17
@@ -315,7 +315,7 @@
             dtpBillDate.Location = new Point(236, 202);
             dtpBillDate.Margin = new Padding(4);
             dtpBillDate.Name = "dtpBillDate";
-            dtpBillDate.Size = new Size(535, 35);
+            dtpBillDate.Size = new Size(607, 35);
             dtpBillDate.TabIndex = 28;
             // 
             // cbbMerUnit
@@ -325,7 +325,7 @@
             cbbMerUnit.Location = new Point(236, 435);
             cbbMerUnit.Margin = new Padding(4);
             cbbMerUnit.Name = "cbbMerUnit";
-            cbbMerUnit.Size = new Size(421, 38);
+            cbbMerUnit.Size = new Size(493, 38);
             cbbMerUnit.TabIndex = 27;
             // 
             // txtBillTotal
@@ -334,7 +334,7 @@
             txtBillTotal.Location = new Point(236, 480);
             txtBillTotal.Margin = new Padding(4);
             txtBillTotal.Name = "txtBillTotal";
-            txtBillTotal.Size = new Size(421, 35);
+            txtBillTotal.Size = new Size(493, 35);
             txtBillTotal.TabIndex = 26;
             // 
             // txtMerQuantity
@@ -343,7 +343,7 @@
             txtMerQuantity.Location = new Point(236, 384);
             txtMerQuantity.Margin = new Padding(4);
             txtMerQuantity.Name = "txtMerQuantity";
-            txtMerQuantity.Size = new Size(421, 35);
+            txtMerQuantity.Size = new Size(493, 35);
             txtMerQuantity.TabIndex = 25;
             // 
             // txtMerPrice
@@ -352,7 +352,7 @@
             txtMerPrice.Location = new Point(236, 339);
             txtMerPrice.Margin = new Padding(4);
             txtMerPrice.Name = "txtMerPrice";
-            txtMerPrice.Size = new Size(421, 35);
+            txtMerPrice.Size = new Size(493, 35);
             txtMerPrice.TabIndex = 24;
             // 
             // txtMerName

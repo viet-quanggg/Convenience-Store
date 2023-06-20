@@ -72,8 +72,18 @@ namespace Convenience_Store
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
+            txtName.Clear();
+            txtPassword.Clear();
+            txtAddress.Clear();
+            txtPassword.Clear();
+            txtPhone.Clear();
+        }
+
+        private void ExitButton_Click(object sender, EventArgs e)
+        {
             this.Close();
         }
+
     }
 }
 
