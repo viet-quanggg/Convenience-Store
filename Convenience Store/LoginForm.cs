@@ -1,6 +1,5 @@
 ﻿using Service.Repository;
 using System.Drawing.Drawing2D;
-using Service.Repository;
 using static System.Net.Mime.MediaTypeNames;
 using Microsoft.VisualBasic.ApplicationServices;
 using Service.Models;
@@ -31,8 +30,8 @@ namespace Convenience_Store
         {
             string user = txtUsername.Text.ToLower();
             string password = txtPassword.Text;
-            
-            
+
+
 
             if (ValidateString(txtUsername.Text) || Regex.IsMatch(formatString(txtUsername.Text), @"^[^a-zA-Z]+$"))
             {
@@ -95,6 +94,11 @@ namespace Convenience_Store
         {
             txtUsername.Text = string.Empty;
             txtPassword.Text = string.Empty;
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

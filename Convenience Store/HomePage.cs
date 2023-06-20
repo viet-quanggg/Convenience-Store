@@ -1,4 +1,5 @@
-﻿using Service.Models;
+﻿using Convenience_Store;
+using Service.Models;
 using Service.Repository;
 using System;
 using System.Collections.Generic;
@@ -34,17 +35,18 @@ namespace Convenience_Store
             var check = Accounts.FirstOrDefault(a => a.AccRole != 0); ;
             if (check != null)
             {
-                btnCustomer.Visible = false;
+                btnMerchandiseorder.Visible = false;
             }
             else
             {
-                btnCustomer.Visible = true;
+                btnMerchandiseorder.Visible = true;
             }
         }
         private void btnOrder_Click(object sender, EventArgs e)
         {
-            /*Form order = new (Accounts);
-            order.ShowDialog();*/
+            Form order = new Order(Accounts);
+            order.ShowDialog();
+            this.Close();
         }
 
         private void btnMerchandise_Click(object sender, EventArgs e)
@@ -63,6 +65,7 @@ namespace Convenience_Store
         {
             Form importbill = new ImportBillForm(Accounts);
             importbill.ShowDialog();
+            this.Close();
         }
 
         private void btnCustomer_Click(object sender, EventArgs e)
@@ -75,6 +78,7 @@ namespace Convenience_Store
         {
             Form setting = new AccountSetting(Accounts);
             setting.ShowDialog();
+            this.Close();
         }
 
 
@@ -94,5 +98,13 @@ namespace Convenience_Store
                 return;
             }
         }
+
+        private void btnMerchandiseorder_Click(object sender, EventArgs e)
+        {
+            Form merchandiseorder = new MerchandiseOrder(Accounts);
+            merchandiseorder.ShowDialog();
+            this.Close();
+        
+    }
     }
 }

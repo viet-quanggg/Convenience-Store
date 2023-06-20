@@ -140,6 +140,7 @@
             dgvImportBill.AllowUserToAddRows = false;
             dgvImportBill.AllowUserToDeleteRows = false;
             dgvImportBill.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            dgvImportBill.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
             dgvImportBill.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvImportBill.Location = new Point(306, 81);
             dgvImportBill.Name = "dgvImportBill";
