@@ -34,7 +34,6 @@
             label3 = new Label();
             btnExit = new Button();
             btnOrder = new Button();
-            btnMerchandise = new Button();
             btnExportBill = new Button();
             btnImportBill = new Button();
             btnCustomer = new Button();
@@ -111,19 +110,6 @@
             btnOrder.UseVisualStyleBackColor = true;
             btnOrder.Click += btnOrder_Click;
             // 
-            // btnMerchandise
-            // 
-            btnMerchandise.Anchor = AnchorStyles.None;
-            btnMerchandise.AutoSize = true;
-            btnMerchandise.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
-            btnMerchandise.Location = new Point(351, 178);
-            btnMerchandise.Name = "btnMerchandise";
-            btnMerchandise.Size = new Size(221, 54);
-            btnMerchandise.TabIndex = 4;
-            btnMerchandise.Text = "Merchandise";
-            btnMerchandise.UseVisualStyleBackColor = true;
-            btnMerchandise.Click += btnMerchandise_Click;
-            // 
             // btnExportBill
             // 
             btnExportBill.Anchor = AnchorStyles.None;
@@ -182,11 +168,11 @@
             btnMerchandiseorder.Anchor = AnchorStyles.None;
             btnMerchandiseorder.AutoSize = true;
             btnMerchandiseorder.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
-            btnMerchandiseorder.Location = new Point(351, 412);
+            btnMerchandiseorder.Location = new Point(350, 178);
             btnMerchandiseorder.Name = "btnMerchandiseorder";
             btnMerchandiseorder.Size = new Size(221, 54);
             btnMerchandiseorder.TabIndex = 5;
-            btnMerchandiseorder.Text = "Merchandise Order";
+            btnMerchandiseorder.Text = "Merchandise";
             btnMerchandiseorder.UseVisualStyleBackColor = true;
             btnMerchandiseorder.Click += btnMerchandiseorder_Click;
             // 
@@ -200,7 +186,6 @@
             Controls.Add(btnCustomer);
             Controls.Add(btnImportBill);
             Controls.Add(btnExportBill);
-            Controls.Add(btnMerchandise);
             Controls.Add(btnOrder);
             Controls.Add(panel2);
             Controls.Add(panel1);
@@ -224,7 +209,6 @@
         private Label label3;
         private Button btnExit;
         private Button btnOrder;
-        private Button btnMerchandise;
         private Button btnExportBill;
         private Button btnImportBill;
         private Button btnCustomer;
