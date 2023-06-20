@@ -1,4 +1,4 @@
-use [master]
+﻿use [master]
 go
 /*******************************************************************************
    Drop database if it exists
@@ -68,13 +68,24 @@ create table [Customer](
 
 GO
 
+Create table [Category](
+	idCategory int identity(1,1) primary key,
+	nameCateGory nvarchar(100) not null,
+
+);
+Go
+
 create table [Merchandise](
     merId int identity (1,1) PRIMARY KEY,
-    merName varchar (1000) NOT NULL,
-    merDescription varchar(2000) NOT NULL,
+    merName nvarchar (100) NOT NULL,
+    merDescription nvarchar(2000) NOT NULL,
     merPrice float NOT NULL,
     merQuantity int NOT NULL,
-    merUnit varchar(50),
+    merUnit nvarchar(50),
+	merIdCategory int not null,
+	foreign key(merIdCategory) references Category(idCategory)
+
+
 );
 
 GO
@@ -169,18 +180,120 @@ VALUES
 
 GO
 
-INSERT INTO [Merchandise] (merName, merDescription, merPrice, merQuantity, merUnit)
+insert into [Category] (nameCategory)
+values
+('Snack,Candy'),		/*1*/
+('Acoholic Drink'),		/*2*/
+('Beverage'),			/*3*/
+('Instant Food'),		/*4*/
+('Personal Belongings'),/*5*/
+('Medicine'),			/*6*/
+('Milk'),				/*7*/
+('Spices'),				/*8*/
+('Cigarette'),			/*9*/
+('Office Supplies'),	/*10*/
+('Tissue'),				/*11*/
+('Frozen Products'),	/*12*/
+('Canned Food'),		/*13*/
+('Chemicals - Cosmetics');/*14*/
+
+go
+
+INSERT INTO [Merchandise] (merName, merDescription, merPrice, merQuantity, merUnit, merIdCategory)
 VALUES
-('Product A', 'This is a description for Product A', 10.99, 100, 'pcs'),
-('Product B', 'This is a description for Product B', 5.99, 50, 'pcs'),
-('Product C', 'This is a description for Product C', 19.99, 200, 'pcs'),
-('Product D', 'This is a description for Product D', 7.49, 75, 'pcs'),
-('Product E', 'This is a description for Product E', 12.99, 150, 'pcs'),
-('Product F', 'This is a description for Product F', 3.99, 25, 'pcs'),
-('Product G', 'This is a description for Product G', 9.99, 80, 'pcs'),
-('Product H', 'This is a description for Product H', 15.49, 120, 'pcs'),
-('Product I', 'This is a description for Product I', 22.99, 250, 'pcs'),
-('Product J', 'This is a description for Product J', 6.99, 40, 'pcs');
+(N'Snack Doritos', N'This is a description for Product A', 10.99, 100, 'pcs', 1),
+(N'Cá hộp Thái', N'This is a description for Product B', 5.99, 50, 'pcs',13),
+(N'Beer Tiger', N'This is a description for Product C', 19.99, 200, 'pcs',2),
+(N'Nước gạo rang', N'This is a description for Product D', 7.49, 75, 'pcs',7),
+(N'Sữa bột Ensure Gold', N'This is a description for Product E', 12.99, 150, 'pcs',7),
+(N'Beer 333', N'This is a description for Product F', 3.99, 25, 'pcs',2),
+(N'Bút bi',N'This is a description for Product G', 9.99, 80, 'pcs',10),
+(N'Soju bưởi', N'This is a description for Product H', 15.49, 120, 'pcs',2),
+(N'Muối Tiêu chanh Guyumi', N'This is a description for Product I', 22.99, 250, 'pcs',8),
+(N'Bấm kim số 3', N'This is a description for Product J', 6.99, 40, 'pcs',10),
+(N'Dầu tắm Ôliu', N'This is a description for Product I', 22.99, 250, 'pcs',14),
+(N'ENCHANTEUR ST-C', N'This is a description for Product I', 22.99, 250, 'pcs',14),
+(N'Bánh Bon sợi thịt gà', N'This is a description for Product I', 22.99, 250, 'pcs',1),
+(N'Chả giò chay', N'This is a description for Product I', 22.99, 250, 'pcs',12),
+(N'Cá hộp 3 cô gái', N'This is a description for Product I', 22.99, 250, 'pcs',13),
+(N'Snack Poca', N'This is a description for Product I', 22.99, 250, 'pcs',1),
+(N'Kem Celano ốc quế dâu', N'This is a description for Product I', 22.99, 250, 'pcs',12),
+(N'Yakult', N'This is a description for Product I', 22.99, 250, 'pcs',7),
+(N'Chocopile', N'This is a description for Product I', 22.99, 250, 'pcs',1),
+(N'Kem tắm trắng da Scentio Doublo', N'This is a description for Product I', 22.99, 250, 'pcs',14),
+(N'Snack Pringles', N'This is a description for Product I', 22.99, 250, 'pcs',1),
+(N'Soju đào', N'This is a description for Product I', 22.99, 250, 'pcs',2),
+(N'Kem Dưỡng Ẩm Toàn Thân Byphasse Moisturizing', N'This is a description for Product I', 22.99, 250, 'pcs',14),
+(N'Bánh socola pie Oreo', N'This is a description for Product I', 22.99, 250, 'pcs',1),
+(N'Snack Cheetos', N'This is a description for Product I', 22.99, 250, 'pcs',1),
+(N'ALPERLIEBE SỮA', N'This is a description for Product I', 22.99, 250, 'pcs',1),
+(N'Bánh DAISY', N'This is a description for Product I', 22.99, 250, 'pcs',1),
+(N'Rượu gạo nho', N'This is a description for Product I', 22.99, 250, 'pcs',2),
+(N'Cá ngừ sốt cay', N'This is a description for Product I', 22.99, 250, 'pcs',13),
+(N'Bánh Danisa 200g', N'This is a description for Product I', 22.99, 250, 'pcs',1),
+(N'Rượu vang Santiago', N'This is a description for Product I', 22.99, 250, 'pcs',2),
+(N'Sữa TH True Milk', N'This is a description for Product I', 22.99, 250, 'pcs',7),
+(N'Snack Lay’s Stax', N'This is a description for Product I', 22.99, 250, 'pcs',1),
+(N'Vinamilk ít đường', N'This is a description for Product I', 22.99, 250, 'pcs',7),
+(N'Cá xốt cà', N'This is a description for Product I', 22.99, 250, 'pcs',13),
+(N'Grow Plus', N'This is a description for Product I', 22.99, 250, 'pcs',7),
+(N'Bánh Custas kem trứng', N'This is a description for Product I', 22.99, 250, 'pcs',1),
+(N'Bóp vải ', N'This is a description for Product I', 22.99, 250, 'pcs',10),
+(N'Bánh đậu phộng Peanut', N'This is a description for Product I', 22.99, 250, 'pcs',1),
+(N'Sữa milo', N'This is a description for Product I', 22.99, 250, 'pcs',7),
+(N'Bánh gạo One One ', N'This is a description for Product I', 22.99, 250, 'pcs',1),	
+(N'Sữa Ovaltine', N'This is a description for Product I', 22.99, 250, 'pcs',7),
+(N'Bánh trứng tươi KARO', N'This is a description for Product I', 22.99, 250, 'pcs',1),
+(N'Bút bi FO-036 mực đỏ', N'This is a description for Product I', 22.99, 250, 'pcs',10),
+(N'Băng keo xóa ', N'This is a description for Product I', 22.99, 250, 'pcs',10),
+(N'Bánh que Cosy', N'This is a description for Product I', 22.99, 250, 'pcs',1),
+(N'Coca Cola', N'This is a description for Product I', 22.99, 250, 'pcs',3),
+(N'Kem đánh răng', N'This is a description for Product I', 22.99, 250, 'pcs',5),
+(N'Bàn chải', N'This is a description for Product I', 22.99, 250, 'pcs',5),
+(N'Da cá chiên giòn', N'This is a description for Product I', 22.99, 250, 'pcs',4),
+(N'Chỉ nha khoa', N'This is a description for Product I', 22.99, 250, 'pcs',5),
+(N'Condom', N'This is a description for Product I', 22.99, 250, 'pcs',5),
+(N'Panadol', N'This is a description for Product I', 22.99, 250, 'pcs',6),
+(N'Thuốc đau dạ dày', N'This is a description for Product I', 22.99, 250, 'pcs',6),
+(N'Đường tinh luyện', N'This is a description for Product I', 22.99, 250, 'pcs',8),
+(N'Sa tế hũ', N'This is a description for Product I', 22.99, 250, 'pcs',8),
+(N'Hạt nêm', N'This is a description for Product I', 22.99, 250, 'pcs',8),
+(N'Bột ngọt', N'This is a description for Product I', 22.99, 250, 'pcs',8),
+(N'Muối Iot', N'This is a description for Product I', 22.99, 250, 'pcs',8),
+(N'Bình giữ nhiệt', N'This is a description for Product I', 22.99, 250, 'pcs',5),
+(N'Dao cạo râu', N'This is a description for Product I', 22.99, 250, 'pcs',5),
+(N'Bánh que Cosy', N'This is a description for Product I', 22.99, 250, 'pcs',1),
+(N'Rong biển', N'This is a description for Product I', 22.99, 250, 'pcs',4),
+(N'Redbull', N'This is a description for Product I', 22.99, 250, 'pcs',3),
+(N'Xúc xích xiên', N'This is a description for Product I', 22.99, 250, 'pcs',4),
+(N'Bánh que Cosy', N'This is a description for Product I', 22.99, 250, 'pcs',1),
+(N'Cơm hộp Dosirak', N'This is a description for Product I', 22.99, 250, 'pcs',4),
+(N'Monster Energy ', N'This is a description for Product I', 22.99, 250, 'pcs',3),
+(N'Sprite', N'This is a description for Product I', 22.99, 250, 'pcs',3),
+(N'Cơm nắm', N'This is a description for Product I', 22.99, 250, 'pcs',4),
+(N'Bánh que Cosy', N'This is a description for Product I', 22.99, 250, 'pcs',1),
+(N'Mì ly Hảo Hảo', N'This is a description for Product I', 22.99, 250, 'pcs',4),
+(N'Pepsi', N'This is a description for Product I', 22.99, 250, 'pcs',3),
+(N'Demi', N'This is a description for Product I', 22.99, 250, 'pcs',9),
+(N'Sài gòn bạc', N'This is a description for Product I', 22.99, 250, 'pcs',9),
+(N'555',N'This is a description for Product I', 22.99, 250, 'pcs',9),
+(N'Jet', N'This is a description for Product I', 22.99, 250, 'pcs',9),
+(N'Giấy Puri', N'This is a description for Product I', 22.99, 250, 'pcs',11),
+(N'Giấy Pulppy', N'This is a description for Product I', 22.99, 250, 'pcs',11),
+(N'Giấy Elene', N'This is a description for Product I', 22.99, 250, 'pcs',11),
+(N'Giấy tempo', N'This is a description for Product I', 22.99, 250, 'pcs',11),
+(N'Bánh xếp CJ nhân thịt và bắp', N'This is a description for Product I', 22.99, 250, 'pcs',12),
+(N'Cá viên La cusina', N'This is a description for Product I', 22.99, 250, 'pcs',12),
+(N'Chả lụa quết Cầu Tre', N'This is a description for Product I', 22.99, 250, 'pcs',12),
+(N'Gà viên lá chanh SG', N'This is a description for Product I', 22.99, 250, 'pcs',12),
+(N'Cá Saba Tiêu xanh', N'This is a description for Product I', 22.99, 250, 'pcs',12),
+(N'Kim chi cải thảo cắt lát', N'This is a description for Product I', 22.99, 250, 'pcs',12),
+(N'Bột giặt Omo', N'This is a description for Product I', 22.99, 250, 'pcs',14),
+(N'Vim', N'This is a description for Product I', 22.99, 250, 'pcs',14),
+(N'Nước rửa chén sunlight', N'This is a description for Product I', 22.99, 250, 'pcs',14),
+(N'Chà xoong nồi SUN BRITE', N'This is a description for Product I', 22.99, 250, 'pcs',14),
+(N'Nước lau kính CIF', N'This is a description for Product I', 22.99, 250, 'pcs',14),
+(N'Sữa đặc Ngôi sao', N'This is a description for Product J', 6.99, 40, 'pcs',7);
 
 GO
 

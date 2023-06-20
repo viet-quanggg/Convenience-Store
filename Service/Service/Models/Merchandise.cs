@@ -19,7 +19,9 @@ namespace Service.Models
         public double MerPrice { get; set; }
         public int MerQuantity { get; set; }
         public string MerUnit { get; set; }
+        public int MerIdCategory { get; set; }
 
+        public virtual Category MerIdCategoryNavigation { get; set; }
         public virtual ICollection<Bill> Bills { get; set; }
         public virtual ICollection<ImportBill> ImportBills { get; set; }
     }

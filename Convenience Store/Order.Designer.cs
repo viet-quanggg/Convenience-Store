@@ -31,14 +31,12 @@
             dgvOrder = new DataGridView();
             lblTotal = new Label();
             pnlHeader = new Panel();
+            lblOrderTitle = new Label();
             lblQuantity = new Label();
             txtQuantity = new TextBox();
-            lblHeaderLine = new Label();
-            lblOrderTitle = new Label();
             pnlFooter = new Panel();
             lblOrderFooter = new Label();
             btnExit = new Button();
-            lblFooterLine = new Label();
             txtTotal = new TextBox();
             lblDollarSign = new Label();
             btnExport = new Button();
@@ -67,45 +65,61 @@
             // 
             // dgvOrder
             // 
+            dgvOrder.AllowUserToAddRows = false;
+            dgvOrder.AllowUserToDeleteRows = false;
+            dgvOrder.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             dgvOrder.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvOrder.Location = new Point(450, 103);
-            dgvOrder.Margin = new Padding(2);
+            dgvOrder.Location = new Point(675, 67);
             dgvOrder.Name = "dgvOrder";
             dgvOrder.ReadOnly = true;
             dgvOrder.RowHeadersWidth = 62;
             dgvOrder.RowTemplate.Height = 33;
-            dgvOrder.Size = new Size(445, 244);
+            dgvOrder.Size = new Size(683, 517);
             dgvOrder.TabIndex = 13;
             dgvOrder.CellClick += dgvOrder_CellClick;
             dgvOrder.CellValueChanged += dgvOrder_CellValueChanged;
             // 
             // lblTotal
             // 
+            lblTotal.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             lblTotal.AutoSize = true;
             lblTotal.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            lblTotal.Location = new Point(403, 382);
-            lblTotal.Margin = new Padding(2, 0, 2, 0);
+            lblTotal.Location = new Point(571, 595);
             lblTotal.Name = "lblTotal";
-            lblTotal.Size = new Size(58, 28);
+            lblTotal.Size = new Size(81, 38);
             lblTotal.TabIndex = 3;
             lblTotal.Text = "Total:";
             // 
             // pnlHeader
             // 
-            pnlHeader.Controls.Add(lblHeaderLine);
+            pnlHeader.BackColor = Color.FromArgb(128, 128, 255);
             pnlHeader.Controls.Add(lblOrderTitle);
+            pnlHeader.Dock = DockStyle.Top;
             pnlHeader.ForeColor = SystemColors.MenuText;
-            pnlHeader.Location = new Point(-14, -6);
+            pnlHeader.Location = new Point(0, 0);
+            pnlHeader.Margin = new Padding(4);
             pnlHeader.Name = "pnlHeader";
-            pnlHeader.Size = new Size(956, 103);
+            pnlHeader.Size = new Size(1374, 60);
             pnlHeader.TabIndex = 20;
+            // 
+            // lblOrderTitle
+            // 
+            lblOrderTitle.AutoSize = true;
+            lblOrderTitle.Font = new Font("Segoe UI", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
+            lblOrderTitle.Location = new Point(621, 9);
+            lblOrderTitle.Margin = new Padding(4, 0, 4, 0);
+            lblOrderTitle.Name = "lblOrderTitle";
+            lblOrderTitle.Size = new Size(92, 38);
+            lblOrderTitle.TabIndex = 0;
+            lblOrderTitle.Text = "Order";
             // 
             // lblQuantity
             // 
             lblQuantity.AutoSize = true;
-            lblQuantity.Location = new Point(251, 94);
+            lblQuantity.Location = new Point(376, 141);
+            lblQuantity.Margin = new Padding(4, 0, 4, 0);
             lblQuantity.Name = "lblQuantity";
-            lblQuantity.Size = new Size(72, 20);
+            lblQuantity.Size = new Size(104, 30);
             lblQuantity.TabIndex = 15;
             lblQuantity.Text = "Quantity :";
             // 
@@ -113,139 +127,114 @@
             // 
             txtQuantity.BackColor = SystemColors.MenuBar;
             txtQuantity.BorderStyle = BorderStyle.FixedSingle;
-            txtQuantity.Location = new Point(251, 128);
+            txtQuantity.Location = new Point(376, 192);
+            txtQuantity.Margin = new Padding(4);
             txtQuantity.Name = "txtQuantity";
-            txtQuantity.Size = new Size(146, 27);
+            txtQuantity.Size = new Size(218, 35);
             txtQuantity.TabIndex = 16;
-            // 
-            // lblHeaderLine
-            // 
-            lblHeaderLine.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            lblHeaderLine.BackColor = SystemColors.ActiveCaptionText;
-            lblHeaderLine.BorderStyle = BorderStyle.FixedSingle;
-            lblHeaderLine.Location = new Point(17, 80);
-            lblHeaderLine.Name = "lblHeaderLine";
-            lblHeaderLine.Size = new Size(2456, 10);
-            lblHeaderLine.TabIndex = 17;
-            lblHeaderLine.Text = "label6";
-            lblHeaderLine.TextAlign = ContentAlignment.TopCenter;
-            // 
-            // lblOrderTitle
-            // 
-            lblOrderTitle.AutoSize = true;
-            lblOrderTitle.Font = new Font("Segoe UI", 35F, FontStyle.Regular, GraphicsUnit.Point);
-            lblOrderTitle.Location = new Point(379, 3);
-            lblOrderTitle.Name = "lblOrderTitle";
-            lblOrderTitle.Size = new Size(185, 78);
-            lblOrderTitle.TabIndex = 0;
-            lblOrderTitle.Text = "Order";
             // 
             // pnlFooter
             // 
+            pnlFooter.BackColor = Color.FromArgb(128, 128, 255);
             pnlFooter.Controls.Add(lblOrderFooter);
             pnlFooter.Controls.Add(btnExit);
-            pnlFooter.Location = new Point(3, 415);
+            pnlFooter.Dock = DockStyle.Bottom;
+            pnlFooter.Location = new Point(0, 650);
+            pnlFooter.Margin = new Padding(4);
             pnlFooter.Name = "pnlFooter";
-            pnlFooter.Size = new Size(912, 124);
+            pnlFooter.Size = new Size(1374, 60);
             pnlFooter.TabIndex = 24;
             // 
             // lblOrderFooter
             // 
             lblOrderFooter.AutoSize = true;
-            lblOrderFooter.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            lblOrderFooter.Location = new Point(834, 21);
+            lblOrderFooter.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
+            lblOrderFooter.Location = new Point(1306, 30);
+            lblOrderFooter.Margin = new Padding(4, 0, 4, 0);
             lblOrderFooter.Name = "lblOrderFooter";
-            lblOrderFooter.Size = new Size(63, 28);
+            lblOrderFooter.Size = new Size(68, 30);
             lblOrderFooter.TabIndex = 1;
             lblOrderFooter.Text = "Order";
             // 
             // btnExit
             // 
             btnExit.FlatAppearance.BorderSize = 2;
-            btnExit.FlatStyle = FlatStyle.Flat;
-            btnExit.Location = new Point(10, 22);
+            btnExit.Location = new Point(13, 12);
+            btnExit.Margin = new Padding(4);
             btnExit.Name = "btnExit";
-            btnExit.Size = new Size(94, 29);
+            btnExit.Size = new Size(141, 44);
             btnExit.TabIndex = 0;
             btnExit.Text = "Exit";
             btnExit.UseVisualStyleBackColor = true;
-            // 
-            // lblFooterLine
-            // 
-            lblFooterLine.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            lblFooterLine.BackColor = SystemColors.ActiveCaptionText;
-            lblFooterLine.BorderStyle = BorderStyle.FixedSingle;
-            lblFooterLine.Location = new Point(-726, 421);
-            lblFooterLine.Name = "lblFooterLine";
-            lblFooterLine.Size = new Size(2441, 10);
-            lblFooterLine.TabIndex = 18;
-            lblFooterLine.Text = "label3";
-            lblFooterLine.TextAlign = ContentAlignment.TopCenter;
+            btnExit.Click += btnExit_Click;
             // 
             // txtTotal
             // 
+            txtTotal.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
             txtTotal.BackColor = SystemColors.Menu;
             txtTotal.BorderStyle = BorderStyle.None;
             txtTotal.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
-            txtTotal.Location = new Point(465, 360);
-            txtTotal.Margin = new Padding(2);
+            txtTotal.Location = new Point(658, 592);
             txtTotal.Multiline = true;
             txtTotal.Name = "txtTotal";
-            txtTotal.Size = new Size(164, 50);
+            txtTotal.Size = new Size(246, 50);
             txtTotal.TabIndex = 25;
             // 
             // lblDollarSign
             // 
             lblDollarSign.AutoSize = true;
             lblDollarSign.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            lblDollarSign.Location = new Point(627, 379);
-            lblDollarSign.Margin = new Padding(2, 0, 2, 0);
+            lblDollarSign.Location = new Point(910, 595);
             lblDollarSign.Name = "lblDollarSign";
-            lblDollarSign.Size = new Size(23, 28);
+            lblDollarSign.Size = new Size(32, 38);
             lblDollarSign.TabIndex = 26;
             lblDollarSign.Text = "$";
             // 
             // btnExport
             // 
+            btnExport.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
             btnExport.FlatAppearance.BorderSize = 2;
-            btnExport.FlatStyle = FlatStyle.Flat;
-            btnExport.Location = new Point(655, 370);
+            btnExport.Location = new Point(998, 592);
+            btnExport.Margin = new Padding(4);
             btnExport.Name = "btnExport";
-            btnExport.Size = new Size(117, 33);
+            btnExport.Size = new Size(176, 50);
             btnExport.TabIndex = 2;
             btnExport.Text = "Export Bill";
             btnExport.UseVisualStyleBackColor = true;
             // 
             // btnFinish
             // 
+            btnFinish.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
             btnFinish.FlatAppearance.BorderSize = 2;
-            btnFinish.FlatStyle = FlatStyle.Flat;
-            btnFinish.Location = new Point(788, 370);
+            btnFinish.Location = new Point(1182, 592);
+            btnFinish.Margin = new Padding(4);
             btnFinish.Name = "btnFinish";
-            btnFinish.Size = new Size(117, 33);
+            btnFinish.Size = new Size(176, 50);
             btnFinish.TabIndex = 27;
             btnFinish.Text = "Finish";
             btnFinish.UseVisualStyleBackColor = true;
             // 
             // btnEdit
             // 
+            btnEdit.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
             btnEdit.FlatAppearance.BorderSize = 2;
-            btnEdit.FlatStyle = FlatStyle.Flat;
-            btnEdit.Location = new Point(13, 371);
+            btnEdit.Location = new Point(13, 592);
+            btnEdit.Margin = new Padding(4);
             btnEdit.Name = "btnEdit";
-            btnEdit.Size = new Size(117, 33);
+            btnEdit.Size = new Size(176, 50);
             btnEdit.TabIndex = 28;
-            btnEdit.Text = "Edit";
+            btnEdit.Text = "Save";
             btnEdit.UseVisualStyleBackColor = true;
             btnEdit.Click += btnEdit_Click;
             // 
             // btnDelete
             // 
+            btnDelete.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
             btnDelete.FlatAppearance.BorderSize = 2;
-            btnDelete.FlatStyle = FlatStyle.Flat;
-            btnDelete.Location = new Point(149, 371);
+            btnDelete.Location = new Point(197, 592);
+            btnDelete.Margin = new Padding(4);
             btnDelete.Name = "btnDelete";
-            btnDelete.Size = new Size(117, 33);
+            btnDelete.Size = new Size(176, 50);
             btnDelete.TabIndex = 29;
             btnDelete.Text = "Delete";
             btnDelete.UseVisualStyleBackColor = true;
@@ -253,11 +242,12 @@
             // 
             // btnMerchandise
             // 
+            btnMerchandise.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
             btnMerchandise.FlatAppearance.BorderSize = 2;
-            btnMerchandise.FlatStyle = FlatStyle.Flat;
-            btnMerchandise.Location = new Point(281, 371);
+            btnMerchandise.Location = new Point(381, 592);
+            btnMerchandise.Margin = new Padding(4);
             btnMerchandise.Name = "btnMerchandise";
-            btnMerchandise.Size = new Size(117, 33);
+            btnMerchandise.Size = new Size(176, 50);
             btnMerchandise.TabIndex = 30;
             btnMerchandise.Text = "Merchandise";
             btnMerchandise.UseVisualStyleBackColor = true;
@@ -279,17 +269,19 @@
             pnlCurrentEm.Controls.Add(txtId);
             pnlCurrentEm.Controls.Add(lblName);
             pnlCurrentEm.Controls.Add(lblId);
-            pnlCurrentEm.Location = new Point(13, 103);
+            pnlCurrentEm.Location = new Point(13, 67);
+            pnlCurrentEm.Margin = new Padding(4);
             pnlCurrentEm.Name = "pnlCurrentEm";
-            pnlCurrentEm.Size = new Size(421, 244);
+            pnlCurrentEm.Size = new Size(639, 517);
             pnlCurrentEm.TabIndex = 31;
             // 
             // lblMerId
             // 
             lblMerId.AutoSize = true;
-            lblMerId.Location = new Point(251, 12);
+            lblMerId.Location = new Point(376, 18);
+            lblMerId.Margin = new Padding(4, 0, 4, 0);
             lblMerId.Name = "lblMerId";
-            lblMerId.Size = new Size(117, 20);
+            lblMerId.Size = new Size(167, 30);
             lblMerId.TabIndex = 13;
             lblMerId.Text = "Merchandise Id :";
             // 
@@ -298,72 +290,80 @@
             txtMerId.BackColor = SystemColors.MenuBar;
             txtMerId.BorderStyle = BorderStyle.FixedSingle;
             txtMerId.Enabled = false;
-            txtMerId.Location = new Point(251, 46);
+            txtMerId.Location = new Point(376, 69);
+            txtMerId.Margin = new Padding(4);
             txtMerId.Name = "txtMerId";
             txtMerId.ReadOnly = true;
-            txtMerId.Size = new Size(146, 27);
+            txtMerId.Size = new Size(218, 35);
             txtMerId.TabIndex = 14;
             // 
             // txtAddress
             // 
-            txtAddress.Location = new Point(97, 166);
+            txtAddress.Location = new Point(146, 249);
+            txtAddress.Margin = new Padding(4);
             txtAddress.Multiline = true;
             txtAddress.Name = "txtAddress";
             txtAddress.ReadOnly = true;
-            txtAddress.Size = new Size(285, 57);
+            txtAddress.Size = new Size(448, 84);
             txtAddress.TabIndex = 12;
             // 
             // lblAddress
             // 
             lblAddress.AutoSize = true;
-            lblAddress.Location = new Point(11, 165);
+            lblAddress.Location = new Point(16, 248);
+            lblAddress.Margin = new Padding(4, 0, 4, 0);
             lblAddress.Name = "lblAddress";
-            lblAddress.Size = new Size(69, 20);
+            lblAddress.Size = new Size(98, 30);
             lblAddress.TabIndex = 11;
             lblAddress.Text = "Address :";
             // 
             // txtPhone
             // 
-            txtPhone.Location = new Point(99, 129);
+            txtPhone.Location = new Point(148, 194);
+            txtPhone.Margin = new Padding(4);
             txtPhone.Name = "txtPhone";
             txtPhone.ReadOnly = true;
-            txtPhone.Size = new Size(125, 27);
+            txtPhone.Size = new Size(186, 35);
             txtPhone.TabIndex = 10;
             // 
             // lblPhone
             // 
             lblPhone.AutoSize = true;
-            lblPhone.Location = new Point(13, 135);
+            lblPhone.Location = new Point(20, 202);
+            lblPhone.Margin = new Padding(4, 0, 4, 0);
             lblPhone.Name = "lblPhone";
-            lblPhone.Size = new Size(57, 20);
+            lblPhone.Size = new Size(83, 30);
             lblPhone.TabIndex = 9;
             lblPhone.Text = "Phone :";
             // 
             // lblRole
             // 
             lblRole.AutoSize = true;
-            lblRole.Location = new Point(11, 94);
+            lblRole.Location = new Point(16, 141);
+            lblRole.Margin = new Padding(4, 0, 4, 0);
             lblRole.Name = "lblRole";
-            lblRole.Size = new Size(46, 20);
+            lblRole.Size = new Size(64, 30);
             lblRole.TabIndex = 8;
             lblRole.Text = "Role :";
             // 
             // txtRole
             // 
             txtRole.Enabled = false;
-            txtRole.Location = new Point(97, 91);
+            txtRole.Location = new Point(146, 136);
+            txtRole.Margin = new Padding(4);
             txtRole.Name = "txtRole";
             txtRole.ReadOnly = true;
-            txtRole.Size = new Size(125, 27);
+            txtRole.Size = new Size(186, 35);
             txtRole.TabIndex = 7;
             // 
             // txtName
             // 
             txtName.Enabled = false;
-            txtName.Location = new Point(97, 50);
+            txtName.Location = new Point(146, 75);
+            txtName.Margin = new Padding(4);
             txtName.Name = "txtName";
             txtName.ReadOnly = true;
-            txtName.Size = new Size(125, 27);
+            txtName.Size = new Size(186, 35);
             txtName.TabIndex = 7;
             // 
             // txtId
@@ -371,36 +371,39 @@
             txtId.BackColor = SystemColors.MenuBar;
             txtId.BorderStyle = BorderStyle.FixedSingle;
             txtId.Enabled = false;
-            txtId.Location = new Point(99, 10);
+            txtId.Location = new Point(148, 15);
+            txtId.Margin = new Padding(4);
             txtId.Name = "txtId";
             txtId.ReadOnly = true;
-            txtId.Size = new Size(125, 27);
+            txtId.Size = new Size(186, 35);
             txtId.TabIndex = 7;
             txtId.TextChanged += txtId_TextChanged;
             // 
             // lblName
             // 
             lblName.AutoSize = true;
-            lblName.Location = new Point(11, 53);
+            lblName.Location = new Point(16, 80);
+            lblName.Margin = new Padding(4, 0, 4, 0);
             lblName.Name = "lblName";
-            lblName.Size = new Size(56, 20);
+            lblName.Size = new Size(80, 30);
             lblName.TabIndex = 6;
             lblName.Text = "Name :";
             // 
             // lblId
             // 
             lblId.AutoSize = true;
-            lblId.Location = new Point(13, 17);
+            lblId.Location = new Point(20, 26);
+            lblId.Margin = new Padding(4, 0, 4, 0);
             lblId.Name = "lblId";
-            lblId.Size = new Size(29, 20);
+            lblId.Size = new Size(42, 30);
             lblId.TabIndex = 4;
             lblId.Text = "Id :";
             // 
             // Order
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(12F, 30F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(916, 473);
+            ClientSize = new Size(1374, 710);
             Controls.Add(pnlCurrentEm);
             Controls.Add(btnMerchandise);
             Controls.Add(btnDelete);
@@ -409,12 +412,10 @@
             Controls.Add(btnExport);
             Controls.Add(lblDollarSign);
             Controls.Add(txtTotal);
-            Controls.Add(lblFooterLine);
             Controls.Add(pnlFooter);
             Controls.Add(pnlHeader);
             Controls.Add(lblTotal);
             Controls.Add(dgvOrder);
-            Margin = new Padding(2);
             Name = "Order";
             Text = "Order";
             ((System.ComponentModel.ISupportInitialize)dgvOrder).EndInit();
@@ -432,12 +433,10 @@
         private DataGridView dgvOrder;
         private Label lblTotal;
         private Panel pnlHeader;
-        private Label lblHeaderLine;
         private Label lblOrderTitle;
         private Panel pnlFooter;
         private Label lblOrderFooter;
         private Button btnExit;
-        private Label lblFooterLine;
         private TextBox txtTotal;
         private Label lblDollarSign;
         private Button btnExport;

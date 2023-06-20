@@ -1,7 +1,6 @@
-﻿ using System;
+﻿using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
-using Microsoft.Extensions.Configuration;
 
 #nullable disable
 
@@ -19,8 +18,9 @@ namespace Service.Models
         }
 
         public virtual DbSet<Account> Accounts { get; set; }
-        public virtual DbSet<Bill> Bills { get; set; }  
+        public virtual DbSet<Bill> Bills { get; set; }
         public virtual DbSet<BillDetail> BillDetails { get; set; }
+        public virtual DbSet<Category> Categories { get; set; }
         public virtual DbSet<Customer> Customers { get; set; }
         public virtual DbSet<ExportBill> ExportBills { get; set; }
         public virtual DbSet<ImportBill> ImportBills { get; set; }
@@ -31,20 +31,10 @@ namespace Service.Models
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseSqlServer( GetConnectionString());
+#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
+                optionsBuilder.UseSqlServer("server =localhost; database = ConvenienceStore;uid=sa;pwd=12345;Trusted_Connection=True;TrustServerCertificate=True;");
             }
         }
-
-        private string GetConnectionString()
-        {
-            IConfiguration config = new ConfigurationBuilder()
-                .SetBasePath(Directory.GetCurrentDirectory())
-                .AddJsonFile("appsettings.json", true, true)
-                .Build();
-            var strConn = config["ConnectionStrings:ConvenienceStore"];
-            return strConn;
-        }
- 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -53,7 +43,7 @@ namespace Service.Models
             modelBuilder.Entity<Account>(entity =>
             {
                 entity.HasKey(e => e.AccId)
-                    .HasName("PK__Account__A471AFDA1AC3E71F");
+                    .HasName("PK__Account__A471AFDA63272109");
 
                 entity.ToTable("Account");
 
@@ -111,13 +101,13 @@ namespace Service.Models
                     .WithMany(p => p.Bills)
                     .HasForeignKey(d => d.AccId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__Bill__accId__1FCDBCEB");
+                    .HasConstraintName("FK__Bill__accId__36B12243");
 
                 entity.HasOne(d => d.Mer)
                     .WithMany(p => p.Bills)
                     .HasForeignKey(d => d.MerId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__Bill__merId__20C1E124");
+                    .HasConstraintName("FK__Bill__merId__37A5467C");
             });
 
             modelBuilder.Entity<BillDetail>(entity =>
@@ -142,19 +132,34 @@ namespace Service.Models
                     .WithMany()
                     .HasForeignKey(d => d.BillId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__BillDetai__billI__22AA2996");
+                    .HasConstraintName("FK__BillDetai__billI__398D8EEE");
 
                 entity.HasOne(d => d.Mer)
                     .WithMany()
                     .HasForeignKey(d => d.MerId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__BillDetai__merId__239E4DCF");
+                    .HasConstraintName("FK__BillDetai__merId__3A81B327");
+            });
+
+            modelBuilder.Entity<Category>(entity =>
+            {
+                entity.HasKey(e => e.IdCategory)
+                    .HasName("PK__Category__79D361B614E17B48");
+
+                entity.ToTable("Category");
+
+                entity.Property(e => e.IdCategory).HasColumnName("idCategory");
+
+                entity.Property(e => e.NameCateGory)
+                    .IsRequired()
+                    .HasMaxLength(100)
+                    .HasColumnName("nameCateGory");
             });
 
             modelBuilder.Entity<Customer>(entity =>
             {
                 entity.HasKey(e => e.CusId)
-                    .HasName("PK__Customer__BA9897F3D711702E");
+                    .HasName("PK__Customer__BA9897F3E46C7BDC");
 
                 entity.ToTable("Customer");
 
@@ -181,7 +186,7 @@ namespace Service.Models
             modelBuilder.Entity<ExportBill>(entity =>
             {
                 entity.HasKey(e => e.ExId)
-                    .HasName("PK__ExportBi__38F47E584503E6A0");
+                    .HasName("PK__ExportBi__38F47E5849BD0C41");
 
                 entity.ToTable("ExportBill");
 
@@ -205,19 +210,19 @@ namespace Service.Models
                     .WithMany(p => p.ExportBills)
                     .HasForeignKey(d => d.AccId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__ExportBil__accId__182C9B23");
+                    .HasConstraintName("FK__ExportBil__accId__2F10007B");
 
                 entity.HasOne(d => d.Cus)
                     .WithMany(p => p.ExportBills)
                     .HasForeignKey(d => d.CusId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__ExportBil__cusId__1920BF5C");
+                    .HasConstraintName("FK__ExportBil__cusId__300424B4");
             });
 
             modelBuilder.Entity<ImportBill>(entity =>
             {
                 entity.HasKey(e => e.ImId)
-                    .HasName("PK__ImportBi__9BF4082F37221A6B");
+                    .HasName("PK__ImportBi__9BF4082F3BA075E3");
 
                 entity.ToTable("ImportBill");
 
@@ -247,19 +252,19 @@ namespace Service.Models
                     .WithMany(p => p.ImportBills)
                     .HasForeignKey(d => d.MerId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__ImportBil__merId__1BFD2C07");
+                    .HasConstraintName("FK__ImportBil__merId__32E0915F");
 
                 entity.HasOne(d => d.Pro)
                     .WithMany(p => p.ImportBills)
                     .HasForeignKey(d => d.ProId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__ImportBil__proId__1CF15040");
+                    .HasConstraintName("FK__ImportBil__proId__33D4B598");
             });
 
             modelBuilder.Entity<Merchandise>(entity =>
             {
                 entity.HasKey(e => e.MerId)
-                    .HasName("PK__Merchand__31EEDA21CA29ED36");
+                    .HasName("PK__Merchand__31EEDA2147E7C5FA");
 
                 entity.ToTable("Merchandise");
 
@@ -268,13 +273,13 @@ namespace Service.Models
                 entity.Property(e => e.MerDescription)
                     .IsRequired()
                     .HasMaxLength(2000)
-                    .IsUnicode(false)
                     .HasColumnName("merDescription");
+
+                entity.Property(e => e.MerIdCategory).HasColumnName("merIdCategory");
 
                 entity.Property(e => e.MerName)
                     .IsRequired()
-                    .HasMaxLength(1000)
-                    .IsUnicode(false)
+                    .HasMaxLength(100)
                     .HasColumnName("merName");
 
                 entity.Property(e => e.MerPrice).HasColumnName("merPrice");
@@ -283,14 +288,19 @@ namespace Service.Models
 
                 entity.Property(e => e.MerUnit)
                     .HasMaxLength(50)
-                    .IsUnicode(false)
                     .HasColumnName("merUnit");
+
+                entity.HasOne(d => d.MerIdCategoryNavigation)
+                    .WithMany(p => p.Merchandises)
+                    .HasForeignKey(d => d.MerIdCategory)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK__Merchandi__merId__2A4B4B5E");
             });
 
             modelBuilder.Entity<Provider>(entity =>
             {
                 entity.HasKey(e => e.ProId)
-                    .HasName("PK__Provider__5BBBEEF5A6093BF3");
+                    .HasName("PK__Provider__5BBBEEF5BBA9323C");
 
                 entity.ToTable("Provider");
 
