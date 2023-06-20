@@ -43,7 +43,6 @@ namespace Convenience_Store
             this.accounts = accounts;
             this.orderlist = list;
             searchlist = repoMerchandise.GetAll().ToList();
-            orderlist = new List<Merchandise>();
             dgvMerchandise.DataSource = new BindingSource() { DataSource = searchlist };
             dgvCurrentlyAdd.DataSource = new BindingSource() { DataSource = orderlist };
         }
@@ -116,6 +115,31 @@ namespace Convenience_Store
             {
                 index = (int)dgvMerchandise.Rows[e.RowIndex].Cells[0].Value;
             }
+        }
+
+        private void dgvCurrentlyAdd_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+            if (e != null && e.RowIndex >= 0 && e.RowIndex < orderlist.Count)
+            {
+                index = (int)dgvCurrentlyAdd.Rows[e.RowIndex].Cells[0].Value;
+            }
+        }
+
+        private void btnRemove_Click(object sender, EventArgs e)
+        {
+            if (index != -1)
+            {
+                var gay = repoMerchandise.GetAll().Where(a => a.MerId == index).ToList();
+                if (gay.Count == 1)
+                {
+                    var merfirst = gay.FirstOrDefault();
+                    if (orderlist.Contains(merfirst))
+                        orderlist.Remove(gay.FirstOrDefault());
+                }
+            }
+            index = -1;
+            dgvCurrentlyAdd.DataSource = new BindingSource() { DataSource = orderlist };
         }
     }
 }
