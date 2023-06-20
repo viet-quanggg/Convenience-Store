@@ -1,4 +1,5 @@
 ﻿using Service.Models;
+using Service.Repository;
 using System.Collections.Generic;
 using System.Linq.Expressions;
 using System.Text.RegularExpressions;
@@ -13,6 +14,9 @@ public partial class Order : Form
     List<Merchandise> orderlist = new List<Merchandise>();
     double total = 0;
     int index = -1;
+
+    RepoAccount repoAccount = new RepoAccount();
+    private readonly Account _account;
     public Order(List<Account> accounts)
     {
         InitializeComponent();
@@ -24,7 +28,7 @@ public partial class Order : Form
             return;
         }
         this.accounts = accounts;
-        var _account = accounts.FirstOrDefault();
+        _account = accounts.FirstOrDefault();
         txtId.Text = _account.AccId.ToString();
         txtName.Text = _account.AccName;
         txtRole.Text = _account.AccRole.ToString();
@@ -256,5 +260,14 @@ public partial class Order : Form
 
         }
 
+    }
+
+    private void btnExit_Click(object sender, EventArgs e)
+    {
+        this.Close();
+        var link = repoAccount.GetAll().Where(a => a.AccId.Equals(_account.AccId));
+        HomePage homePage = new HomePage(link.ToList());
+        homePage.Show();
+        this.Close();
     }
 }

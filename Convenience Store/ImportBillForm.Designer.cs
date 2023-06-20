@@ -204,27 +204,27 @@
             // txtRole
             // 
             txtRole.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
-            txtRole.Enabled = false;
             txtRole.Location = new Point(110, 70);
             txtRole.Name = "txtRole";
+            txtRole.ReadOnly = true;
             txtRole.Size = new Size(174, 27);
             txtRole.TabIndex = 9;
             // 
             // txtName
             // 
             txtName.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
-            txtName.Enabled = false;
             txtName.Location = new Point(110, 37);
             txtName.Name = "txtName";
+            txtName.ReadOnly = true;
             txtName.Size = new Size(174, 27);
             txtName.TabIndex = 8;
             // 
             // txtId
             // 
             txtId.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
-            txtId.Enabled = false;
             txtId.Location = new Point(110, 4);
             txtId.Name = "txtId";
+            txtId.ReadOnly = true;
             txtId.Size = new Size(174, 27);
             txtId.TabIndex = 7;
             // 

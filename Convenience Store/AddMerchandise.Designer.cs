@@ -60,10 +60,11 @@
             panel2.Controls.Add(label5);
             panel2.Controls.Add(label7);
             panel2.Controls.Add(label6);
-            panel2.Location = new Point(265, 33);
+            panel2.Location = new Point(12, 12);
             panel2.Name = "panel2";
-            panel2.Size = new Size(365, 422);
+            panel2.Size = new Size(365, 378);
             panel2.TabIndex = 23;
+            panel2.Paint += panel2_Paint;
             // 
             // label2
             // 
@@ -183,8 +184,9 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(975, 609);
+            ClientSize = new Size(393, 405);
             Controls.Add(panel2);
+            FormBorderStyle = FormBorderStyle.FixedToolWindow;
             Name = "AddMerchandise";
             Text = "AddMerchandise";
             Load += AddMerchandise_Load;
