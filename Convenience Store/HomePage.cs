@@ -32,16 +32,19 @@ namespace Convenience_Store
         private void HomePage_Load(object sender, EventArgs e)
         {
             //ẩn nút cho từng role
-            /*var check = Accounts.FirstOrDefault(a => a.AccRole != 0); ;
+            var check = Accounts.FirstOrDefault(a => a.AccRole != 0); ;
             if (check != null)
             {
                 btnMerchandiseorder.Visible = false;
+                btnStaffManage.Visible = false;
             }
             else
             {
                 btnMerchandiseorder.Visible = true;
-            }*/
+                btnStaffManage.Visible = true;
+            }
         }
+
         private void btnOrder_Click(object sender, EventArgs e)
         {
             Form order = new Order(Accounts);
@@ -49,16 +52,26 @@ namespace Convenience_Store
             this.Close();
         }
 
-        private void btnMerchandise_Click(object sender, EventArgs e)
+        private void btnStaffManage_Click(object sender, EventArgs e)
         {
-            /*Form merchandise = new (Accounts);
-            merchandise.ShowDialog();*/
+            Form importbill = new StaffManageForm(Accounts);
+            importbill.ShowDialog();
+            this.Close();
+        }
+        private void btnMerchandiseorder_Click(object sender, EventArgs e)
+        {
+            Form merchandiseorder = new MerchandiseOrder(Accounts);
+            merchandiseorder.ShowDialog();
+            this.Close();
+
+
         }
 
         private void btnExportBill_Click(object sender, EventArgs e)
         {
-            /*Form exportbill = new (Accounts);
-            exportbill.ShowDialog();*/
+            /*Form importbill = new (Accounts);
+            importbill.ShowDialog();
+            this.Close();*/
         }
 
         private void btnImportBill_Click(object sender, EventArgs e)
@@ -70,8 +83,9 @@ namespace Convenience_Store
 
         private void btnCustomer_Click(object sender, EventArgs e)
         {
-            /*Form customer = new (Accounts);
-            customer.ShowDialog();*/
+            /*Form importbill = new (Accounts);
+            importbill.ShowDialog();
+            this.Close();*/
         }
 
         private void btnSetting_Click(object sender, EventArgs e)
@@ -99,19 +113,6 @@ namespace Convenience_Store
             }
         }
 
-        private void btnStaffManage_Click(object sender, EventArgs e)
-        {
-            Form importbill = new StaffManageForm(Accounts);
-            importbill.ShowDialog();
-            this.Close();
-        }
-        private void btnMerchandiseorder_Click(object sender, EventArgs e)
-        {
-            Form merchandiseorder = new MerchandiseOrder(Accounts);
-            merchandiseorder.ShowDialog();
-            this.Close();
-
-
-        }
+       
     }
 }

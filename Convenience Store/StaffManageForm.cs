@@ -18,9 +18,15 @@ namespace Convenience_Store
     {
         int indexRow;
         RepoAccount _context = new RepoAccount();
+
+        private readonly Account _account;
+        RepoAccount repoAccount = new RepoAccount();
         public StaffManageForm(List<Account> accounts)
         {
             InitializeComponent();
+            _account = accounts.FirstOrDefault();
+
+
             var listAllStaff = _context.GetAll()
         .Select(x => new
         {
@@ -208,6 +214,11 @@ namespace Convenience_Store
 
         private void ExitButton_Click(object sender, EventArgs e)
         {
+            var link = repoAccount.GetAll().Where(a => a.AccId.Equals(_account.AccId));
+            this.Hide();
+
+            Form form = new HomePage(link.ToList());
+            form.ShowDialog();
             this.Close();
         }
     }
