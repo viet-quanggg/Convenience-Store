@@ -87,7 +87,8 @@
             // dgvKho
             // 
             dgvKho.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            dgvKho.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvKho.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            dgvKho.ColumnHeadersHeight = 29;
             dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = SystemColors.Window;
             dataGridViewCellStyle1.Font = new Font("Times New Roman", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
@@ -101,7 +102,7 @@
             dgvKho.ReadOnly = true;
             dgvKho.RowHeadersWidth = 51;
             dgvKho.RowTemplate.Height = 29;
-            dgvKho.Size = new Size(725, 370);
+            dgvKho.Size = new Size(730, 370);
             dgvKho.TabIndex = 1;
             dgvKho.CellDoubleClick += dgvKho_CellDoubleClick_1;
             // 
@@ -489,18 +490,19 @@
             panel3.Dock = DockStyle.Top;
             panel3.Location = new Point(0, 0);
             panel3.Name = "panel3";
-            panel3.Size = new Size(1202, 40);
+            panel3.Size = new Size(1179, 40);
             panel3.TabIndex = 27;
             // 
             // label8
             // 
             label8.AutoSize = true;
             label8.Font = new Font("Segoe UI", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
-            label8.Location = new Point(524, 6);
+            label8.Location = new Point(475, 9);
             label8.Name = "label8";
             label8.Size = new Size(249, 28);
             label8.TabIndex = 3;
             label8.Text = "Information Merchandise";
+            label8.TextAlign = ContentAlignment.TopCenter;
             // 
             // panel4
             // 
@@ -510,7 +512,7 @@
             panel4.Dock = DockStyle.Bottom;
             panel4.Location = new Point(0, 653);
             panel4.Name = "panel4";
-            panel4.Size = new Size(1202, 61);
+            panel4.Size = new Size(1179, 61);
             panel4.TabIndex = 28;
             // 
             // label1
@@ -518,7 +520,7 @@
             label1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
-            label1.Location = new Point(994, 29);
+            label1.Location = new Point(978, 24);
             label1.Name = "label1";
             label1.Size = new Size(181, 20);
             label1.TabIndex = 4;
@@ -606,7 +608,7 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoScroll = true;
-            ClientSize = new Size(1202, 714);
+            ClientSize = new Size(1179, 714);
             Controls.Add(panel5);
             Controls.Add(panel4);
             Controls.Add(panel3);
