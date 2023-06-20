@@ -104,7 +104,7 @@ namespace Convenience_Store
             Form merchandiseorder = new MerchandiseOrder(Accounts);
             merchandiseorder.ShowDialog();
             this.Close();
-        
-    }
+
+        }
     }
 }

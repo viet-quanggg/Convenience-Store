@@ -34,7 +34,6 @@
             label3 = new Label();
             btnExit = new Button();
             btnOrder = new Button();
-            btnMerchandise = new Button();
             btnExportBill = new Button();
             btnImportBill = new Button();
             btnCustomer = new Button();
@@ -50,8 +49,9 @@
             panel1.Controls.Add(label2);
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
+            panel1.Margin = new Padding(4, 4, 4, 4);
             panel1.Name = "panel1";
-            panel1.Size = new Size(920, 105);
+            panel1.Size = new Size(1380, 158);
             panel1.TabIndex = 1;
             // 
             // label2
@@ -59,9 +59,10 @@
             label2.Anchor = AnchorStyles.None;
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 27.8571434F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
-            label2.Location = new Point(323, 16);
+            label2.Location = new Point(484, 24);
+            label2.Margin = new Padding(4, 0, 4, 0);
             label2.Name = "label2";
-            label2.Size = new Size(282, 62);
+            label2.Size = new Size(391, 87);
             label2.TabIndex = 19;
             label2.Text = "Main Home";
             // 
@@ -71,28 +72,31 @@
             panel2.Controls.Add(label3);
             panel2.Controls.Add(btnExit);
             panel2.Dock = DockStyle.Bottom;
-            panel2.Location = new Point(0, 472);
+            panel2.Location = new Point(0, 708);
+            panel2.Margin = new Padding(4, 4, 4, 4);
             panel2.Name = "panel2";
-            panel2.Size = new Size(920, 78);
+            panel2.Size = new Size(1380, 117);
             panel2.TabIndex = 2;
             // 
             // label3
             // 
             label3.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            label3.Location = new Point(797, 41);
+            label3.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
+            label3.Location = new Point(1256, 87);
+            label3.Margin = new Padding(4, 0, 4, 0);
             label3.Name = "label3";
-            label3.Size = new Size(86, 20);
+            label3.Size = new Size(124, 30);
             label3.TabIndex = 20;
             label3.Text = "Home Page";
             // 
             // btnExit
             // 
             btnExit.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
-            btnExit.Location = new Point(12, 33);
+            btnExit.Location = new Point(18, 50);
+            btnExit.Margin = new Padding(4, 4, 4, 4);
             btnExit.Name = "btnExit";
-            btnExit.Size = new Size(95, 33);
+            btnExit.Size = new Size(142, 50);
             btnExit.TabIndex = 19;
             btnExit.Text = "Exit";
             btnExit.UseVisualStyleBackColor = true;
@@ -103,35 +107,24 @@
             btnOrder.Anchor = AnchorStyles.None;
             btnOrder.AutoSize = true;
             btnOrder.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
-            btnOrder.Location = new Point(55, 178);
+            btnOrder.Location = new Point(82, 267);
+            btnOrder.Margin = new Padding(4, 4, 4, 4);
             btnOrder.Name = "btnOrder";
-            btnOrder.Size = new Size(201, 54);
+            btnOrder.Size = new Size(302, 81);
             btnOrder.TabIndex = 3;
             btnOrder.Text = "New Order";
             btnOrder.UseVisualStyleBackColor = true;
             btnOrder.Click += btnOrder_Click;
-            // 
-            // btnMerchandise
-            // 
-            btnMerchandise.Anchor = AnchorStyles.None;
-            btnMerchandise.AutoSize = true;
-            btnMerchandise.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
-            btnMerchandise.Location = new Point(351, 178);
-            btnMerchandise.Name = "btnMerchandise";
-            btnMerchandise.Size = new Size(221, 54);
-            btnMerchandise.TabIndex = 4;
-            btnMerchandise.Text = "Merchandise";
-            btnMerchandise.UseVisualStyleBackColor = true;
-            btnMerchandise.Click += btnMerchandise_Click;
             // 
             // btnExportBill
             // 
             btnExportBill.Anchor = AnchorStyles.None;
             btnExportBill.AutoSize = true;
             btnExportBill.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
-            btnExportBill.Location = new Point(674, 178);
+            btnExportBill.Location = new Point(1011, 267);
+            btnExportBill.Margin = new Padding(4, 4, 4, 4);
             btnExportBill.Name = "btnExportBill";
-            btnExportBill.Size = new Size(201, 54);
+            btnExportBill.Size = new Size(302, 81);
             btnExportBill.TabIndex = 4;
             btnExportBill.Text = "Export Bill";
             btnExportBill.UseVisualStyleBackColor = true;
@@ -142,9 +135,10 @@
             btnImportBill.Anchor = AnchorStyles.None;
             btnImportBill.AutoSize = true;
             btnImportBill.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
-            btnImportBill.Location = new Point(55, 296);
+            btnImportBill.Location = new Point(82, 444);
+            btnImportBill.Margin = new Padding(4, 4, 4, 4);
             btnImportBill.Name = "btnImportBill";
-            btnImportBill.Size = new Size(201, 54);
+            btnImportBill.Size = new Size(302, 81);
             btnImportBill.TabIndex = 4;
             btnImportBill.Text = "Import Bill";
             btnImportBill.UseVisualStyleBackColor = true;
@@ -155,9 +149,10 @@
             btnCustomer.Anchor = AnchorStyles.None;
             btnCustomer.AutoSize = true;
             btnCustomer.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
-            btnCustomer.Location = new Point(360, 296);
+            btnCustomer.Location = new Point(540, 444);
+            btnCustomer.Margin = new Padding(4, 4, 4, 4);
             btnCustomer.Name = "btnCustomer";
-            btnCustomer.Size = new Size(201, 54);
+            btnCustomer.Size = new Size(302, 81);
             btnCustomer.TabIndex = 4;
             btnCustomer.Text = "Customer";
             btnCustomer.UseVisualStyleBackColor = true;
@@ -169,9 +164,10 @@
             btnSetting.AutoSize = true;
             btnSetting.DialogResult = DialogResult.OK;
             btnSetting.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
-            btnSetting.Location = new Point(674, 296);
+            btnSetting.Location = new Point(1011, 444);
+            btnSetting.Margin = new Padding(4, 4, 4, 4);
             btnSetting.Name = "btnSetting";
-            btnSetting.Size = new Size(201, 54);
+            btnSetting.Size = new Size(302, 81);
             btnSetting.TabIndex = 4;
             btnSetting.Text = "Setting";
             btnSetting.UseVisualStyleBackColor = true;
@@ -182,9 +178,10 @@
             btnMerchandiseorder.Anchor = AnchorStyles.None;
             btnMerchandiseorder.AutoSize = true;
             btnMerchandiseorder.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
-            btnMerchandiseorder.Location = new Point(351, 412);
+            btnMerchandiseorder.Location = new Point(540, 267);
+            btnMerchandiseorder.Margin = new Padding(4, 4, 4, 4);
             btnMerchandiseorder.Name = "btnMerchandiseorder";
-            btnMerchandiseorder.Size = new Size(221, 54);
+            btnMerchandiseorder.Size = new Size(308, 81);
             btnMerchandiseorder.TabIndex = 5;
             btnMerchandiseorder.Text = "Merchandise Order";
             btnMerchandiseorder.UseVisualStyleBackColor = true;
@@ -192,18 +189,18 @@
             // 
             // HomePage
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(12F, 30F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(920, 550);
+            ClientSize = new Size(1380, 825);
             Controls.Add(btnMerchandiseorder);
             Controls.Add(btnSetting);
             Controls.Add(btnCustomer);
             Controls.Add(btnImportBill);
             Controls.Add(btnExportBill);
-            Controls.Add(btnMerchandise);
             Controls.Add(btnOrder);
             Controls.Add(panel2);
             Controls.Add(panel1);
+            Margin = new Padding(4, 4, 4, 4);
             Name = "HomePage";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Form1";
@@ -224,7 +221,6 @@
         private Label label3;
         private Button btnExit;
         private Button btnOrder;
-        private Button btnMerchandise;
         private Button btnExportBill;
         private Button btnImportBill;
         private Button btnCustomer;

@@ -22,7 +22,7 @@ namespace Convenience_Store
         private DataGridView f1dgvImportBill;
         List<ImportBill> f1list;
         private readonly Account _account;
-        
+
 
 
         public ImportPopup(DataGridView dgvImportBill, int index, DataGridViewRow SelectedRow, List<ImportBill> list, Account _account)

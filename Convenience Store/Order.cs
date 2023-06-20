@@ -45,7 +45,7 @@ public partial class Order : Form
                 total += bd.BillMerPrice * bd.BillMerQuanity;
             }
             txtTotal.Text = total.ToString();
-            
+
             /*dgvOrder.AutoGenerateColumns = false;
             var newColumn = new DataGridViewTextBoxColumn();
             newColumn.HeaderText = "MerName";
