@@ -104,6 +104,7 @@
             btnRemove.TabIndex = 31;
             btnRemove.Text = "Remove";
             btnRemove.UseVisualStyleBackColor = true;
+            btnRemove.Click += btnRemove_Click;
             // 
             // label1
             // 
@@ -128,6 +129,7 @@
             dgvCurrentlyAdd.RowTemplate.Height = 33;
             dgvCurrentlyAdd.Size = new Size(290, 221);
             dgvCurrentlyAdd.TabIndex = 37;
+            dgvCurrentlyAdd.CellClick += dgvCurrentlyAdd_CellClick;
             // 
             // dgvMerchandise
             // 

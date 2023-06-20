@@ -45,15 +45,31 @@ public partial class Order : Form
                 total += bd.BillMerPrice * bd.BillMerQuanity;
             }
             txtTotal.Text = total.ToString();
+            
+            /*dgvOrder.AutoGenerateColumns = false;
+            var newColumn = new DataGridViewTextBoxColumn();
+            newColumn.HeaderText = "MerName";
+            newColumn.Name = "MerName";
+            newColumn.DataPropertyName = "Mer.MerName";*/
+            /*newColumn.DataPropertyName = "Mer.MerName";*/
+            /*dgvOrder.Columns.Add(newColumn);
+            dgvOrder.Columns[newColumn.Index].ValueType = typeof(string);
+            for (int i = 0; i < orderlist.Count; i++)
+            {
+                // set the value of the new column for the current row
+                dgvOrder.Rows[i].Cells[newColumn.Index].Value = orderlist[i].MerName.ToString();
+            }*/
             dgvOrder.DataSource = new BindingSource() { DataSource = billDetails };
+
             /* dgvOrder.ReadOnly = true;*/
-            dgvOrder.Columns["BillDetailId"].Visible = false;
-            dgvOrder.Columns["BillId"].Visible = false;
+            dgvOrder.Columns[0].Visible = false;
+            dgvOrder.Columns[1].Visible = false;
             /*dgvOrder.Columns["MerId"].ReadOnly = true;
             dgvOrder.Columns[3].ReadOnly = true;
             dgvOrder.Columns["BillMerPrice"].ReadOnly = true;*/
-            dgvOrder.Columns["Bill"].Visible = false;
-            dgvOrder.Columns["Mer"].Visible = false;
+            dgvOrder.Columns[5].Visible = false;
+            dgvOrder.Columns[6].Visible = false;
+
 
         }
 
@@ -175,6 +191,7 @@ public partial class Order : Form
                 bd.MerId = mer.MerId;
                 bd.BillMerQuanity = 1;
                 bd.BillMerPrice = mer.MerPrice;
+                bd.Mer = mer;
                 billDetails.Add(bd);
             }
         }
@@ -228,6 +245,7 @@ public partial class Order : Form
             else
             {
                 billDetails.RemoveAt(index);
+                orderlist.RemoveAt(index);
                 loadGrid();
             }
             index = -1;
