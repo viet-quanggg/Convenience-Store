@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq.Expressions;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
+using static System.Windows.Forms.LinkLabel;
 
 namespace Convenience_Store;
 
@@ -221,6 +222,58 @@ public partial class Order : Form
         catch (Exception excep) { MessageBox.Show("Something is wrong with MerchandiseList."); }
     }
 
+
+    private void btnFinish_Click(object sender, EventArgs e)
+    {
+        if (accounts == null || accounts.Count != 1 || accounts.FirstOrDefault() == null)
+        {
+            accounts = null;
+            LoginForm form = new LoginForm();
+            this.Close();
+            return;
+        }
+        if (_account == null || orderlist == null || orderlist.Count < 1 || orderlist[0] == null)
+        {
+            orderlist = new List<Merchandise>();
+            MerchandiseList merchandiseList = new MerchandiseList(accounts, orderlist);
+            this.Close();
+            return;
+        }
+        if (billDetails == null || billDetails.Count < 1 || billDetails[0] == null)
+        {
+            orderToBill();
+            return;
+        }
+        loadGrid();
+        try
+        {
+            
+            RepoBill rb = new RepoBill();
+            Bill b = new Bill();
+            b.BillCreatedTime = DateTime.Now;
+            b.AccId = _account.AccId;
+            b.Acc = _account;
+            b.MerId = orderlist[0].MerId;
+            b.Mer = orderlist[0];
+            
+            rb.Create(b);
+            RepoBillDetail rbd = new RepoBillDetail();
+            foreach (BillDetail bd in billDetails)
+            {
+                bd.Bill = b;
+                bd.BillMerPrice *= bd.BillMerQuanity;
+                bd.BillId = b.BillId;
+                rbd.Create(bd);
+            }
+
+        }
+        catch (Exception excep)
+        {
+
+        }
+        this.orderlist = new List<Merchandise>();
+        loadGrid();
+    }
     private void txtId_TextChanged(object sender, EventArgs e)
     {
 
@@ -269,5 +322,33 @@ public partial class Order : Form
         HomePage homePage = new HomePage(link.ToList());
         homePage.Show();
         this.Close();
+    }
+
+    private void btnExport_Click(object sender, EventArgs e)
+    {
+        if (accounts == null || accounts.Count != 1 || accounts.FirstOrDefault() == null)
+        {
+            accounts = null;
+            LoginForm form = new LoginForm();
+            this.Close();
+            return;
+        }
+        if (_account == null || orderlist == null || orderlist.Count < 1 || orderlist[0] == null)
+        {
+            orderlist = new List<Merchandise>();
+            MerchandiseList merchandiseList = new MerchandiseList(accounts, orderlist);
+            this.Close();
+            return;
+        }
+        if (billDetails == null || billDetails.Count < 1 || billDetails[0] == null)
+        {
+            orderToBill();
+            return;
+        }
+
+        if (MessageBox.Show("Exported successfully!", "Notification", MessageBoxButtons.OKCancel) == DialogResult.OK)
+        {
+            return;
+        }
     }
 }

@@ -49,7 +49,7 @@ namespace Convenience_Store
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            String search = txtSearch.Text.ToLower().Trim();
+            String search = AccountSetting.formatString(txtSearch.Text.ToLower());
             if (search.Equals(null))
                 return;
 
@@ -131,7 +131,7 @@ namespace Convenience_Store
             if (index != -1)
             {
                 var gay = repoMerchandise.GetAll().Where(a => a.MerId == index).ToList();
-                if (gay.Count == 1)
+                if (gay != null && gay.Count == 1)
                 {
                     var merfirst = gay.FirstOrDefault();
                     if (orderlist.Contains(merfirst))

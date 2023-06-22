@@ -69,9 +69,9 @@ namespace Convenience_Store
 
         private void btnExportBill_Click(object sender, EventArgs e)
         {
-            /*Form importbill = new (Accounts);
-            importbill.ShowDialog();
-            this.Close();*/
+            Form ebf = new ExportBillForm(Accounts);
+            ebf.ShowDialog();
+            this.Close();
         }
 
         private void btnImportBill_Click(object sender, EventArgs e)
