@@ -247,7 +247,7 @@ public partial class Order : Form
         loadGrid();
         try
         {
-            
+
             RepoBill rb = new RepoBill();
             Bill b = new Bill();
             b.BillCreatedTime = DateTime.Now;
@@ -255,7 +255,7 @@ public partial class Order : Form
             b.Acc = _account;
             b.MerId = orderlist[0].MerId;
             b.Mer = orderlist[0];
-            
+
             rb.Create(b);
             RepoBillDetail rbd = new RepoBillDetail();
             foreach (BillDetail bd in billDetails)

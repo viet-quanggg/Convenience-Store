@@ -59,9 +59,18 @@
             lblCusId = new Label();
             dgvExportBill = new DataGridView();
             btnExit = new Button();
+            panel1 = new Panel();
+            label6 = new Label();
+            label1 = new Label();
+            panel4 = new Panel();
+            label2 = new Label();
+            button1 = new Button();
+            label3 = new Label();
             pnlAcc.SuspendLayout();
             pnlCusMer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvExportBill).BeginInit();
+            panel1.SuspendLayout();
+            panel4.SuspendLayout();
             SuspendLayout();
             // 
             // txtSearch
@@ -87,7 +96,7 @@
             // btnEdit
             // 
             btnEdit.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
-            btnEdit.Location = new Point(211, 450);
+            btnEdit.Location = new Point(343, 450);
             btnEdit.Name = "btnEdit";
             btnEdit.Size = new Size(88, 29);
             btnEdit.TabIndex = 35;
@@ -187,7 +196,7 @@
             // btnDelete
             // 
             btnDelete.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            btnDelete.Location = new Point(587, 450);
+            btnDelete.Location = new Point(542, 450);
             btnDelete.Name = "btnDelete";
             btnDelete.Size = new Size(88, 29);
             btnDelete.TabIndex = 33;
@@ -409,7 +418,7 @@
             // 
             // btnExit
             // 
-            btnExit.Location = new Point(26, 450);
+            btnExit.Location = new Point(22, 8);
             btnExit.Name = "btnExit";
             btnExit.Size = new Size(94, 29);
             btnExit.TabIndex = 38;
@@ -417,12 +426,95 @@
             btnExit.UseVisualStyleBackColor = true;
             btnExit.Click += btnExit_Click;
             // 
+            // panel1
+            // 
+            panel1.BackColor = Color.FromArgb(128, 128, 255);
+            panel1.Controls.Add(label6);
+            panel1.Controls.Add(label1);
+            panel1.Dock = DockStyle.Top;
+            panel1.Location = new Point(0, 0);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(833, 40);
+            panel1.TabIndex = 39;
+            // 
+            // label6
+            // 
+            label6.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
+            label6.AutoSize = true;
+            label6.Location = new Point(12, 14);
+            label6.Name = "label6";
+            label6.Size = new Size(0, 20);
+            label6.TabIndex = 10;
+            // 
+            // label1
+            // 
+            label1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
+            label1.AutoSize = true;
+            label1.BackColor = Color.FromArgb(128, 128, 255);
+            label1.FlatStyle = FlatStyle.System;
+            label1.Font = new Font("Segoe UI", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
+            label1.ForeColor = SystemColors.ControlText;
+            label1.Location = new Point(367, 6);
+            label1.Name = "label1";
+            label1.Size = new Size(111, 28);
+            label1.TabIndex = 2;
+            label1.Text = "Export Bill";
+            label1.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // panel4
+            // 
+            panel4.BackColor = Color.FromArgb(128, 128, 255);
+            panel4.Controls.Add(label3);
+            panel4.Controls.Add(label2);
+            panel4.Controls.Add(button1);
+            panel4.Controls.Add(btnExit);
+            panel4.Dock = DockStyle.Bottom;
+            panel4.Location = new Point(0, 487);
+            panel4.Name = "panel4";
+            panel4.Size = new Size(833, 40);
+            panel4.TabIndex = 40;
+            // 
+            // label2
+            // 
+            label2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
+            label2.Location = new Point(1235, 20);
+            label2.Name = "label2";
+            label2.Size = new Size(118, 20);
+            label2.TabIndex = 3;
+            label2.Text = "Import Bill Page";
+            label2.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // button1
+            // 
+            button1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
+            button1.Location = new Point(12, 8);
+            button1.Name = "button1";
+            button1.Size = new Size(92, 0);
+            button1.TabIndex = 0;
+            button1.Text = "Exit";
+            button1.UseVisualStyleBackColor = true;
+            // 
+            // label3
+            // 
+            label3.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
+            label3.AutoSize = true;
+            label3.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
+            label3.Location = new Point(715, 17);
+            label3.Name = "label3";
+            label3.Size = new Size(117, 20);
+            label3.TabIndex = 11;
+            label3.Text = "Export Bill Page";
+            label3.TextAlign = ContentAlignment.MiddleCenter;
+            // 
             // ExportBillForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(833, 527);
-            Controls.Add(btnExit);
+            Controls.Add(panel4);
+            Controls.Add(panel1);
             Controls.Add(dgvExportBill);
             Controls.Add(txtSearch);
             Controls.Add(btnSearch);
@@ -438,6 +530,10 @@
             pnlCusMer.ResumeLayout(false);
             pnlCusMer.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dgvExportBill).EndInit();
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
+            panel4.ResumeLayout(false);
+            panel4.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -475,5 +571,12 @@
         private Label lblCusId;
         private DataGridView dgvExportBill;
         private Button btnExit;
+        private Panel panel1;
+        private Label label6;
+        private Label label1;
+        private Panel panel4;
+        private Label label2;
+        private Button button1;
+        private Label label3;
     }
 }

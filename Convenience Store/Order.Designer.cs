@@ -146,11 +146,11 @@
             // 
             lblOrderFooter.AutoSize = true;
             lblOrderFooter.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
-            lblOrderFooter.Location = new Point(871, 20);
+            lblOrderFooter.Location = new Point(825, 20);
             lblOrderFooter.Name = "lblOrderFooter";
-            lblOrderFooter.Size = new Size(49, 20);
+            lblOrderFooter.Size = new Size(88, 20);
             lblOrderFooter.TabIndex = 1;
-            lblOrderFooter.Text = "Order";
+            lblOrderFooter.Text = "Order Page";
             // 
             // btnExit
             // 
