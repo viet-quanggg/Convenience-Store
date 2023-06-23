@@ -83,7 +83,7 @@ namespace Convenience_Store
                             cbbCusGender.Items.Add("Male");
                             cbbCusGender.Items.Add("Female");
                         }
-                        if (ebr.Customer_Gender.Equals("1")) { cbbCusGender.SelectedItem = "Male"; }
+                        if (ebr.Customer_Gender.Equals("Male")) { cbbCusGender.SelectedItem = "Male"; }
                         else cbbCusGender.SelectedItem = "Female";
                         loadCustomerCBB(ebr.Customer_ID);
                         loadManagerCBB(ebr.Manager_ID);
@@ -265,12 +265,19 @@ namespace Convenience_Store
                              where a.CusId == (int)cbbCusID.SelectedItem
                              select new
                              {
-                                 a.CusName
+                                 a.CusName,
+                                 a.CusGender, 
+                                 a.CusDob,
+                                 a.CusPhone
                              };
                 if (result != null && result.Count() == 1 && result.FirstOrDefault() != null)
                 {
-                    txtCusName.Text = result.FirstOrDefault().CusName;
-
+                    var a = result.FirstOrDefault();
+                    txtCusName.Text = a.CusName;
+                    if (a.CusGender == 1) cbbCusGender.SelectedItem = "Male";
+                    else cbbCusGender.SelectedItem = "Female";
+                    dtpCusDOB.Value = a.CusDob;
+                    txtCusPhone.Text = a.CusPhone;
                 }
             }
         }
