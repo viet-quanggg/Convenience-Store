@@ -141,7 +141,7 @@
             panel3.Controls.Add(label6);
             panel3.Location = new Point(12, 45);
             panel3.Name = "panel3";
-            panel3.Size = new Size(286, 134);
+            panel3.Size = new Size(286, 174);
             panel3.TabIndex = 35;
             // 
             // txtAccRole
@@ -182,7 +182,7 @@
             // 
             txtProviderID.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
             txtProviderID.Enabled = false;
-            txtProviderID.Location = new Point(1327, 104);
+            txtProviderID.Location = new Point(1235, 104);
             txtProviderID.Name = "txtProviderID";
             txtProviderID.Size = new Size(61, 27);
             txtProviderID.TabIndex = 32;
@@ -192,7 +192,7 @@
             label1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(1289, 107);
+            label1.Location = new Point(1197, 107);
             label1.Name = "label1";
             label1.Size = new Size(87, 20);
             label1.TabIndex = 31;
@@ -204,7 +204,7 @@
             dtpEBDate.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             dtpEBDate.Location = new Point(157, 104);
             dtpEBDate.Name = "dtpEBDate";
-            dtpEBDate.Size = new Size(438, 27);
+            dtpEBDate.Size = new Size(346, 27);
             dtpEBDate.TabIndex = 28;
             // 
             // txtCusPhone
@@ -213,7 +213,7 @@
             txtCusPhone.FormattingEnabled = true;
             txtCusPhone.Location = new Point(157, 259);
             txtCusPhone.Name = "txtCusPhone";
-            txtCusPhone.Size = new Size(1126, 28);
+            txtCusPhone.Size = new Size(1034, 28);
             txtCusPhone.TabIndex = 27;
             // 
             // txtCusName
@@ -221,7 +221,7 @@
             txtCusName.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             txtCusName.Location = new Point(157, 165);
             txtCusName.Name = "txtCusName";
-            txtCusName.Size = new Size(1235, 27);
+            txtCusName.Size = new Size(1143, 27);
             txtCusName.TabIndex = 23;
             // 
             // txtMngName
@@ -230,7 +230,7 @@
             txtMngName.Location = new Point(157, 41);
             txtMngName.Name = "txtMngName";
             txtMngName.ReadOnly = true;
-            txtMngName.Size = new Size(1235, 27);
+            txtMngName.Size = new Size(1143, 27);
             txtMngName.TabIndex = 20;
             // 
             // txtEBID
@@ -240,15 +240,15 @@
             txtEBID.Location = new Point(157, 8);
             txtEBID.Name = "txtEBID";
             txtEBID.ReadOnly = true;
-            txtEBID.Size = new Size(1235, 27);
+            txtEBID.Size = new Size(1143, 27);
             txtEBID.TabIndex = 10;
             // 
             // btnUpdate
             // 
             btnUpdate.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            btnUpdate.Location = new Point(435, 330);
+            btnUpdate.Location = new Point(358, 370);
             btnUpdate.Name = "btnUpdate";
-            btnUpdate.Size = new Size(160, 32);
+            btnUpdate.Size = new Size(145, 32);
             btnUpdate.TabIndex = 37;
             btnUpdate.Text = "Update";
             btnUpdate.UseVisualStyleBackColor = true;
@@ -377,7 +377,7 @@
             panel4.Controls.Add(label7);
             panel4.Location = new Point(308, 45);
             panel4.Name = "panel4";
-            panel4.Size = new Size(598, 365);
+            panel4.Size = new Size(506, 405);
             panel4.TabIndex = 36;
             // 
             // dtpCusDOB
@@ -385,7 +385,7 @@
             dtpCusDOB.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             dtpCusDOB.Location = new Point(157, 229);
             dtpCusDOB.Name = "dtpCusDOB";
-            dtpCusDOB.Size = new Size(438, 27);
+            dtpCusDOB.Size = new Size(346, 27);
             dtpCusDOB.TabIndex = 36;
             // 
             // label12
@@ -403,9 +403,9 @@
             // btnCancel
             // 
             btnCancel.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            btnCancel.Location = new Point(0, 330);
+            btnCancel.Location = new Point(0, 370);
             btnCancel.Name = "btnCancel";
-            btnCancel.Size = new Size(163, 32);
+            btnCancel.Size = new Size(131, 32);
             btnCancel.TabIndex = 38;
             btnCancel.Text = "Cancel";
             btnCancel.UseVisualStyleBackColor = true;
@@ -418,14 +418,15 @@
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(918, 40);
+            panel1.Size = new Size(826, 40);
             panel1.TabIndex = 39;
             // 
             // label2
             // 
+            label2.Anchor = AnchorStyles.None;
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
-            label2.Location = new Point(371, 9);
+            label2.Location = new Point(308, 5);
             label2.Name = "label2";
             label2.Size = new Size(159, 28);
             label2.TabIndex = 3;
@@ -440,18 +441,18 @@
             panel2.Controls.Add(label3);
             panel2.Dock = DockStyle.Bottom;
             panel2.ForeColor = Color.White;
-            panel2.Location = new Point(0, 416);
+            panel2.Location = new Point(0, 456);
             panel2.Name = "panel2";
-            panel2.Size = new Size(918, 40);
+            panel2.Size = new Size(826, 40);
             panel2.TabIndex = 40;
             // 
             // label16
             // 
-            label16.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
+            label16.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             label16.AutoSize = true;
             label16.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
             label16.ForeColor = Color.Black;
-            label16.Location = new Point(800, 15);
+            label16.Location = new Point(708, 15);
             label16.Name = "label16";
             label16.Size = new Size(115, 20);
             label16.TabIndex = 7;
@@ -459,7 +460,7 @@
             // 
             // button1
             // 
-            button1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
+            button1.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             button1.ForeColor = Color.Black;
             button1.Location = new Point(3, 12);
             button1.Name = "button1";
@@ -486,7 +487,7 @@
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
             label3.ForeColor = Color.Black;
-            label3.Location = new Point(1454, 20);
+            label3.Location = new Point(1362, 20);
             label3.Name = "label3";
             label3.Size = new Size(178, 20);
             label3.TabIndex = 4;
@@ -496,7 +497,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(918, 456);
+            ClientSize = new Size(826, 496);
             Controls.Add(panel2);
             Controls.Add(panel1);
             Controls.Add(panel3);

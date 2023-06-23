@@ -35,11 +35,6 @@ namespace Convenience_Store
             }
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnImport_Click(object sender, EventArgs e)
         {
             Form billPopup = new ImportPopup_Create(dgvImportBill, _account);

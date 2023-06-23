@@ -83,9 +83,9 @@ namespace Convenience_Store
 
         private void btnCustomer_Click(object sender, EventArgs e)
         {
-            /*Form importbill = new (Accounts);
+            Form importbill = new CustomerForm(Accounts);
             importbill.ShowDialog();
-            this.Close();*/
+            this.Close();
         }
 
         private void btnSetting_Click(object sender, EventArgs e)
@@ -113,6 +113,6 @@ namespace Convenience_Store
             }
         }
 
-       
+
     }
 }

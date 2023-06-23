@@ -144,7 +144,7 @@
             btnCustomer.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
             btnCustomer.Location = new Point(360, 296);
             btnCustomer.Name = "btnCustomer";
-            btnCustomer.Size = new Size(201, 54);
+            btnCustomer.Size = new Size(221, 54);
             btnCustomer.TabIndex = 4;
             btnCustomer.Text = "Customer";
             btnCustomer.UseVisualStyleBackColor = true;
@@ -169,9 +169,9 @@
             btnStaffManage.Anchor = AnchorStyles.None;
             btnStaffManage.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
             btnStaffManage.Location = new Point(360, 413);
-            btnStaffManage.Margin = new Padding(2, 2, 2, 2);
+            btnStaffManage.Margin = new Padding(2);
             btnStaffManage.Name = "btnStaffManage";
-            btnStaffManage.Size = new Size(201, 54);
+            btnStaffManage.Size = new Size(221, 54);
             btnStaffManage.TabIndex = 5;
             btnStaffManage.Text = "Staff Manage";
             btnStaffManage.UseVisualStyleBackColor = true;
