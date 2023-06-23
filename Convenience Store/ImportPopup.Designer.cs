@@ -80,11 +80,12 @@
             panel1.Controls.Add(label2);
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(915, 40);
+            panel1.Size = new Size(888, 40);
             panel1.TabIndex = 1;
             // 
             // label2
             // 
+            label2.Anchor = AnchorStyles.None;
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
             label2.Location = new Point(354, 9);
@@ -100,9 +101,9 @@
             panel2.Controls.Add(label3);
             panel2.Dock = DockStyle.Bottom;
             panel2.ForeColor = Color.White;
-            panel2.Location = new Point(0, 502);
+            panel2.Location = new Point(0, 505);
             panel2.Name = "panel2";
-            panel2.Size = new Size(918, 40);
+            panel2.Size = new Size(891, 40);
             panel2.TabIndex = 2;
             // 
             // btnExit
@@ -123,7 +124,7 @@
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
             label3.ForeColor = Color.Black;
-            label3.Location = new Point(736, 20);
+            label3.Location = new Point(709, 20);
             label3.Name = "label3";
             label3.Size = new Size(178, 20);
             label3.TabIndex = 4;
@@ -140,7 +141,7 @@
             panel3.Controls.Add(label6);
             panel3.Location = new Point(12, 46);
             panel3.Name = "panel3";
-            panel3.Size = new Size(286, 220);
+            panel3.Size = new Size(286, 223);
             panel3.TabIndex = 7;
             panel3.Paint += panel3_Paint;
             // 
@@ -229,7 +230,9 @@
             // panel4
             // 
             panel4.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            panel4.Controls.Add(btnCancel);
             panel4.Controls.Add(txtProviderID);
+            panel4.Controls.Add(btnUpdate);
             panel4.Controls.Add(label1);
             panel4.Controls.Add(txtProviderPhone);
             panel4.Controls.Add(label17);
@@ -255,7 +258,7 @@
             panel4.Controls.Add(label7);
             panel4.Location = new Point(308, 46);
             panel4.Name = "panel4";
-            panel4.Size = new Size(598, 415);
+            panel4.Size = new Size(571, 453);
             panel4.TabIndex = 11;
             panel4.Paint += panel4_Paint;
             // 
@@ -263,7 +266,7 @@
             // 
             txtProviderID.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
             txtProviderID.Enabled = false;
-            txtProviderID.Location = new Point(531, 104);
+            txtProviderID.Location = new Point(504, 104);
             txtProviderID.Name = "txtProviderID";
             txtProviderID.Size = new Size(61, 27);
             txtProviderID.TabIndex = 32;
@@ -273,7 +276,7 @@
             label1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(493, 107);
+            label1.Location = new Point(466, 107);
             label1.Name = "label1";
             label1.Size = new Size(87, 20);
             label1.TabIndex = 31;
@@ -285,7 +288,7 @@
             txtProviderPhone.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             txtProviderPhone.Location = new Point(157, 104);
             txtProviderPhone.Name = "txtProviderPhone";
-            txtProviderPhone.Size = new Size(328, 27);
+            txtProviderPhone.Size = new Size(301, 27);
             txtProviderPhone.TabIndex = 30;
             txtProviderPhone.TextChanged += txtProviderPhone_TextChanged;
             // 
@@ -307,7 +310,7 @@
             dtpBillDate.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             dtpBillDate.Location = new Point(157, 135);
             dtpBillDate.Name = "dtpBillDate";
-            dtpBillDate.Size = new Size(406, 27);
+            dtpBillDate.Size = new Size(379, 27);
             dtpBillDate.TabIndex = 28;
             dtpBillDate.ValueChanged += dtpBillDate_ValueChanged;
             // 
@@ -317,7 +320,7 @@
             cbbMerUnit.FormattingEnabled = true;
             cbbMerUnit.Location = new Point(157, 290);
             cbbMerUnit.Name = "cbbMerUnit";
-            cbbMerUnit.Size = new Size(330, 28);
+            cbbMerUnit.Size = new Size(303, 28);
             cbbMerUnit.TabIndex = 27;
             cbbMerUnit.SelectedIndexChanged += cbbMerUnit_SelectedIndexChanged;
             // 
@@ -326,7 +329,7 @@
             txtBillTotal.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             txtBillTotal.Location = new Point(157, 320);
             txtBillTotal.Name = "txtBillTotal";
-            txtBillTotal.Size = new Size(330, 27);
+            txtBillTotal.Size = new Size(303, 27);
             txtBillTotal.TabIndex = 26;
             txtBillTotal.TextChanged += txtBillTotal_TextChanged;
             // 
@@ -335,7 +338,7 @@
             txtMerQuantity.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             txtMerQuantity.Location = new Point(157, 256);
             txtMerQuantity.Name = "txtMerQuantity";
-            txtMerQuantity.Size = new Size(330, 27);
+            txtMerQuantity.Size = new Size(303, 27);
             txtMerQuantity.TabIndex = 25;
             txtMerQuantity.TextChanged += txtMerQuantity_TextChanged;
             // 
@@ -344,7 +347,7 @@
             txtMerPrice.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             txtMerPrice.Location = new Point(157, 226);
             txtMerPrice.Name = "txtMerPrice";
-            txtMerPrice.Size = new Size(330, 27);
+            txtMerPrice.Size = new Size(303, 27);
             txtMerPrice.TabIndex = 24;
             txtMerPrice.TextChanged += txtMerPrice_TextChanged;
             // 
@@ -353,7 +356,7 @@
             txtMerName.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             txtMerName.Location = new Point(157, 196);
             txtMerName.Name = "txtMerName";
-            txtMerName.Size = new Size(439, 27);
+            txtMerName.Size = new Size(412, 27);
             txtMerName.TabIndex = 23;
             txtMerName.TextChanged += txtMerName_TextChanged;
             // 
@@ -363,7 +366,7 @@
             txtMerId.Enabled = false;
             txtMerId.Location = new Point(157, 166);
             txtMerId.Name = "txtMerId";
-            txtMerId.Size = new Size(439, 27);
+            txtMerId.Size = new Size(412, 27);
             txtMerId.TabIndex = 22;
             txtMerId.TextChanged += txtMerId_TextChanged;
             // 
@@ -372,7 +375,7 @@
             txtProName.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             txtProName.Location = new Point(157, 74);
             txtProName.Name = "txtProName";
-            txtProName.Size = new Size(439, 27);
+            txtProName.Size = new Size(412, 27);
             txtProName.TabIndex = 21;
             txtProName.TextChanged += txtProName_TextChanged;
             // 
@@ -381,7 +384,7 @@
             txtBillName.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             txtBillName.Location = new Point(157, 41);
             txtBillName.Name = "txtBillName";
-            txtBillName.Size = new Size(439, 27);
+            txtBillName.Size = new Size(412, 27);
             txtBillName.TabIndex = 20;
             txtBillName.TextChanged += txtBillName_TextChanged;
             // 
@@ -391,7 +394,7 @@
             txtBillId.Enabled = false;
             txtBillId.Location = new Point(157, 8);
             txtBillId.Name = "txtBillId";
-            txtBillId.Size = new Size(439, 27);
+            txtBillId.Size = new Size(412, 27);
             txtBillId.TabIndex = 10;
             txtBillId.TextChanged += txtBillId_TextChanged;
             // 
@@ -515,9 +518,9 @@
             // btnUpdate
             // 
             btnUpdate.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            btnUpdate.Location = new Point(743, 467);
+            btnUpdate.Location = new Point(414, 418);
             btnUpdate.Name = "btnUpdate";
-            btnUpdate.Size = new Size(163, 32);
+            btnUpdate.Size = new Size(157, 32);
             btnUpdate.TabIndex = 30;
             btnUpdate.Text = "Update";
             btnUpdate.UseVisualStyleBackColor = true;
@@ -526,9 +529,9 @@
             // btnCancel
             // 
             btnCancel.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            btnCancel.Location = new Point(12, 467);
+            btnCancel.Location = new Point(0, 418);
             btnCancel.Name = "btnCancel";
-            btnCancel.Size = new Size(163, 32);
+            btnCancel.Size = new Size(158, 32);
             btnCancel.TabIndex = 31;
             btnCancel.Text = "Cancel";
             btnCancel.UseVisualStyleBackColor = true;
@@ -537,9 +540,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(918, 542);
-            Controls.Add(btnCancel);
-            Controls.Add(btnUpdate);
+            ClientSize = new Size(891, 545);
             Controls.Add(panel4);
             Controls.Add(panel3);
             Controls.Add(panel2);

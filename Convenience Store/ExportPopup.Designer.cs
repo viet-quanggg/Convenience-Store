@@ -58,8 +58,17 @@
             dtpCusDOB = new DateTimePicker();
             label12 = new Label();
             btnCancel = new Button();
+            panel1 = new Panel();
+            label2 = new Label();
+            panel2 = new Panel();
+            label16 = new Label();
+            button1 = new Button();
+            btnExit = new Button();
+            label3 = new Label();
             panel3.SuspendLayout();
             panel4.SuspendLayout();
+            panel1.SuspendLayout();
+            panel2.SuspendLayout();
             SuspendLayout();
             // 
             // txtAccName
@@ -132,7 +141,7 @@
             panel3.Controls.Add(label6);
             panel3.Location = new Point(12, 45);
             panel3.Name = "panel3";
-            panel3.Size = new Size(286, 220);
+            panel3.Size = new Size(286, 134);
             panel3.TabIndex = 35;
             // 
             // txtAccRole
@@ -237,9 +246,9 @@
             // btnUpdate
             // 
             btnUpdate.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            btnUpdate.Location = new Point(743, 466);
+            btnUpdate.Location = new Point(435, 330);
             btnUpdate.Name = "btnUpdate";
-            btnUpdate.Size = new Size(163, 32);
+            btnUpdate.Size = new Size(160, 32);
             btnUpdate.TabIndex = 37;
             btnUpdate.Text = "Update";
             btnUpdate.UseVisualStyleBackColor = true;
@@ -347,8 +356,10 @@
             panel4.Controls.Add(dtpCusDOB);
             panel4.Controls.Add(cbbCusGender);
             panel4.Controls.Add(cbbCusID);
+            panel4.Controls.Add(btnUpdate);
             panel4.Controls.Add(cbbMngID);
             panel4.Controls.Add(txtProviderID);
+            panel4.Controls.Add(btnCancel);
             panel4.Controls.Add(label1);
             panel4.Controls.Add(dtpEBDate);
             panel4.Controls.Add(txtCusPhone);
@@ -366,7 +377,7 @@
             panel4.Controls.Add(label7);
             panel4.Location = new Point(308, 45);
             panel4.Name = "panel4";
-            panel4.Size = new Size(598, 415);
+            panel4.Size = new Size(598, 365);
             panel4.TabIndex = 36;
             // 
             // dtpCusDOB
@@ -392,7 +403,7 @@
             // btnCancel
             // 
             btnCancel.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            btnCancel.Location = new Point(12, 466);
+            btnCancel.Location = new Point(0, 330);
             btnCancel.Name = "btnCancel";
             btnCancel.Size = new Size(163, 32);
             btnCancel.TabIndex = 38;
@@ -400,21 +411,106 @@
             btnCancel.UseVisualStyleBackColor = true;
             btnCancel.Click += btnCancel_Click;
             // 
+            // panel1
+            // 
+            panel1.BackColor = Color.FromArgb(128, 128, 255);
+            panel1.Controls.Add(label2);
+            panel1.Dock = DockStyle.Top;
+            panel1.Location = new Point(0, 0);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(918, 40);
+            panel1.TabIndex = 39;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
+            label2.Location = new Point(371, 9);
+            label2.Name = "label2";
+            label2.Size = new Size(159, 28);
+            label2.TabIndex = 3;
+            label2.Text = "Export Bill Tool";
+            // 
+            // panel2
+            // 
+            panel2.BackColor = Color.FromArgb(128, 128, 255);
+            panel2.Controls.Add(label16);
+            panel2.Controls.Add(button1);
+            panel2.Controls.Add(btnExit);
+            panel2.Controls.Add(label3);
+            panel2.Dock = DockStyle.Bottom;
+            panel2.ForeColor = Color.White;
+            panel2.Location = new Point(0, 416);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(918, 40);
+            panel2.TabIndex = 40;
+            // 
+            // label16
+            // 
+            label16.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
+            label16.AutoSize = true;
+            label16.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
+            label16.ForeColor = Color.Black;
+            label16.Location = new Point(800, 15);
+            label16.Name = "label16";
+            label16.Size = new Size(115, 20);
+            label16.TabIndex = 7;
+            label16.Text = "Edit Export Tool";
+            // 
+            // button1
+            // 
+            button1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
+            button1.ForeColor = Color.Black;
+            button1.Location = new Point(3, 12);
+            button1.Name = "button1";
+            button1.Size = new Size(95, 25);
+            button1.TabIndex = 6;
+            button1.Text = "Exit";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
+            // 
+            // btnExit
+            // 
+            btnExit.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
+            btnExit.ForeColor = Color.Black;
+            btnExit.Location = new Point(12, 9);
+            btnExit.Name = "btnExit";
+            btnExit.Size = new Size(95, 0);
+            btnExit.TabIndex = 5;
+            btnExit.Text = "Exit";
+            btnExit.UseVisualStyleBackColor = true;
+            // 
+            // label3
+            // 
+            label3.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
+            label3.AutoSize = true;
+            label3.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
+            label3.ForeColor = Color.Black;
+            label3.Location = new Point(1454, 20);
+            label3.Name = "label3";
+            label3.Size = new Size(178, 20);
+            label3.TabIndex = 4;
+            label3.Text = "New/Update Import Tool";
+            // 
             // ExportPopup
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(918, 542);
+            ClientSize = new Size(918, 456);
+            Controls.Add(panel2);
+            Controls.Add(panel1);
             Controls.Add(panel3);
-            Controls.Add(btnUpdate);
             Controls.Add(panel4);
-            Controls.Add(btnCancel);
             Name = "ExportPopup";
-            Text = "Export Bill - Edit";
+            Text = "Export Bill - Popup";
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
             panel4.ResumeLayout(false);
             panel4.PerformLayout();
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
+            panel2.ResumeLayout(false);
+            panel2.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -450,5 +546,12 @@
         private Label label12;
         private Button btnCancel;
         private DateTimePicker dtpCusDOB;
+        private Panel panel1;
+        private Label label2;
+        private Panel panel2;
+        private Button btnExit;
+        private Label label3;
+        private Button button1;
+        private Label label16;
     }
 }

@@ -64,19 +64,17 @@
             panel1.Controls.Add(label1);
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
-            panel1.Margin = new Padding(4, 4, 4, 4);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1186, 60);
+            panel1.Size = new Size(791, 40);
             panel1.TabIndex = 0;
             // 
             // label6
             // 
             label6.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
             label6.AutoSize = true;
-            label6.Location = new Point(18, 21);
-            label6.Margin = new Padding(4, 0, 4, 0);
+            label6.Location = new Point(12, 14);
             label6.Name = "label6";
-            label6.Size = new Size(0, 30);
+            label6.Size = new Size(0, 20);
             label6.TabIndex = 10;
             // 
             // label1
@@ -87,10 +85,9 @@
             label1.FlatStyle = FlatStyle.System;
             label1.Font = new Font("Segoe UI", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
             label1.ForeColor = SystemColors.ControlText;
-            label1.Location = new Point(458, 9);
-            label1.Margin = new Padding(4, 0, 4, 0);
+            label1.Location = new Point(338, 6);
             label1.Name = "label1";
-            label1.Size = new Size(160, 38);
+            label1.Size = new Size(113, 28);
             label1.TabIndex = 2;
             label1.Text = "Import Bill";
             label1.TextAlign = ContentAlignment.MiddleCenter;
@@ -101,10 +98,9 @@
             panel4.Controls.Add(label2);
             panel4.Controls.Add(btnExit);
             panel4.Dock = DockStyle.Bottom;
-            panel4.Location = new Point(0, 693);
-            panel4.Margin = new Padding(4, 4, 4, 4);
+            panel4.Location = new Point(0, 462);
             panel4.Name = "panel4";
-            panel4.Size = new Size(1186, 60);
+            panel4.Size = new Size(791, 40);
             panel4.TabIndex = 1;
             // 
             // label2
@@ -112,10 +108,9 @@
             label2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
-            label2.Location = new Point(903, 30);
-            label2.Margin = new Padding(4, 0, 4, 0);
+            label2.Location = new Point(602, 20);
             label2.Name = "label2";
-            label2.Size = new Size(168, 30);
+            label2.Size = new Size(118, 20);
             label2.TabIndex = 3;
             label2.Text = "Import Bill Page";
             label2.TextAlign = ContentAlignment.MiddleCenter;
@@ -123,10 +118,9 @@
             // btnExit
             // 
             btnExit.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
-            btnExit.Location = new Point(18, 12);
-            btnExit.Margin = new Padding(4, 4, 4, 4);
+            btnExit.Location = new Point(12, 8);
             btnExit.Name = "btnExit";
-            btnExit.Size = new Size(138, 38);
+            btnExit.Size = new Size(92, 25);
             btnExit.TabIndex = 0;
             btnExit.Text = "Exit";
             btnExit.UseVisualStyleBackColor = true;
@@ -135,11 +129,10 @@
             // txtSearch
             // 
             txtSearch.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            txtSearch.Location = new Point(458, 72);
-            txtSearch.Margin = new Padding(4, 4, 4, 4);
+            txtSearch.Location = new Point(305, 48);
             txtSearch.Name = "txtSearch";
             txtSearch.PlaceholderText = "Search Bill Based On Merchandise Name";
-            txtSearch.Size = new Size(566, 35);
+            txtSearch.Size = new Size(379, 27);
             txtSearch.TabIndex = 0;
             // 
             // dgvImportBill
@@ -149,13 +142,12 @@
             dgvImportBill.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             dgvImportBill.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
             dgvImportBill.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvImportBill.Location = new Point(459, 122);
-            dgvImportBill.Margin = new Padding(4, 4, 4, 4);
+            dgvImportBill.Location = new Point(306, 81);
             dgvImportBill.Name = "dgvImportBill";
             dgvImportBill.ReadOnly = true;
             dgvImportBill.RowHeadersWidth = 51;
             dgvImportBill.RowTemplate.Height = 29;
-            dgvImportBill.Size = new Size(710, 501);
+            dgvImportBill.Size = new Size(473, 334);
             dgvImportBill.TabIndex = 2;
             dgvImportBill.CellClick += dgvImportBill_CellClick;
             // 
@@ -166,10 +158,9 @@
             // btnSearch
             // 
             btnSearch.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            btnSearch.Location = new Point(1035, 69);
-            btnSearch.Margin = new Padding(4, 4, 4, 4);
+            btnSearch.Location = new Point(690, 46);
             btnSearch.Name = "btnSearch";
-            btnSearch.Size = new Size(132, 44);
+            btnSearch.Size = new Size(88, 29);
             btnSearch.TabIndex = 3;
             btnSearch.Text = "Search";
             btnSearch.UseVisualStyleBackColor = true;
@@ -178,10 +169,9 @@
             // btnExport
             // 
             btnExport.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            btnExport.Location = new Point(1035, 632);
-            btnExport.Margin = new Padding(4, 4, 4, 4);
+            btnExport.Location = new Point(690, 421);
             btnExport.Name = "btnExport";
-            btnExport.Size = new Size(132, 44);
+            btnExport.Size = new Size(88, 29);
             btnExport.TabIndex = 4;
             btnExport.Text = "Export";
             btnExport.UseVisualStyleBackColor = true;
@@ -190,10 +180,9 @@
             // btnDelete
             // 
             btnDelete.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            btnDelete.Location = new Point(818, 632);
-            btnDelete.Margin = new Padding(4, 4, 4, 4);
+            btnDelete.Location = new Point(545, 421);
             btnDelete.Name = "btnDelete";
-            btnDelete.Size = new Size(132, 44);
+            btnDelete.Size = new Size(88, 29);
             btnDelete.TabIndex = 5;
             btnDelete.Text = "Delete";
             btnDelete.UseVisualStyleBackColor = true;
@@ -207,40 +196,36 @@
             panel2.Controls.Add(label5);
             panel2.Controls.Add(label4);
             panel2.Controls.Add(label3);
-            panel2.Location = new Point(18, 72);
-            panel2.Margin = new Padding(4, 4, 4, 4);
+            panel2.Location = new Point(12, 48);
             panel2.Name = "panel2";
-            panel2.Size = new Size(430, 234);
+            panel2.Size = new Size(287, 156);
             panel2.TabIndex = 6;
             // 
             // txtRole
             // 
             txtRole.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
-            txtRole.Location = new Point(165, 105);
-            txtRole.Margin = new Padding(4, 4, 4, 4);
+            txtRole.Location = new Point(110, 70);
             txtRole.Name = "txtRole";
             txtRole.ReadOnly = true;
-            txtRole.Size = new Size(259, 35);
+            txtRole.Size = new Size(174, 27);
             txtRole.TabIndex = 9;
             // 
             // txtName
             // 
             txtName.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
-            txtName.Location = new Point(165, 56);
-            txtName.Margin = new Padding(4, 4, 4, 4);
+            txtName.Location = new Point(110, 37);
             txtName.Name = "txtName";
             txtName.ReadOnly = true;
-            txtName.Size = new Size(259, 35);
+            txtName.Size = new Size(174, 27);
             txtName.TabIndex = 8;
             // 
             // txtId
             // 
             txtId.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
-            txtId.Location = new Point(165, 6);
-            txtId.Margin = new Padding(4, 4, 4, 4);
+            txtId.Location = new Point(110, 4);
             txtId.Name = "txtId";
             txtId.ReadOnly = true;
-            txtId.Size = new Size(259, 35);
+            txtId.Size = new Size(174, 27);
             txtId.TabIndex = 7;
             // 
             // label5
@@ -248,10 +233,9 @@
             label5.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label5.Location = new Point(15, 116);
-            label5.Margin = new Padding(4, 0, 4, 0);
+            label5.Location = new Point(10, 77);
             label5.Name = "label5";
-            label5.Size = new Size(54, 30);
+            label5.Size = new Size(39, 20);
             label5.TabIndex = 6;
             label5.Text = "Role";
             label5.TextAlign = ContentAlignment.MiddleCenter;
@@ -261,10 +245,9 @@
             label4.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label4.Location = new Point(15, 66);
-            label4.Margin = new Padding(4, 0, 4, 0);
+            label4.Location = new Point(10, 44);
             label4.Name = "label4";
-            label4.Size = new Size(70, 30);
+            label4.Size = new Size(50, 20);
             label4.TabIndex = 5;
             label4.Text = "Name";
             label4.TextAlign = ContentAlignment.MiddleCenter;
@@ -274,10 +257,9 @@
             label3.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label3.Location = new Point(15, 16);
-            label3.Margin = new Padding(4, 0, 4, 0);
+            label3.Location = new Point(10, 11);
             label3.Name = "label3";
-            label3.Size = new Size(119, 30);
+            label3.Size = new Size(84, 20);
             label3.TabIndex = 4;
             label3.Text = "Account ID";
             label3.TextAlign = ContentAlignment.MiddleCenter;
@@ -285,10 +267,9 @@
             // btnImport
             // 
             btnImport.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
-            btnImport.Location = new Point(18, 632);
-            btnImport.Margin = new Padding(4, 4, 4, 4);
+            btnImport.Location = new Point(12, 421);
             btnImport.Name = "btnImport";
-            btnImport.Size = new Size(180, 44);
+            btnImport.Size = new Size(120, 29);
             btnImport.TabIndex = 7;
             btnImport.Text = "New Import";
             btnImport.UseVisualStyleBackColor = true;
@@ -297,10 +278,9 @@
             // btnEdit
             // 
             btnEdit.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
-            btnEdit.Location = new Point(316, 632);
-            btnEdit.Margin = new Padding(4, 4, 4, 4);
+            btnEdit.Location = new Point(211, 421);
             btnEdit.Name = "btnEdit";
-            btnEdit.Size = new Size(132, 44);
+            btnEdit.Size = new Size(88, 29);
             btnEdit.TabIndex = 8;
             btnEdit.Text = "Edit";
             btnEdit.UseVisualStyleBackColor = true;
@@ -308,9 +288,9 @@
             // 
             // ImportBillForm
             // 
-            AutoScaleDimensions = new SizeF(12F, 30F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1186, 753);
+            ClientSize = new Size(791, 502);
             Controls.Add(btnEdit);
             Controls.Add(btnImport);
             Controls.Add(panel2);
@@ -321,7 +301,6 @@
             Controls.Add(txtSearch);
             Controls.Add(panel4);
             Controls.Add(panel1);
-            Margin = new Padding(4, 4, 4, 4);
             Name = "ImportBillForm";
             Text = "ImportBill";
             Load += ImportBill_Load;

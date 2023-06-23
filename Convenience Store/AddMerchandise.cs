@@ -108,14 +108,18 @@ namespace Convenience_Store
             }
         }
 
-        private void AddMerchandise_Load(object sender, EventArgs e)
+        private void btnExit_Click(object sender, EventArgs e)
         {
-
+            this.Close();
         }
 
-        private void panel2_Paint(object sender, PaintEventArgs e)
+        private void btnClear_Click(object sender, EventArgs e)
         {
-
+            txtDes.Clear();
+            txtName.Clear();
+            txtPrice.Clear();
+            txtQuantity.Clear();
+            txtUnit.Clear();
         }
     }
 
