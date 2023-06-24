@@ -1,4 +1,6 @@
-﻿using Service.Models;
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using Service.Models;
 using Service.Repository;
 using System;
 using System.Collections.Generic;
@@ -15,30 +17,61 @@ namespace Convenience_Store
 {
     public partial class CustomerForm : Form
     {
+        int indexRow;
+        int index;
         private readonly Account _account;
         RepoAccount repoAccount = new RepoAccount();
         RepoCustomer customer = new RepoCustomer();
-        public CustomerForm(List<Account> accounts)
+        List<Customer> list = new List<Customer>();
+        public static DataGridViewRow SelectedRow { get; set; }
+        public CustomerForm(List<Account> _accounts)
         {
             InitializeComponent();
             this.Text = string.Empty;
             this.ControlBox = false;
 
-            _account = accounts.FirstOrDefault();
             if (_account != null)
             {
                 txtId.Text = _account.AccId.ToString();
-                txtName.Text = _account.AccName;
+                txtName.Text = _account.AccName.ToString();
                 txtRole.Text = _account.AccRole.ToString();
-
             }
-            List<Customer> customers = customer.GetAll();
-            dgvCustomer.DataSource = new BindingSource() { DataSource = customers };
+            var listAllStaff = customer.GetAll()
+             .Select(x => new
+             {
+                 x.CusId,
+                 x.CusName,
+                 x.CusGender,
+                 x.CusDob,
+                 x.CusPhone
+
+             })
+             .ToList();
+
+            dgvCustomer.DataSource = new BindingSource() { DataSource = listAllStaff };
         }
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
         private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
+
+        private void refreshData()
+        {
+            var listAllStaff = customer.GetAll()
+           .Select(x => new
+           {
+               x.CusId,
+               x.CusName,
+               x.CusGender,
+               x.CusDob,
+               x.CusPhone
+           })
+           .ToList();
+
+            dgvCustomer.DataSource = new BindingSource() { DataSource = listAllStaff };
+        }
+
+
         private void btnExit_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -70,6 +103,55 @@ namespace Convenience_Store
         private void btnExit1_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void CustomerForm_Load(object sender, EventArgs e)
+        {
+            var listAllStaff = customer.GetAll()
+        .Select(x => new
+        {
+            x.CusId,
+            x.CusName,
+            x.CusGender,
+            x.CusDob,
+            x.CusPhone
+        })
+        .ToList();
+            dgvCustomer.DataSource = new BindingSource() { DataSource = listAllStaff };
+        }
+
+        private void dgvCustomer_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            var customers = customer.GetAll()[dgvCustomer.CurrentCell.RowIndex];
+            list.Add(customers);
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Are you sure to delete this bill?", "Notification", MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes)
+            {
+                var customers = customer.GetAll()[dgvCustomer.CurrentCell.RowIndex];
+                using (var context = new ConvenienceStoreContext())
+                {
+                    var cus = context.ImportBills.Find(customers.CusId);
+                    if (cus != null)
+                    {
+                        context.ImportBills.Remove(cus);
+                        context.SaveChanges();
+                        refreshData();
+                    }
+                }
+            }
+        }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            index = dgvCustomer.CurrentCell.RowIndex;
+            SelectedRow = dgvCustomer.Rows[index];
+            var currentBill = customer.GetAll()[dgvCustomer.CurrentCell.RowIndex];
+            Form billPopup = new CustomerPopup(dgvCustomer, index, SelectedRow, list);
+            billPopup.ShowDialog();
         }
     }
 }

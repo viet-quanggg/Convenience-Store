@@ -91,8 +91,8 @@ namespace Convenience_Store
 
         private void btnCustomer_Click(object sender, EventArgs e)
         {
-            Form importbill = new CustomerForm(Accounts);
-            importbill.ShowDialog();
+            Form customer = new CustomerForm(Accounts);
+            customer.ShowDialog();
             this.Close();
         }
 

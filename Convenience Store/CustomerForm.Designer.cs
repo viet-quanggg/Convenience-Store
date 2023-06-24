@@ -29,7 +29,10 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
+            btnMinimize = new Button();
+            btnMaximize = new Button();
             label9 = new Label();
+            btnExit1 = new Button();
             label6 = new Label();
             label1 = new Label();
             panel4 = new Panel();
@@ -47,9 +50,9 @@
             button1 = new Button();
             label2 = new Label();
             ExitButton = new Button();
-            btnMinimize = new Button();
-            btnMaximize = new Button();
-            btnExit1 = new Button();
+            btnDelete = new Button();
+            btnEdit = new Button();
+            btnAdd = new Button();
             panel1.SuspendLayout();
             panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvCustomer).BeginInit();
@@ -72,6 +75,32 @@
             panel1.TabIndex = 3;
             panel1.MouseDown += panel1_MouseDown;
             // 
+            // btnMinimize
+            // 
+            btnMinimize.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnMinimize.FlatAppearance.BorderSize = 0;
+            btnMinimize.FlatStyle = FlatStyle.Flat;
+            btnMinimize.Image = Properties.Resources.Screenshot_2023_06_24_182809_removebg_preview1;
+            btnMinimize.Location = new Point(742, 6);
+            btnMinimize.Name = "btnMinimize";
+            btnMinimize.Size = new Size(24, 24);
+            btnMinimize.TabIndex = 32;
+            btnMinimize.UseVisualStyleBackColor = false;
+            btnMinimize.Click += btnMinimize_Click;
+            // 
+            // btnMaximize
+            // 
+            btnMaximize.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnMaximize.FlatAppearance.BorderSize = 0;
+            btnMaximize.FlatStyle = FlatStyle.Flat;
+            btnMaximize.Image = Properties.Resources.Screenshot_2023_06_24_182506_removebg_preview;
+            btnMaximize.Location = new Point(772, 6);
+            btnMaximize.Name = "btnMaximize";
+            btnMaximize.Size = new Size(24, 24);
+            btnMaximize.TabIndex = 33;
+            btnMaximize.UseVisualStyleBackColor = true;
+            btnMaximize.Click += btnMaximize_Click;
+            // 
             // label9
             // 
             label9.Anchor = AnchorStyles.None;
@@ -86,6 +115,19 @@
             label9.TabIndex = 11;
             label9.Text = "Customer";
             label9.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // btnExit1
+            // 
+            btnExit1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnExit1.FlatAppearance.BorderSize = 0;
+            btnExit1.FlatStyle = FlatStyle.Flat;
+            btnExit1.Image = Properties.Resources.png_clipart_power_symbol_computer_icons_button_button_computer_electrical_switches_removebg_preview1;
+            btnExit1.Location = new Point(712, 6);
+            btnExit1.Name = "btnExit1";
+            btnExit1.Size = new Size(24, 24);
+            btnExit1.TabIndex = 31;
+            btnExit1.UseVisualStyleBackColor = false;
+            btnExit1.Click += btnExit1_Click;
             // 
             // label6
             // 
@@ -120,7 +162,7 @@
             panel4.Controls.Add(label5);
             panel4.Controls.Add(label4);
             panel4.Controls.Add(label7);
-            panel4.Location = new Point(21, 64);
+            panel4.Location = new Point(0, 45);
             panel4.Name = "panel4";
             panel4.Size = new Size(287, 156);
             panel4.TabIndex = 29;
@@ -192,12 +234,13 @@
             // 
             dgvCustomer.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             dgvCustomer.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvCustomer.Location = new Point(311, 45);
+            dgvCustomer.Location = new Point(331, 45);
             dgvCustomer.Name = "dgvCustomer";
             dgvCustomer.RowHeadersWidth = 51;
             dgvCustomer.RowTemplate.Height = 29;
             dgvCustomer.Size = new Size(472, 362);
             dgvCustomer.TabIndex = 28;
+            dgvCustomer.CellContentClick += dgvCustomer_CellContentClick;
             // 
             // panel2
             // 
@@ -283,56 +326,53 @@
             ExitButton.Text = "Exit";
             ExitButton.UseVisualStyleBackColor = true;
             // 
-            // btnMinimize
+            // btnDelete
             // 
-            btnMinimize.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            btnMinimize.FlatAppearance.BorderSize = 0;
-            btnMinimize.FlatStyle = FlatStyle.Flat;
-            btnMinimize.Image = Properties.Resources.Screenshot_2023_06_24_182809_removebg_preview1;
-            btnMinimize.Location = new Point(742, 6);
-            btnMinimize.Name = "btnMinimize";
-            btnMinimize.Size = new Size(24, 24);
-            btnMinimize.TabIndex = 32;
-            btnMinimize.UseVisualStyleBackColor = false;
-            btnMinimize.Click += btnMinimize_Click;
+            btnDelete.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            btnDelete.Location = new Point(715, 413);
+            btnDelete.Name = "btnDelete";
+            btnDelete.Size = new Size(88, 29);
+            btnDelete.TabIndex = 33;
+            btnDelete.Text = "Delete";
+            btnDelete.UseVisualStyleBackColor = true;
+            btnDelete.Click += btnDelete_Click;
             // 
-            // btnMaximize
+            // btnEdit
             // 
-            btnMaximize.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            btnMaximize.FlatAppearance.BorderSize = 0;
-            btnMaximize.FlatStyle = FlatStyle.Flat;
-            btnMaximize.Image = Properties.Resources.Screenshot_2023_06_24_182506_removebg_preview;
-            btnMaximize.Location = new Point(772, 6);
-            btnMaximize.Name = "btnMaximize";
-            btnMaximize.Size = new Size(24, 24);
-            btnMaximize.TabIndex = 33;
-            btnMaximize.UseVisualStyleBackColor = true;
-            btnMaximize.Click += btnMaximize_Click;
+            btnEdit.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            btnEdit.Location = new Point(331, 413);
+            btnEdit.Name = "btnEdit";
+            btnEdit.Size = new Size(88, 29);
+            btnEdit.TabIndex = 32;
+            btnEdit.Text = "Edit";
+            btnEdit.UseVisualStyleBackColor = true;
+            btnEdit.Click += btnEdit_Click;
             // 
-            // btnExit1
+            // btnAdd
             // 
-            btnExit1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            btnExit1.FlatAppearance.BorderSize = 0;
-            btnExit1.FlatStyle = FlatStyle.Flat;
-            btnExit1.Image = Properties.Resources.png_clipart_power_symbol_computer_icons_button_button_computer_electrical_switches_removebg_preview1;
-            btnExit1.Location = new Point(712, 6);
-            btnExit1.Name = "btnExit1";
-            btnExit1.Size = new Size(24, 24);
-            btnExit1.TabIndex = 31;
-            btnExit1.UseVisualStyleBackColor = false;
-            btnExit1.Click += btnExit1_Click;
+            btnAdd.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            btnAdd.Location = new Point(0, 413);
+            btnAdd.Name = "btnAdd";
+            btnAdd.Size = new Size(88, 29);
+            btnAdd.TabIndex = 31;
+            btnAdd.Text = "New Customer";
+            btnAdd.UseVisualStyleBackColor = true;
             // 
             // CustomerForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(803, 483);
+            Controls.Add(btnDelete);
+            Controls.Add(btnEdit);
+            Controls.Add(btnAdd);
             Controls.Add(panel2);
             Controls.Add(panel4);
             Controls.Add(dgvCustomer);
             Controls.Add(panel1);
             Name = "CustomerForm";
             Text = "CustomerForm";
+            Load += CustomerForm_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             panel4.ResumeLayout(false);
@@ -367,5 +407,8 @@
         private Button btnMinimize;
         private Button btnMaximize;
         private Button btnExit1;
+        private Button btnDelete;
+        private Button btnEdit;
+        private Button btnAdd;
     }
 }
