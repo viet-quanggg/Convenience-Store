@@ -47,6 +47,9 @@
             button1 = new Button();
             label2 = new Label();
             ExitButton = new Button();
+            btnMinimize = new Button();
+            btnMaximize = new Button();
+            btnExit1 = new Button();
             panel1.SuspendLayout();
             panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvCustomer).BeginInit();
@@ -56,7 +59,10 @@
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(128, 128, 255);
+            panel1.Controls.Add(btnMinimize);
+            panel1.Controls.Add(btnMaximize);
             panel1.Controls.Add(label9);
+            panel1.Controls.Add(btnExit1);
             panel1.Controls.Add(label6);
             panel1.Controls.Add(label1);
             panel1.Dock = DockStyle.Top;
@@ -64,6 +70,7 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(803, 40);
             panel1.TabIndex = 3;
+            panel1.MouseDown += panel1_MouseDown;
             // 
             // label9
             // 
@@ -207,6 +214,7 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(803, 40);
             panel2.TabIndex = 30;
+            panel2.MouseDown += panel1_MouseDown;
             // 
             // label8
             // 
@@ -275,6 +283,45 @@
             ExitButton.Text = "Exit";
             ExitButton.UseVisualStyleBackColor = true;
             // 
+            // btnMinimize
+            // 
+            btnMinimize.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnMinimize.FlatAppearance.BorderSize = 0;
+            btnMinimize.FlatStyle = FlatStyle.Flat;
+            btnMinimize.Image = Properties.Resources.Screenshot_2023_06_24_182809_removebg_preview1;
+            btnMinimize.Location = new Point(742, 6);
+            btnMinimize.Name = "btnMinimize";
+            btnMinimize.Size = new Size(24, 24);
+            btnMinimize.TabIndex = 32;
+            btnMinimize.UseVisualStyleBackColor = false;
+            btnMinimize.Click += btnMinimize_Click;
+            // 
+            // btnMaximize
+            // 
+            btnMaximize.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnMaximize.FlatAppearance.BorderSize = 0;
+            btnMaximize.FlatStyle = FlatStyle.Flat;
+            btnMaximize.Image = Properties.Resources.Screenshot_2023_06_24_182506_removebg_preview;
+            btnMaximize.Location = new Point(772, 6);
+            btnMaximize.Name = "btnMaximize";
+            btnMaximize.Size = new Size(24, 24);
+            btnMaximize.TabIndex = 33;
+            btnMaximize.UseVisualStyleBackColor = true;
+            btnMaximize.Click += btnMaximize_Click;
+            // 
+            // btnExit1
+            // 
+            btnExit1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnExit1.FlatAppearance.BorderSize = 0;
+            btnExit1.FlatStyle = FlatStyle.Flat;
+            btnExit1.Image = Properties.Resources.png_clipart_power_symbol_computer_icons_button_button_computer_electrical_switches_removebg_preview1;
+            btnExit1.Location = new Point(712, 6);
+            btnExit1.Name = "btnExit1";
+            btnExit1.Size = new Size(24, 24);
+            btnExit1.TabIndex = 31;
+            btnExit1.UseVisualStyleBackColor = false;
+            btnExit1.Click += btnExit1_Click;
+            // 
             // CustomerForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -317,5 +364,8 @@
         private Button btnExit;
         private Label label8;
         private Label label9;
+        private Button btnMinimize;
+        private Button btnMaximize;
+        private Button btnExit1;
     }
 }

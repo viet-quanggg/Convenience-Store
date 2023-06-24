@@ -57,6 +57,9 @@
             txtId = new TextBox();
             lblName = new Label();
             lblId = new Label();
+            btnMinimize = new Button();
+            btnMaximize = new Button();
+            btnExit1 = new Button();
             ((System.ComponentModel.ISupportInitialize)dgvOrder).BeginInit();
             pnlHeader.SuspendLayout();
             pnlFooter.SuspendLayout();
@@ -95,13 +98,17 @@
             // pnlHeader
             // 
             pnlHeader.BackColor = Color.FromArgb(128, 128, 255);
+            pnlHeader.Controls.Add(btnMinimize);
+            pnlHeader.Controls.Add(btnMaximize);
             pnlHeader.Controls.Add(lblOrderTitle);
+            pnlHeader.Controls.Add(btnExit1);
             pnlHeader.Dock = DockStyle.Top;
             pnlHeader.ForeColor = SystemColors.MenuText;
             pnlHeader.Location = new Point(0, 0);
             pnlHeader.Name = "pnlHeader";
             pnlHeader.Size = new Size(916, 40);
             pnlHeader.TabIndex = 20;
+            pnlHeader.MouseDown += pnlFooter_MouseDown;
             // 
             // lblOrderTitle
             // 
@@ -141,6 +148,7 @@
             pnlFooter.Name = "pnlFooter";
             pnlFooter.Size = new Size(916, 40);
             pnlFooter.TabIndex = 24;
+            pnlFooter.MouseDown += pnlFooter_MouseDown;
             // 
             // lblOrderFooter
             // 
@@ -379,6 +387,45 @@
             lblId.TabIndex = 4;
             lblId.Text = "Id :";
             // 
+            // btnMinimize
+            // 
+            btnMinimize.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnMinimize.FlatAppearance.BorderSize = 0;
+            btnMinimize.FlatStyle = FlatStyle.Flat;
+            btnMinimize.Image = Properties.Resources.Screenshot_2023_06_24_182809_removebg_preview1;
+            btnMinimize.Location = new Point(859, 3);
+            btnMinimize.Name = "btnMinimize";
+            btnMinimize.Size = new Size(24, 24);
+            btnMinimize.TabIndex = 33;
+            btnMinimize.UseVisualStyleBackColor = false;
+            btnMinimize.Click += btnMinimize_Click;
+            // 
+            // btnMaximize
+            // 
+            btnMaximize.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnMaximize.FlatAppearance.BorderSize = 0;
+            btnMaximize.FlatStyle = FlatStyle.Flat;
+            btnMaximize.Image = Properties.Resources.Screenshot_2023_06_24_182506_removebg_preview;
+            btnMaximize.Location = new Point(889, 3);
+            btnMaximize.Name = "btnMaximize";
+            btnMaximize.Size = new Size(24, 24);
+            btnMaximize.TabIndex = 34;
+            btnMaximize.UseVisualStyleBackColor = true;
+            btnMaximize.Click += btnMaximize_Click;
+            // 
+            // btnExit1
+            // 
+            btnExit1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnExit1.FlatAppearance.BorderSize = 0;
+            btnExit1.FlatStyle = FlatStyle.Flat;
+            btnExit1.Image = Properties.Resources.png_clipart_power_symbol_computer_icons_button_button_computer_electrical_switches_removebg_preview1;
+            btnExit1.Location = new Point(829, 3);
+            btnExit1.Name = "btnExit1";
+            btnExit1.Size = new Size(24, 24);
+            btnExit1.TabIndex = 32;
+            btnExit1.UseVisualStyleBackColor = false;
+            btnExit1.Click += btnExit1_Click;
+            // 
             // Order
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -440,5 +487,8 @@
         private TextBox txtMerId;
         private Label lblQuantity;
         private TextBox txtQuantity;
+        private Button btnMinimize;
+        private Button btnMaximize;
+        private Button btnExit1;
     }
 }

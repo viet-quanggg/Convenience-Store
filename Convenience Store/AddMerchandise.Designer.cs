@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             panel2 = new Panel();
+            btnAdd = new Button();
+            btnClear = new Button();
             label2 = new Label();
             txtName = new TextBox();
             cbCategory = new ComboBox();
@@ -49,8 +51,6 @@
             btnExit = new Button();
             ExitButton = new Button();
             label9 = new Label();
-            btnClear = new Button();
-            btnAdd = new Button();
             panel2.SuspendLayout();
             panel1.SuspendLayout();
             panel3.SuspendLayout();
@@ -77,6 +77,28 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(365, 292);
             panel2.TabIndex = 23;
+            // 
+            // btnAdd
+            // 
+            btnAdd.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            btnAdd.Location = new Point(270, 263);
+            btnAdd.Name = "btnAdd";
+            btnAdd.Size = new Size(95, 25);
+            btnAdd.TabIndex = 27;
+            btnAdd.Text = "Add";
+            btnAdd.UseVisualStyleBackColor = true;
+            btnAdd.Click += Add_Click;
+            // 
+            // btnClear
+            // 
+            btnClear.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            btnClear.Location = new Point(10, 263);
+            btnClear.Name = "btnClear";
+            btnClear.Size = new Size(95, 25);
+            btnClear.TabIndex = 27;
+            btnClear.Text = "Clear";
+            btnClear.UseVisualStyleBackColor = true;
+            btnClear.Click += btnClear_Click;
             // 
             // label2
             // 
@@ -191,6 +213,7 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(393, 40);
             panel1.TabIndex = 24;
+            panel1.MouseDown += panel1_MouseDown;
             // 
             // label1
             // 
@@ -274,28 +297,6 @@
             label9.Size = new Size(108, 20);
             label9.TabIndex = 12;
             label9.Text = "Staff Manager";
-            // 
-            // btnClear
-            // 
-            btnClear.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
-            btnClear.Location = new Point(10, 263);
-            btnClear.Name = "btnClear";
-            btnClear.Size = new Size(95, 25);
-            btnClear.TabIndex = 27;
-            btnClear.Text = "Clear";
-            btnClear.UseVisualStyleBackColor = true;
-            btnClear.Click += btnClear_Click;
-            // 
-            // btnAdd
-            // 
-            btnAdd.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
-            btnAdd.Location = new Point(270, 263);
-            btnAdd.Name = "btnAdd";
-            btnAdd.Size = new Size(95, 25);
-            btnAdd.TabIndex = 27;
-            btnAdd.Text = "Add";
-            btnAdd.UseVisualStyleBackColor = true;
-            btnAdd.Click += Add_Click;
             // 
             // AddMerchandise
             // 

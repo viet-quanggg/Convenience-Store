@@ -56,8 +56,8 @@
             label7 = new Label();
             panel4 = new Panel();
             dtpCusDOB = new DateTimePicker();
-            label12 = new Label();
             btnCancel = new Button();
+            label12 = new Label();
             panel1 = new Panel();
             label2 = new Label();
             panel2 = new Panel();
@@ -65,6 +65,9 @@
             button1 = new Button();
             btnExit = new Button();
             label3 = new Label();
+            btnMinimize = new Button();
+            btnMaximize = new Button();
+            btnExit1 = new Button();
             panel3.SuspendLayout();
             panel4.SuspendLayout();
             panel1.SuspendLayout();
@@ -388,6 +391,17 @@
             dtpCusDOB.Size = new Size(346, 27);
             dtpCusDOB.TabIndex = 36;
             // 
+            // btnCancel
+            // 
+            btnCancel.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            btnCancel.Location = new Point(0, 370);
+            btnCancel.Name = "btnCancel";
+            btnCancel.Size = new Size(131, 32);
+            btnCancel.TabIndex = 38;
+            btnCancel.Text = "Cancel";
+            btnCancel.UseVisualStyleBackColor = true;
+            btnCancel.Click += btnCancel_Click;
+            // 
             // label12
             // 
             label12.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
@@ -400,33 +414,26 @@
             label12.Text = "Customer Name";
             label12.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // btnCancel
-            // 
-            btnCancel.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            btnCancel.Location = new Point(0, 370);
-            btnCancel.Name = "btnCancel";
-            btnCancel.Size = new Size(131, 32);
-            btnCancel.TabIndex = 38;
-            btnCancel.Text = "Cancel";
-            btnCancel.UseVisualStyleBackColor = true;
-            btnCancel.Click += btnCancel_Click;
-            // 
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(128, 128, 255);
+            panel1.Controls.Add(btnMinimize);
+            panel1.Controls.Add(btnMaximize);
+            panel1.Controls.Add(btnExit1);
             panel1.Controls.Add(label2);
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
             panel1.Size = new Size(826, 40);
             panel1.TabIndex = 39;
+            panel1.MouseDown += panel2_MouseDown;
             // 
             // label2
             // 
             label2.Anchor = AnchorStyles.None;
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
-            label2.Location = new Point(308, 5);
+            label2.Location = new Point(329, 5);
             label2.Name = "label2";
             label2.Size = new Size(159, 28);
             label2.TabIndex = 3;
@@ -445,6 +452,7 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(826, 40);
             panel2.TabIndex = 40;
+            panel2.MouseDown += panel2_MouseDown;
             // 
             // label16
             // 
@@ -492,6 +500,45 @@
             label3.Size = new Size(178, 20);
             label3.TabIndex = 4;
             label3.Text = "New/Update Import Tool";
+            // 
+            // btnMinimize
+            // 
+            btnMinimize.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnMinimize.FlatAppearance.BorderSize = 0;
+            btnMinimize.FlatStyle = FlatStyle.Flat;
+            btnMinimize.Image = Properties.Resources.Screenshot_2023_06_24_182809_removebg_preview1;
+            btnMinimize.Location = new Point(765, 5);
+            btnMinimize.Name = "btnMinimize";
+            btnMinimize.Size = new Size(24, 24);
+            btnMinimize.TabIndex = 17;
+            btnMinimize.UseVisualStyleBackColor = false;
+            btnMinimize.Click += btnMinimize_Click;
+            // 
+            // btnMaximize
+            // 
+            btnMaximize.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnMaximize.FlatAppearance.BorderSize = 0;
+            btnMaximize.FlatStyle = FlatStyle.Flat;
+            btnMaximize.Image = Properties.Resources.Screenshot_2023_06_24_182506_removebg_preview;
+            btnMaximize.Location = new Point(795, 5);
+            btnMaximize.Name = "btnMaximize";
+            btnMaximize.Size = new Size(24, 24);
+            btnMaximize.TabIndex = 18;
+            btnMaximize.UseVisualStyleBackColor = true;
+            btnMaximize.Click += btnMaximize_Click;
+            // 
+            // btnExit1
+            // 
+            btnExit1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnExit1.FlatAppearance.BorderSize = 0;
+            btnExit1.FlatStyle = FlatStyle.Flat;
+            btnExit1.Image = Properties.Resources.png_clipart_power_symbol_computer_icons_button_button_computer_electrical_switches_removebg_preview1;
+            btnExit1.Location = new Point(735, 5);
+            btnExit1.Name = "btnExit1";
+            btnExit1.Size = new Size(24, 24);
+            btnExit1.TabIndex = 16;
+            btnExit1.UseVisualStyleBackColor = false;
+            btnExit1.Click += btnExit1_Click;
             // 
             // ExportPopup
             // 
@@ -554,5 +601,8 @@
         private Label label3;
         private Button button1;
         private Label label16;
+        private Button btnMinimize;
+        private Button btnMaximize;
+        private Button btnExit1;
     }
 }
