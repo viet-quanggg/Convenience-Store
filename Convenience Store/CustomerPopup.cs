@@ -55,5 +55,40 @@ namespace Convenience_Store
 
             cdgvCustomer.DataSource = new BindingSource() { DataSource = listAllStaff };
         }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Save button clicked!");
+            int cusId = int.Parse(txtCusId.Text);
+            string cusName = txtCusName.Text;
+            int cusGender = int.Parse(txtcusGender.Text);
+            DateTime cusDob = dtpDOB.Value;
+            string cusPhone = txtCusPhone.Text;
+
+            // find the customer object to be updated from the list
+            Customer customerToUpdate = customer.GetAll().FirstOrDefault(c => c.CusId == cusId);
+
+            if (customerToUpdate != null)
+            {
+                // update the customer object with new values
+                customerToUpdate.CusName = cusName;
+                customerToUpdate.CusGender = cusGender;
+                customerToUpdate.CusDob = cusDob;
+                customerToUpdate.CusPhone = cusPhone;
+
+                // update the customer object in the database
+                customer.Update(customerToUpdate);
+
+                // refresh the data grid view with updated data
+                refreshData();
+
+                // close the pop-up form
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Invalid Customer ID. Please select a valid customer.");
+            }
+        }
     }
 }

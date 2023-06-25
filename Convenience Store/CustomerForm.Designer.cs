@@ -357,6 +357,7 @@
             btnAdd.TabIndex = 31;
             btnAdd.Text = "New Customer";
             btnAdd.UseVisualStyleBackColor = true;
+            btnAdd.Click += btnAdd_Click;
             // 
             // CustomerForm
             // 
@@ -371,6 +372,7 @@
             Controls.Add(dgvCustomer);
             Controls.Add(panel1);
             Name = "CustomerForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "CustomerForm";
             Load += CustomerForm_Load;
             panel1.ResumeLayout(false);

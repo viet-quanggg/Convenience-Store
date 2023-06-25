@@ -30,6 +30,7 @@ namespace Convenience_Store
             this.Text = string.Empty;
             this.ControlBox = false;
 
+            _account = _accounts.FirstOrDefault();
             if (_account != null)
             {
                 txtId.Text = _account.AccId.ToString();
@@ -128,20 +129,20 @@ namespace Convenience_Store
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("Are you sure to delete this bill?", "Notification", MessageBoxButtons.YesNo);
-            if (result == DialogResult.Yes)
+            try
             {
-                var customers = customer.GetAll()[dgvCustomer.CurrentCell.RowIndex];
-                using (var context = new ConvenienceStoreContext())
+                DialogResult result = MessageBox.Show("Are you sure to delete this customer?", "Notification", MessageBoxButtons.YesNo);
+                if (result == DialogResult.Yes)
                 {
-                    var cus = context.ImportBills.Find(customers.CusId);
-                    if (cus != null)
-                    {
-                        context.ImportBills.Remove(cus);
-                        context.SaveChanges();
-                        refreshData();
-                    }
+                    var selectedCustomer = customer.GetAll()[dgvCustomer.CurrentCell.RowIndex];
+                    customer.Delete(selectedCustomer);
+                    refreshData();
+
                 }
+            }
+            catch (DbUpdateException ex)
+            {
+                MessageBox.Show($"An error occurred while updating the entries: {ex.InnerException?.Message}");
             }
         }
 
@@ -152,6 +153,12 @@ namespace Convenience_Store
             var currentBill = customer.GetAll()[dgvCustomer.CurrentCell.RowIndex];
             Form billPopup = new CustomerPopup(dgvCustomer, index, SelectedRow, list);
             billPopup.ShowDialog();
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            Form createcustomer = new CreateCustomer(dgvCustomer, _account);
+            createcustomer.ShowDialog();
         }
     }
 }

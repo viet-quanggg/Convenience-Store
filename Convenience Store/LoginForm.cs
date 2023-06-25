@@ -107,8 +107,14 @@ namespace Convenience_Store
 
         private void cbPassword_CheckedChanged(object sender, EventArgs e)
         {
-            txtUsername.Text = string.Empty;
-            txtPassword.Text = string.Empty;
+            if(cbPassword.Checked) 
+            {
+                txtPassword.UseSystemPasswordChar = false;
+            }
+            else
+            {
+                txtPassword.UseSystemPasswordChar = true;
+            }
         }
 
         private void btnclear_Click_1(object sender, EventArgs e)

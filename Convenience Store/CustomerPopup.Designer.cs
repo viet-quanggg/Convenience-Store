@@ -48,6 +48,7 @@
             panel1 = new Panel();
             button1 = new Button();
             label2 = new Label();
+            btnSave = new Button();
             panel4.SuspendLayout();
             panel2.SuspendLayout();
             panel1.SuspendLayout();
@@ -57,7 +58,7 @@
             // 
             txtProviderID.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
             txtProviderID.Enabled = false;
-            txtProviderID.Location = new Point(814, 104);
+            txtProviderID.Location = new Point(815, 104);
             txtProviderID.Name = "txtProviderID";
             txtProviderID.Size = new Size(61, 27);
             txtProviderID.TabIndex = 32;
@@ -65,9 +66,9 @@
             // btnUpdate
             // 
             btnUpdate.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            btnUpdate.Location = new Point(414, 557);
+            btnUpdate.Location = new Point(414, 566);
             btnUpdate.Name = "btnUpdate";
-            btnUpdate.Size = new Size(467, 32);
+            btnUpdate.Size = new Size(468, 32);
             btnUpdate.TabIndex = 30;
             btnUpdate.Text = "Update";
             btnUpdate.UseVisualStyleBackColor = true;
@@ -77,7 +78,7 @@
             label1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(721, 107);
+            label1.Location = new Point(722, 107);
             label1.Name = "label1";
             label1.Size = new Size(87, 20);
             label1.TabIndex = 31;
@@ -89,7 +90,7 @@
             txtCusPhone.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             txtCusPhone.Location = new Point(157, 164);
             txtCusPhone.Name = "txtCusPhone";
-            txtCusPhone.Size = new Size(528, 27);
+            txtCusPhone.Size = new Size(314, 27);
             txtCusPhone.TabIndex = 30;
             // 
             // label17
@@ -109,7 +110,7 @@
             txtcusGender.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             txtcusGender.Location = new Point(157, 74);
             txtcusGender.Name = "txtcusGender";
-            txtcusGender.Size = new Size(722, 27);
+            txtcusGender.Size = new Size(314, 27);
             txtcusGender.TabIndex = 21;
             // 
             // txtCusName
@@ -117,7 +118,7 @@
             txtCusName.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             txtCusName.Location = new Point(157, 41);
             txtCusName.Name = "txtCusName";
-            txtCusName.Size = new Size(722, 27);
+            txtCusName.Size = new Size(314, 27);
             txtCusName.TabIndex = 20;
             // 
             // txtCusId
@@ -126,7 +127,7 @@
             txtCusId.Enabled = false;
             txtCusId.Location = new Point(157, 8);
             txtCusId.Name = "txtCusId";
-            txtCusId.Size = new Size(722, 27);
+            txtCusId.Size = new Size(314, 27);
             txtCusId.TabIndex = 10;
             // 
             // label9
@@ -182,7 +183,7 @@
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
             label3.ForeColor = Color.Black;
-            label3.Location = new Point(1632, 20);
+            label3.Location = new Point(1174, 20);
             label3.Name = "label3";
             label3.Size = new Size(178, 20);
             label3.TabIndex = 4;
@@ -204,9 +205,9 @@
             panel4.Controls.Add(label9);
             panel4.Controls.Add(label8);
             panel4.Controls.Add(label7);
-            panel4.Location = new Point(259, 140);
+            panel4.Location = new Point(84, 62);
             panel4.Name = "panel4";
-            panel4.Size = new Size(470, 239);
+            panel4.Size = new Size(471, 248);
             panel4.TabIndex = 15;
             // 
             // label4
@@ -235,9 +236,9 @@
             panel2.Controls.Add(label3);
             panel2.Dock = DockStyle.Bottom;
             panel2.ForeColor = Color.White;
-            panel2.Location = new Point(0, 589);
+            panel2.Location = new Point(0, 398);
             panel2.Name = "panel2";
-            panel2.Size = new Size(1083, 40);
+            panel2.Size = new Size(625, 40);
             panel2.TabIndex = 13;
             // 
             // panel1
@@ -249,7 +250,7 @@
             panel1.ForeColor = Color.White;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1083, 40);
+            panel1.Size = new Size(625, 40);
             panel1.TabIndex = 16;
             // 
             // button1
@@ -269,17 +270,28 @@
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
             label2.ForeColor = Color.Black;
-            label2.Location = new Point(2515, 20);
+            label2.Location = new Point(2057, 20);
             label2.Name = "label2";
             label2.Size = new Size(178, 20);
             label2.TabIndex = 4;
             label2.Text = "New/Update Import Tool";
             // 
+            // btnSave
+            // 
+            btnSave.Location = new Point(519, 363);
+            btnSave.Name = "btnSave";
+            btnSave.Size = new Size(94, 29);
+            btnSave.TabIndex = 17;
+            btnSave.Text = "Save";
+            btnSave.UseVisualStyleBackColor = true;
+            btnSave.Click += btnSave_Click;
+            // 
             // CustomerPopup
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1083, 629);
+            ClientSize = new Size(625, 438);
+            Controls.Add(btnSave);
             Controls.Add(panel1);
             Controls.Add(panel4);
             Controls.Add(panel2);
@@ -317,5 +329,6 @@
         private Label label2;
         private Label label4;
         private DateTimePicker dtpDOB;
+        private Button btnSave;
     }
 }
