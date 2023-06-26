@@ -124,6 +124,7 @@
             txtCusId.Enabled = false;
             txtCusId.Location = new Point(176, 16);
             txtCusId.Name = "txtCusId";
+            txtCusId.PlaceholderText = "AutoFill";
             txtCusId.Size = new Size(351, 27);
             txtCusId.TabIndex = 10;
             // 

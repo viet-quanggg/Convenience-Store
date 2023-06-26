@@ -129,7 +129,7 @@
             label3.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
-            label3.Location = new Point(724, 20);
+            label3.Location = new Point(748, 20);
             label3.Name = "label3";
             label3.Size = new Size(88, 20);
             label3.TabIndex = 20;
@@ -208,7 +208,7 @@
             btnSetting.Name = "btnSetting";
             btnSetting.Size = new Size(201, 54);
             btnSetting.TabIndex = 4;
-            btnSetting.Text = "Setting";
+            btnSetting.Text = "Account Setting";
             btnSetting.UseVisualStyleBackColor = true;
             btnSetting.Click += btnSetting_Click;
             // 

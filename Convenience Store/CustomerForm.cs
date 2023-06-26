@@ -8,6 +8,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.ConstrainedExecution;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
@@ -123,11 +124,16 @@ namespace Convenience_Store
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
+            RepoExportBill repoExportBill = new RepoExportBill();
+            
             try
             {
                 DialogResult result = MessageBox.Show("Are you sure to delete this customer?", "Notification", MessageBoxButtons.YesNo);
                 if (result == DialogResult.Yes)
                 {
+                    var selectedCustomerId = int.Parse(customer.GetAll()[dgvCustomer.CurrentCell.RowIndex].CusId.ToString());
+                    ExportBill eb =  repoExportBill.GetAll().SingleOrDefault(m => m.CusId == selectedCustomerId);
+                    repoExportBill.Delete(eb);
                     var selectedCustomer = customer.GetAll()[dgvCustomer.CurrentCell.RowIndex];
                     customer.Delete(selectedCustomer);
                     refreshData();

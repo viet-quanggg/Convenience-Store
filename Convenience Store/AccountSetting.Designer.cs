@@ -415,9 +415,9 @@
             label1.ForeColor = SystemColors.ControlText;
             label1.Location = new Point(420, 3);
             label1.Name = "label1";
-            label1.Size = new Size(79, 28);
+            label1.Size = new Size(161, 28);
             label1.TabIndex = 12;
-            label1.Text = "Setting";
+            label1.Text = "Account Setting";
             label1.TextAlign = ContentAlignment.MiddleCenter;
             label1.MouseDown += label1_MouseDown;
             // 
