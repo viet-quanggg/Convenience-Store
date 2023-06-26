@@ -107,7 +107,7 @@ namespace Convenience_Store
 
         private void cbPassword_CheckedChanged(object sender, EventArgs e)
         {
-            if(cbPassword.Checked) 
+            if (cbPassword.Checked)
             {
                 txtPassword.UseSystemPasswordChar = false;
             }
@@ -124,6 +124,12 @@ namespace Convenience_Store
         }
 
         private void panel1_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
+        private void panel2_MouseDown(object sender, MouseEventArgs e)
         {
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);

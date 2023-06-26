@@ -62,21 +62,22 @@
             panel1.ForeColor = SystemColors.MenuText;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(795, 85);
+            panel1.Size = new Size(795, 58);
             panel1.TabIndex = 12;
-            panel1.MouseDown += panel1_MouseDown;
+            panel1.MouseDown += panel2_MouseDown;
             // 
             // label3
             // 
             label3.Anchor = AnchorStyles.None;
             label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI", 30F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
-            label3.Location = new Point(189, 15);
+            label3.Font = new Font("Segoe UI", 24F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
+            label3.Location = new Point(223, 1);
             label3.Name = "label3";
-            label3.Size = new Size(459, 67);
+            label3.Size = new Size(365, 54);
             label3.TabIndex = 0;
             label3.Text = "Convenience Store";
             label3.Click += label3_Click;
+            label3.MouseDown += panel2_MouseDown;
             // 
             // btnMinimize
             // 
@@ -127,7 +128,7 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(795, 55);
             panel2.TabIndex = 13;
-            panel2.MouseDown += panel1_MouseDown;
+            panel2.MouseDown += panel2_MouseDown;
             // 
             // label4
             // 
@@ -139,6 +140,7 @@
             label4.Size = new Size(108, 28);
             label4.TabIndex = 1;
             label4.Text = "Login Page";
+            label4.MouseDown += panel2_MouseDown;
             // 
             // btnExit
             // 
@@ -173,9 +175,9 @@
             panel4.Controls.Add(label1);
             panel4.Dock = DockStyle.Fill;
             panel4.Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
-            panel4.Location = new Point(0, 85);
+            panel4.Location = new Point(0, 58);
             panel4.Name = "panel4";
-            panel4.Size = new Size(795, 360);
+            panel4.Size = new Size(795, 387);
             panel4.TabIndex = 16;
             // 
             // label5
@@ -183,7 +185,7 @@
             label5.Anchor = AnchorStyles.None;
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI Semibold", 20.1428585F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
-            label5.Location = new Point(304, 50);
+            label5.Location = new Point(304, 63);
             label5.Name = "label5";
             label5.Size = new Size(193, 46);
             label5.TabIndex = 16;
@@ -193,7 +195,7 @@
             // 
             cbPassword.Anchor = AnchorStyles.None;
             cbPassword.AutoSize = true;
-            cbPassword.Location = new Point(629, 210);
+            cbPassword.Location = new Point(629, 223);
             cbPassword.Name = "cbPassword";
             cbPassword.Size = new Size(129, 21);
             cbPassword.TabIndex = 22;
@@ -204,7 +206,7 @@
             // btnclear
             // 
             btnclear.Anchor = AnchorStyles.None;
-            btnclear.Location = new Point(37, 281);
+            btnclear.Location = new Point(37, 294);
             btnclear.Name = "btnclear";
             btnclear.Size = new Size(94, 29);
             btnclear.TabIndex = 23;
@@ -217,7 +219,7 @@
             btnLogin.Anchor = AnchorStyles.None;
             btnLogin.FlatAppearance.BorderSize = 2;
             btnLogin.FlatStyle = FlatStyle.System;
-            btnLogin.Location = new Point(563, 279);
+            btnLogin.Location = new Point(563, 292);
             btnLogin.Margin = new Padding(3, 4, 3, 4);
             btnLogin.Name = "btnLogin";
             btnLogin.Size = new Size(86, 31);
@@ -229,7 +231,7 @@
             // txtUsername
             // 
             txtUsername.Anchor = AnchorStyles.None;
-            txtUsername.Location = new Point(171, 144);
+            txtUsername.Location = new Point(171, 157);
             txtUsername.Margin = new Padding(3, 4, 3, 4);
             txtUsername.Name = "txtUsername";
             txtUsername.Size = new Size(427, 23);
@@ -239,7 +241,7 @@
             // 
             txtPassword.Anchor = AnchorStyles.None;
             txtPassword.ForeColor = SystemColors.ActiveCaptionText;
-            txtPassword.Location = new Point(171, 211);
+            txtPassword.Location = new Point(171, 224);
             txtPassword.Margin = new Padding(3, 4, 3, 4);
             txtPassword.Name = "txtPassword";
             txtPassword.Size = new Size(427, 23);
@@ -250,7 +252,7 @@
             // 
             label2.Anchor = AnchorStyles.None;
             label2.AutoSize = true;
-            label2.Location = new Point(71, 211);
+            label2.Location = new Point(71, 224);
             label2.Name = "label2";
             label2.Size = new Size(69, 17);
             label2.TabIndex = 18;
@@ -260,7 +262,7 @@
             // 
             label1.Anchor = AnchorStyles.None;
             label1.AutoSize = true;
-            label1.Location = new Point(71, 144);
+            label1.Location = new Point(71, 157);
             label1.Name = "label1";
             label1.Size = new Size(73, 17);
             label1.TabIndex = 17;
