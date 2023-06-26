@@ -127,7 +127,7 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(924, 40);
             panel1.TabIndex = 32;
-            panel1.MouseDown += panel1_MouseDown;
+            panel1.MouseDown += label1_MouseDown_1;
             // 
             // btnMinimize
             // 
@@ -177,6 +177,7 @@
             label2.Size = new Size(161, 28);
             label2.TabIndex = 3;
             label2.Text = "Import Bill Tool";
+            label2.MouseDown += label1_MouseDown_1;
             // 
             // label5
             // 
@@ -264,7 +265,7 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(924, 40);
             panel2.TabIndex = 33;
-            panel2.MouseDown += panel1_MouseDown;
+            panel2.MouseDown += label1_MouseDown_1;
             // 
             // label1
             // 
@@ -272,11 +273,12 @@
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
             label1.ForeColor = Color.Black;
-            label1.Location = new Point(697, 20);
+            label1.Location = new Point(746, 20);
             label1.Name = "label1";
             label1.Size = new Size(178, 20);
             label1.TabIndex = 45;
             label1.Text = "New/Update Import Tool";
+            label1.MouseDown += label1_MouseDown_1;
             // 
             // btnExit1
             // 

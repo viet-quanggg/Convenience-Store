@@ -60,15 +60,15 @@
             dgvExportBill = new DataGridView();
             btnExit = new Button();
             panel1 = new Panel();
+            btnMinimize = new Button();
+            btnMaximize = new Button();
             label6 = new Label();
+            btnExit1 = new Button();
             label1 = new Label();
             panel4 = new Panel();
             label3 = new Label();
             label2 = new Label();
             button1 = new Button();
-            btnMinimize = new Button();
-            btnMaximize = new Button();
-            btnExit1 = new Button();
             pnlAcc.SuspendLayout();
             pnlCusMer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvExportBill).BeginInit();
@@ -442,79 +442,7 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(833, 40);
             panel1.TabIndex = 39;
-            panel1.MouseDown += panel4_MouseDown;
-            // 
-            // label6
-            // 
-            label6.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
-            label6.AutoSize = true;
-            label6.Location = new Point(12, 14);
-            label6.Name = "label6";
-            label6.Size = new Size(0, 20);
-            label6.TabIndex = 10;
-            // 
-            // label1
-            // 
-            label1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
-            label1.AutoSize = true;
-            label1.BackColor = Color.FromArgb(128, 128, 255);
-            label1.FlatStyle = FlatStyle.System;
-            label1.Font = new Font("Segoe UI", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
-            label1.ForeColor = SystemColors.ControlText;
-            label1.Location = new Point(367, 6);
-            label1.Name = "label1";
-            label1.Size = new Size(111, 28);
-            label1.TabIndex = 2;
-            label1.Text = "Export Bill";
-            label1.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // panel4
-            // 
-            panel4.BackColor = Color.FromArgb(128, 128, 255);
-            panel4.Controls.Add(label3);
-            panel4.Controls.Add(label2);
-            panel4.Controls.Add(button1);
-            panel4.Controls.Add(btnExit);
-            panel4.Dock = DockStyle.Bottom;
-            panel4.Location = new Point(0, 487);
-            panel4.Name = "panel4";
-            panel4.Size = new Size(833, 40);
-            panel4.TabIndex = 40;
-            panel4.MouseDown += panel4_MouseDown;
-            // 
-            // label3
-            // 
-            label3.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
-            label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
-            label3.Location = new Point(715, 17);
-            label3.Name = "label3";
-            label3.Size = new Size(117, 20);
-            label3.TabIndex = 11;
-            label3.Text = "Export Bill Page";
-            label3.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label2
-            // 
-            label2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
-            label2.Location = new Point(1235, 20);
-            label2.Name = "label2";
-            label2.Size = new Size(118, 20);
-            label2.TabIndex = 3;
-            label2.Text = "Import Bill Page";
-            label2.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // button1
-            // 
-            button1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
-            button1.Location = new Point(12, 8);
-            button1.Name = "button1";
-            button1.Size = new Size(92, 0);
-            button1.TabIndex = 0;
-            button1.Text = "Exit";
-            button1.UseVisualStyleBackColor = true;
+            panel1.MouseDown += label1_MouseDown;
             // 
             // btnMinimize
             // 
@@ -542,6 +470,15 @@
             btnMaximize.UseVisualStyleBackColor = true;
             btnMaximize.Click += btnMaximize_Click;
             // 
+            // label6
+            // 
+            label6.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
+            label6.AutoSize = true;
+            label6.Location = new Point(12, 14);
+            label6.Name = "label6";
+            label6.Size = new Size(0, 20);
+            label6.TabIndex = 10;
+            // 
             // btnExit1
             // 
             btnExit1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
@@ -554,6 +491,71 @@
             btnExit1.TabIndex = 41;
             btnExit1.UseVisualStyleBackColor = false;
             btnExit1.Click += btnExit1_Click;
+            // 
+            // label1
+            // 
+            label1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
+            label1.AutoSize = true;
+            label1.BackColor = Color.FromArgb(128, 128, 255);
+            label1.FlatStyle = FlatStyle.System;
+            label1.Font = new Font("Segoe UI", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
+            label1.ForeColor = SystemColors.ControlText;
+            label1.Location = new Point(367, 6);
+            label1.Name = "label1";
+            label1.Size = new Size(111, 28);
+            label1.TabIndex = 2;
+            label1.Text = "Export Bill";
+            label1.TextAlign = ContentAlignment.MiddleCenter;
+            label1.MouseDown += label1_MouseDown;
+            // 
+            // panel4
+            // 
+            panel4.BackColor = Color.FromArgb(128, 128, 255);
+            panel4.Controls.Add(label3);
+            panel4.Controls.Add(label2);
+            panel4.Controls.Add(button1);
+            panel4.Controls.Add(btnExit);
+            panel4.Dock = DockStyle.Bottom;
+            panel4.Location = new Point(0, 487);
+            panel4.Name = "panel4";
+            panel4.Size = new Size(833, 40);
+            panel4.TabIndex = 40;
+            panel4.MouseDown += label1_MouseDown;
+            // 
+            // label3
+            // 
+            label3.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
+            label3.AutoSize = true;
+            label3.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
+            label3.Location = new Point(715, 17);
+            label3.Name = "label3";
+            label3.Size = new Size(117, 20);
+            label3.TabIndex = 11;
+            label3.Text = "Export Bill Page";
+            label3.TextAlign = ContentAlignment.MiddleCenter;
+            label3.MouseDown += label1_MouseDown;
+            // 
+            // label2
+            // 
+            label2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
+            label2.Location = new Point(1235, 20);
+            label2.Name = "label2";
+            label2.Size = new Size(118, 20);
+            label2.TabIndex = 3;
+            label2.Text = "Import Bill Page";
+            label2.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // button1
+            // 
+            button1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
+            button1.Location = new Point(12, 8);
+            button1.Name = "button1";
+            button1.Size = new Size(92, 0);
+            button1.TabIndex = 0;
+            button1.Text = "Exit";
+            button1.UseVisualStyleBackColor = true;
             // 
             // ExportBillForm
             // 

@@ -62,7 +62,7 @@
             // txtSearch
             // 
             txtSearch.Location = new Point(319, 53);
-            txtSearch.Margin = new Padding(2, 2, 2, 2);
+            txtSearch.Margin = new Padding(2);
             txtSearch.Name = "txtSearch";
             txtSearch.PlaceholderText = "Search Box";
             txtSearch.Size = new Size(373, 27);
@@ -121,7 +121,7 @@
             dgvCurrentlyAdd.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             dgvCurrentlyAdd.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvCurrentlyAdd.Location = new Point(9, 84);
-            dgvCurrentlyAdd.Margin = new Padding(2, 2, 2, 2);
+            dgvCurrentlyAdd.Margin = new Padding(2);
             dgvCurrentlyAdd.Name = "dgvCurrentlyAdd";
             dgvCurrentlyAdd.ReadOnly = true;
             dgvCurrentlyAdd.RowHeadersWidth = 62;
@@ -137,7 +137,7 @@
             dgvMerchandise.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
             dgvMerchandise.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvMerchandise.Location = new Point(317, 84);
-            dgvMerchandise.Margin = new Padding(2, 2, 2, 2);
+            dgvMerchandise.Margin = new Padding(2);
             dgvMerchandise.Name = "dgvMerchandise";
             dgvMerchandise.ReadOnly = true;
             dgvMerchandise.RowHeadersWidth = 62;
@@ -156,6 +156,7 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(791, 40);
             panel2.TabIndex = 34;
+            panel2.MouseDown += label3_MouseDown;
             // 
             // label4
             // 
@@ -167,6 +168,7 @@
             label4.Size = new Size(145, 20);
             label4.TabIndex = 1;
             label4.Text = "Merchandise Popup";
+            label4.MouseDown += label3_MouseDown;
             // 
             // btnExit
             // 
@@ -191,7 +193,7 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(791, 40);
             panel1.TabIndex = 33;
-            panel1.MouseDown += panel1_MouseDown;
+            panel1.MouseDown += label3_MouseDown;
             // 
             // label6
             // 
@@ -214,6 +216,7 @@
             label3.Size = new Size(168, 28);
             label3.TabIndex = 0;
             label3.Text = "Merchandise List";
+            label3.MouseDown += label3_MouseDown;
             // 
             // MerchandiseList
             // 
@@ -230,7 +233,7 @@
             Controls.Add(dgvMerchandise);
             Controls.Add(panel2);
             Controls.Add(panel1);
-            Margin = new Padding(2, 2, 2, 2);
+            Margin = new Padding(2);
             Name = "MerchandiseList";
             Text = "MerchandiseList";
             ((System.ComponentModel.ISupportInitialize)dgvCurrentlyAdd).EndInit();

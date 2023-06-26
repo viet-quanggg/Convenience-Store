@@ -73,7 +73,7 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(803, 40);
             panel1.TabIndex = 3;
-            panel1.MouseDown += panel1_MouseDown;
+            panel1.MouseDown += label9_MouseDown;
             // 
             // btnMinimize
             // 
@@ -115,6 +115,7 @@
             label9.TabIndex = 11;
             label9.Text = "Customer";
             label9.TextAlign = ContentAlignment.MiddleCenter;
+            label9.MouseDown += label9_MouseDown;
             // 
             // btnExit1
             // 
@@ -257,7 +258,7 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(803, 40);
             panel2.TabIndex = 30;
-            panel2.MouseDown += panel1_MouseDown;
+            panel2.MouseDown += label9_MouseDown;
             // 
             // label8
             // 
@@ -270,6 +271,7 @@
             label8.Size = new Size(113, 20);
             label8.TabIndex = 28;
             label8.Text = "Customer Page";
+            label8.MouseDown += label9_MouseDown;
             // 
             // btnExit
             // 

@@ -74,7 +74,7 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(916, 40);
             panel2.TabIndex = 3;
-            panel2.MouseDown += panel2_MouseDown;
+            panel2.MouseDown += label1_MouseDown;
             // 
             // label3
             // 
@@ -86,6 +86,7 @@
             label3.Size = new Size(96, 20);
             label3.TabIndex = 20;
             label3.Text = "Setting Page";
+            label3.MouseDown += label1_MouseDown;
             // 
             // btnExit
             // 
@@ -363,7 +364,7 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(916, 38);
             panel1.TabIndex = 13;
-            panel1.MouseDown += panel2_MouseDown;
+            panel1.MouseDown += label1_MouseDown;
             // 
             // btnMinimize
             // 
@@ -418,6 +419,7 @@
             label1.TabIndex = 12;
             label1.Text = "Setting";
             label1.TextAlign = ContentAlignment.MiddleCenter;
+            label1.MouseDown += label1_MouseDown;
             // 
             // AccountSetting
             // 

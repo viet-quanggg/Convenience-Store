@@ -73,7 +73,7 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(801, 40);
             panel1.TabIndex = 0;
-            panel1.MouseDown += panel4_MouseDown;
+            panel1.MouseDown += label2_MouseDown;
             // 
             // btnMinimize
             // 
@@ -137,6 +137,7 @@
             label1.TabIndex = 2;
             label1.Text = "Import Bill";
             label1.TextAlign = ContentAlignment.MiddleCenter;
+            label1.MouseDown += label2_MouseDown;
             // 
             // panel4
             // 
@@ -148,19 +149,20 @@
             panel4.Name = "panel4";
             panel4.Size = new Size(801, 40);
             panel4.TabIndex = 1;
-            panel4.MouseDown += panel4_MouseDown;
+            panel4.MouseDown += label2_MouseDown;
             // 
             // label2
             // 
             label2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
-            label2.Location = new Point(612, 20);
+            label2.Location = new Point(680, 20);
             label2.Name = "label2";
             label2.Size = new Size(118, 20);
             label2.TabIndex = 3;
             label2.Text = "Import Bill Page";
             label2.TextAlign = ContentAlignment.MiddleCenter;
+            label2.MouseDown += label2_MouseDown;
             // 
             // btnExit
             // 

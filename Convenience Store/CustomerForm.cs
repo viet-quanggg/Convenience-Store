@@ -82,12 +82,6 @@ namespace Convenience_Store
             this.Close();
         }
 
-        private void panel1_MouseDown(object sender, MouseEventArgs e)
-        {
-            ReleaseCapture();
-            SendMessage(this.Handle, 0x112, 0xf012, 0);
-        }
-
         private void btnMinimize_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
@@ -159,6 +153,12 @@ namespace Convenience_Store
         {
             Form createcustomer = new CreateCustomer(dgvCustomer, _account);
             createcustomer.ShowDialog();
+        }
+
+        private void label9_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
     }
 }

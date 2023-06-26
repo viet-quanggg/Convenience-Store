@@ -59,7 +59,7 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(836, 38);
             panel1.TabIndex = 1;
-            panel1.MouseDown += panel1_MouseDown;
+            panel1.MouseDown += label2_MouseDown;
             // 
             // btnMinimize
             // 
@@ -110,6 +110,7 @@
             label2.Size = new Size(120, 28);
             label2.TabIndex = 4;
             label2.Text = "Main Home";
+            label2.MouseDown += label2_MouseDown;
             // 
             // panel2
             // 
@@ -121,7 +122,7 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(836, 40);
             panel2.TabIndex = 2;
-            panel2.MouseDown += panel1_MouseDown;
+            panel2.MouseDown += label2_MouseDown;
             // 
             // label3
             // 
@@ -133,6 +134,7 @@
             label3.Size = new Size(88, 20);
             label3.TabIndex = 20;
             label3.Text = "Home Page";
+            label3.MouseDown += label2_MouseDown;
             // 
             // btnExit
             // 

@@ -213,7 +213,7 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(393, 40);
             panel1.TabIndex = 24;
-            panel1.MouseDown += panel1_MouseDown;
+            panel1.MouseDown += label8_MouseDown;
             // 
             // label1
             // 
@@ -238,6 +238,7 @@
             label8.TabIndex = 2;
             label8.Text = "Add Merchandise";
             label8.TextAlign = ContentAlignment.MiddleCenter;
+            label8.MouseDown += label8_MouseDown;
             // 
             // panel3
             // 
@@ -252,6 +253,7 @@
             panel3.Name = "panel3";
             panel3.Size = new Size(393, 39);
             panel3.TabIndex = 25;
+            panel3.MouseDown += label8_MouseDown;
             // 
             // label10
             // 
@@ -264,6 +266,7 @@
             label10.Size = new Size(129, 20);
             label10.TabIndex = 26;
             label10.Text = "Add Merchandise";
+            label10.MouseDown += label8_MouseDown;
             // 
             // btnExit
             // 
@@ -308,6 +311,7 @@
             Controls.Add(panel3);
             FormBorderStyle = FormBorderStyle.FixedToolWindow;
             Name = "AddMerchandise";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "AddMerchandise";
             panel2.ResumeLayout(false);
             panel2.PerformLayout();

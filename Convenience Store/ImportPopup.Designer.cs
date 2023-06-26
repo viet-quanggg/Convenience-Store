@@ -81,7 +81,7 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(928, 40);
             panel1.TabIndex = 1;
-            panel1.MouseDown += panel2_MouseDown;
+            panel1.MouseDown += label2_MouseDown;
             // 
             // label2
             // 
@@ -93,6 +93,7 @@
             label2.Size = new Size(161, 28);
             label2.TabIndex = 3;
             label2.Text = "Import Bill Tool";
+            label2.MouseDown += label2_MouseDown;
             // 
             // panel2
             // 
@@ -105,7 +106,7 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(931, 40);
             panel2.TabIndex = 2;
-            panel2.MouseDown += panel2_MouseDown;
+            panel2.MouseDown += label2_MouseDown;
             // 
             // btnExit
             // 
@@ -130,6 +131,7 @@
             label3.Size = new Size(178, 20);
             label3.TabIndex = 4;
             label3.Text = "New/Update Import Tool";
+            label3.MouseDown += label2_MouseDown;
             // 
             // panel3
             // 

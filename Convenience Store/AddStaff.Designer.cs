@@ -135,7 +135,7 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(438, 40);
             panel1.TabIndex = 14;
-            panel1.MouseDown += panel3_MouseDown;
+            panel1.MouseDown += label8_MouseDown;
             // 
             // label3
             // 
@@ -160,6 +160,7 @@
             label8.TabIndex = 2;
             label8.Text = "Staff Creation";
             label8.TextAlign = ContentAlignment.MiddleCenter;
+            label8.MouseDown += label8_MouseDown;
             // 
             // btnSave
             // 
@@ -201,7 +202,7 @@
             panel2.Controls.Add(txtName);
             panel2.Controls.Add(txtPassword);
             panel2.Location = new Point(12, 45);
-            panel2.Margin = new Padding(2, 2, 2, 2);
+            panel2.Margin = new Padding(2);
             panel2.Name = "panel2";
             panel2.Size = new Size(416, 276);
             panel2.TabIndex = 18;
@@ -213,11 +214,11 @@
             panel3.Controls.Add(label1);
             panel3.Dock = DockStyle.Bottom;
             panel3.Location = new Point(0, 360);
-            panel3.Margin = new Padding(2, 2, 2, 2);
+            panel3.Margin = new Padding(2);
             panel3.Name = "panel3";
             panel3.Size = new Size(438, 39);
             panel3.TabIndex = 19;
-            panel3.MouseDown += panel3_MouseDown;
+            panel3.MouseDown += label8_MouseDown;
             // 
             // ExitButton
             // 
@@ -241,6 +242,7 @@
             label1.Size = new Size(108, 20);
             label1.TabIndex = 12;
             label1.Text = "Staff Manager";
+            label1.MouseDown += label8_MouseDown;
             // 
             // AddStaff
             // 
@@ -254,6 +256,7 @@
             Controls.Add(panel2);
             FormBorderStyle = FormBorderStyle.FixedToolWindow;
             Name = "AddStaff";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "AddStaff";
             panel1.ResumeLayout(false);
             panel1.PerformLayout();

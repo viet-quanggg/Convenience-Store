@@ -135,7 +135,7 @@
             label4.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label4.Location = new Point(675, 9);
+            label4.Location = new Point(687, 27);
             label4.Name = "label4";
             label4.Size = new Size(108, 28);
             label4.TabIndex = 1;

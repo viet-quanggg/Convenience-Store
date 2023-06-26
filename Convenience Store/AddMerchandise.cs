@@ -130,7 +130,7 @@ namespace Convenience_Store
             txtUnit.Clear();
         }
 
-        private void panel1_MouseDown(object sender, MouseEventArgs e)
+        private void label8_MouseDown(object sender, MouseEventArgs e)
         {
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);

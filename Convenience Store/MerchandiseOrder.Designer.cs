@@ -498,7 +498,7 @@
             panel3.Name = "panel3";
             panel3.Size = new Size(1179, 40);
             panel3.TabIndex = 27;
-            panel3.MouseDown += panel3_MouseDown;
+            panel3.MouseDown += label1_MouseDown;
             // 
             // btnMinimize
             // 
@@ -549,6 +549,7 @@
             label8.TabIndex = 3;
             label8.Text = "Information Merchandise";
             label8.TextAlign = ContentAlignment.TopCenter;
+            label8.MouseDown += label1_MouseDown;
             // 
             // panel4
             // 
@@ -560,19 +561,20 @@
             panel4.Name = "panel4";
             panel4.Size = new Size(1179, 61);
             panel4.TabIndex = 28;
-            panel4.MouseDown += panel3_MouseDown;
+            panel4.MouseDown += label1_MouseDown;
             // 
             // label1
             // 
             label1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
-            label1.Location = new Point(978, 24);
+            label1.Location = new Point(998, 41);
             label1.Name = "label1";
             label1.Size = new Size(181, 20);
             label1.TabIndex = 4;
             label1.Text = "Information Merchandise";
             label1.TextAlign = ContentAlignment.MiddleCenter;
+            label1.MouseDown += label1_MouseDown;
             // 
             // panel5
             // 

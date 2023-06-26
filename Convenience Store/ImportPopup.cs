@@ -167,12 +167,11 @@ namespace Convenience_Store
 
         }
 
-        private void panel2_MouseDown(object sender, MouseEventArgs e)
+        private void label2_MouseDown(object sender, MouseEventArgs e)
         {
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
-
     }
 
 }

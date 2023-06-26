@@ -75,7 +75,7 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(918, 40);
             panel1.TabIndex = 1;
-            panel1.MouseDown += panel1_MouseDown;
+            panel1.MouseDown += label1_MouseDown;
             // 
             // btnMinimize
             // 
@@ -139,6 +139,7 @@
             label1.TabIndex = 2;
             label1.Text = "Staff Manager";
             label1.TextAlign = ContentAlignment.MiddleCenter;
+            label1.MouseDown += label1_MouseDown;
             // 
             // btnAdd
             // 
@@ -321,6 +322,7 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(918, 40);
             panel2.TabIndex = 24;
+            panel2.MouseDown += label1_MouseDown;
             // 
             // label2
             // 
@@ -333,6 +335,7 @@
             label2.Size = new Size(108, 20);
             label2.TabIndex = 11;
             label2.Text = "Staff Manager";
+            label2.MouseDown += label1_MouseDown;
             // 
             // panel3
             // 
